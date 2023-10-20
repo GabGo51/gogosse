@@ -30,7 +30,8 @@ export default createGlobalStyle`
   html, body {
     width: 100vw;
     overflow-x: hidden;
-    
+    background-color: black;
+    color: white;
   }
 
 

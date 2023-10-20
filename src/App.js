@@ -1,12 +1,19 @@
+import styled from "styled-components";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+
 
 function App() {
   return (
-    <div className="App">
-      <h1>WOKE</h1>
-      
-     
-    </div>
+    <Container>
+      <Header/>
+      <Hero/>
+    </Container>
   );
 }
 
+
+const Container = styled.div`
+width: 100vw;
+`
 export default App;
