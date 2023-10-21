@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import Woke from "./fonts/tagada.otf";
+import Authentic from "./fonts/AUTHENTICSans-60.otf"
 
 
 export default createGlobalStyle`
@@ -7,7 +8,14 @@ export default createGlobalStyle`
   @font-face {
       font-family: Tagada;
       src: url(${Woke});
-    }
+  }
+
+  @font-face {
+      font-family: Authentic60;
+      src: url(${Authentic});
+  }
+
+
 
   
 
@@ -24,14 +32,16 @@ export default createGlobalStyle`
   h1, h2, h3, h4, h5, h6, 
   text, textarea {
     font-family: Tagada;
-    
+    font-weight: 400;
   }
 
   html, body {
     width: 100vw;
-    overflow-x: hidden;
-    background-color: black;
+    padding: 100px;
+    overflow: hidden;
+    background-color: #1E1E1E;
     color: white;
+    
   }
 
 

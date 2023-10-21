@@ -4,13 +4,15 @@ import G from "../img/g.png";
 import E from "../img/e.png";
 import O from "../img/o.png";
 import S from "../img/s.png";
-import cat from '../img/3683.webp'
+import cat from "../img/3683.webp";
 
 const Hero = () => {
   const [active, setActive] = useState(null);
 
   const handleHover = (letter) => {
-    setActive(letter);
+    setTimeout(() => {
+      setActive(letter);
+    }, 100);
   };
 
   const handleNotHover = () => {
@@ -20,62 +22,86 @@ const Hero = () => {
 
   return (
     <Container>
+      <TextBox>
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
+        illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+        explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
+        odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+        voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum
+        quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
+        eius modi
+      </TextBox>
       <LettersBox onMouseLeave={handleNotHover}>
         <div onMouseEnter={() => handleHover("g1")}>
-          <img src={G} />
+          <img src={G} alt="letter" />
         </div>
 
         <div
           className={`${active === "g1" ? "show" : "hide"}`}
           onMouseEnter={() => handleHover("g1")}
-        ><img src={cat}/></div>
+        >
+          <img src={cat} alt="project" />
+        </div>
 
         <div onMouseEnter={() => handleHover("o1")}>
-          <img src={O} />
+          <img src={O} alt="letter" />
         </div>
 
         <div
           className={`${active === "o1" ? "show" : "hide"}`}
           onMouseEnter={() => handleHover("o1")}
-        ></div>
+        >
+          <img src={cat} alt="project" />
+        </div>
 
         <div onMouseEnter={() => handleHover("g2")}>
-          <img src={G} />
+          <img src={G} alt="letter" />
         </div>
-        
+
         <div
           className={`${active === "g2" ? "show" : "hide"}`}
           onMouseEnter={() => handleHover("g2")}
-        ></div>
-        
+        >
+          <img src={cat} alt="project" />
+        </div>
+
         <div onMouseEnter={() => handleHover("o2")}>
-          <img src={O} />
+          <img src={O} alt="letter" />
         </div>
         <div
           className={`${active === "o2" ? "show" : "hide"}`}
           onMouseEnter={() => handleHover("o2")}
-        ></div>
+        >
+          <img src={cat} alt="project" />
+        </div>
         <div onMouseEnter={() => handleHover("s1")}>
-          <img src={S} />
+          <img src={S} alt="letter" />
         </div>
         <div
           className={`${active === "s1" ? "show" : "hide"}`}
           onMouseEnter={() => handleHover("s1")}
-        ></div>
+        >
+          <img src={cat} alt="project" />
+        </div>
         <div onMouseEnter={() => handleHover("s2")}>
-          <img src={S} />
+          <img src={S} alt="letter" />
         </div>
         <div
           className={`${active === "s2" ? "show" : "hide"}`}
           onMouseEnter={() => handleHover("s2")}
-        ></div>
+        >
+          <img src={cat} alt="project" />
+        </div>
         <div onMouseEnter={() => handleHover("e")}>
-          <img src={E} />
+          <img src={E} alt="letter" />
         </div>
         <div
           className={`${active === "e" ? "show" : "hide"}`}
           onMouseEnter={() => handleHover("e")}
-        ></div>
+        >
+          <img src={cat} alt="project" />
+        </div>
       </LettersBox>
     </Container>
   );
@@ -101,15 +127,25 @@ const slideOut = keyframes`
   }
 `;
 
-const Container = styled.div``;
+const Container = styled.div`
+padding: 20px;
+`;
+
+const TextBox = styled.div`
+  max-width: 830px;
+  font-weight: 600;
+  font-size: 24px;
+  font-family: Authentic60;
+  text-transform: uppercase;
+  margin-bottom: 120px;
+`;
 
 const LettersBox = styled.div`
-  width: 100vw;
+  width: 98vw;
   height: 400px;
   display: flex;
 
   div {
-    border: 3px solid blue;
     height: 100%;
     flex: 1;
 
@@ -121,6 +157,7 @@ const LettersBox = styled.div`
       animation: ${slideIn} 0.5s forwards;
     }
     &.hide {
+      
       animation: ${slideOut} 0.5s forwards;
     }
   }
