@@ -17,7 +17,7 @@ export default createGlobalStyle`
 
 
 
-  
+  ::-webkit-scrollbar {display:none;} //hide scroll bar 
 
   *,
   *:before,
@@ -39,10 +39,14 @@ export default createGlobalStyle`
     width: 100vw;
     padding: 100px;
     overflow: hidden;
+    overflow-y: scroll;
     background-color: #1E1E1E;
     color: white;
+    box-sizing: content-box;
+    
     
   }
+  
 
 
   

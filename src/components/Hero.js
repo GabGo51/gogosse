@@ -129,6 +129,7 @@ const slideOut = keyframes`
 
 const Container = styled.div`
 padding: 20px;
+padding-bottom: 200px;
 `;
 
 const TextBox = styled.div`

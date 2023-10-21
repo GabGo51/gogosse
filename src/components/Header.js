@@ -48,6 +48,16 @@ nav{
   font-size: 16px;
   border-bottom: 2px solid white;
 }
+
+li{
+  cursor: pointer;
+  &:hover{
+    background-color: white;
+    color: black;
+    transition: 500ms;
+    transform: translateX(-10%);
+  }
+}
 `
 
 
