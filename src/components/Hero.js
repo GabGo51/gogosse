@@ -4,6 +4,7 @@ import G from "../img/g.png";
 import E from "../img/e.png";
 import O from "../img/o.png";
 import S from "../img/s.png";
+import cat from '../img/3683.webp'
 
 const Hero = () => {
   const [active, setActive] = useState(null);
@@ -19,63 +20,62 @@ const Hero = () => {
 
   return (
     <Container>
-      <LettersBox>
+      <LettersBox onMouseLeave={handleNotHover}>
         <div onMouseEnter={() => handleHover("g1")}>
           <img src={G} />
         </div>
-        {active === "g1" && (
-          <div className="new " onMouseEnter={() => handleHover("g1")}>
-            yo
-          </div>
-        )}
+
+        <div
+          className={`${active === "g1" ? "show" : "hide"}`}
+          onMouseEnter={() => handleHover("g1")}
+        ><img src={cat}/></div>
+
         <div onMouseEnter={() => handleHover("o1")}>
           <img src={O} />
         </div>
-        {active === "o1" && (
-          <div className="new " onMouseEnter={() => handleHover("o1")}>
-            yeur
-          </div>
-        )}
+
+        <div
+          className={`${active === "o1" ? "show" : "hide"}`}
+          onMouseEnter={() => handleHover("o1")}
+        ></div>
+
         <div onMouseEnter={() => handleHover("g2")}>
           <img src={G} />
         </div>
-        {active === "g2" && (
-          <div className="new " onMouseEnter={() => handleHover("g2")}>
-            yeur
-          </div>
-        )}
+        
+        <div
+          className={`${active === "g2" ? "show" : "hide"}`}
+          onMouseEnter={() => handleHover("g2")}
+        ></div>
+        
         <div onMouseEnter={() => handleHover("o2")}>
           <img src={O} />
         </div>
-        {active === "o2" && (
-          <div className="new" onMouseEnter={() => handleHover("o2")}>
-            yeur
-          </div>
-        )}
+        <div
+          className={`${active === "o2" ? "show" : "hide"}`}
+          onMouseEnter={() => handleHover("o2")}
+        ></div>
         <div onMouseEnter={() => handleHover("s1")}>
           <img src={S} />
         </div>
-        {active === "s1" && (
-          <div className="new" onMouseEnter={() => handleHover("s1")}>
-            yeur
-          </div>
-        )}
+        <div
+          className={`${active === "s1" ? "show" : "hide"}`}
+          onMouseEnter={() => handleHover("s1")}
+        ></div>
         <div onMouseEnter={() => handleHover("s2")}>
           <img src={S} />
         </div>
-        {active === "s2" && (
-          <div className="new " onMouseEnter={() => handleHover("s2")}>
-            yeur
-          </div>
-        )}
+        <div
+          className={`${active === "s2" ? "show" : "hide"}`}
+          onMouseEnter={() => handleHover("s2")}
+        ></div>
         <div onMouseEnter={() => handleHover("e")}>
           <img src={E} />
         </div>
-        {active === "e" && (
-          <div className="new " onMouseEnter={() => handleHover("e")}>
-            yeur
-          </div>
-        )}
+        <div
+          className={`${active === "e" ? "show" : "hide"}`}
+          onMouseEnter={() => handleHover("e")}
+        ></div>
       </LettersBox>
     </Container>
   );
@@ -117,8 +117,11 @@ const LettersBox = styled.div`
       width: 100%;
       height: 100%;
     }
-    &.new {
+    &.show {
       animation: ${slideIn} 0.5s forwards;
+    }
+    &.hide {
+      animation: ${slideOut} 0.5s forwards;
     }
   }
 `;
