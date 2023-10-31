@@ -7,7 +7,7 @@ const Header = () => {
     <Container>
       <div>
         <h1>GOGOSSE</h1>
-        <p>STUDIO</p>
+        
       </div>
       
       <nav>
@@ -23,20 +23,23 @@ const Header = () => {
 }
 
 const Container = styled.header`
-padding: 20px;
+padding: 40px;
+padding-bottom: 10px;
+padding-top: 20px;
 display: flex;
 justify-content: space-between;
-/* align-items: center; */
+background-color: #DCDCDC;
 
 div{
   width: 100%;
-  border-bottom: 2px solid white;
+  border-bottom: 1px solid black;
 }
 
 h1{
   display: inline-block;
   margin-right:40px ;
   font-size: 60px;
+  font-family: Tagada;
 }
 
 p{
@@ -47,7 +50,8 @@ p{
 nav{
   font-family: Authentic60;
   font-size: 16px;
-  border-bottom: 2px solid white;
+  border-bottom: 1px solid black;
+  text-align: end;
 }
 
 li{

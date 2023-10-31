@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
-import G from './img/g.png'
-import O from './img/o.png'
-import S from './img/s.png'
-import E from './img/e.png'
-
+import proj1 from './img/proj1.png'
 const Hero = () => {
   
   const [active, setActive] = useState(null);
@@ -33,76 +29,106 @@ const Hero = () => {
         </TextBox>
         
         <ImgBox>
-
+          <div>
+            <p>yo</p>
+            <p>yeur</p>
+          </div>
+          <img src={proj1}/>
         </ImgBox>
+
       </div>
       <LettersBox onMouseLeave={handleNotHover}>
-          <div>
-            <img src={G}/>
+        <div className="box">
+
+          <div className="g1">
+            <p>G</p>
           </div>
-          <div>
-            <img src={O}/>
+
+          <div className="o1">
+            <p>O</p>
           </div>
-          <div>
-            <img src={G}/>
+
+          <div className="g2">
+            <p>G</p>
           </div>
           
-          <div>
-            <img src={O}/>
+          <div className="o2">
+            <p>O</p>
           </div>
-          <div>
-            <img src={S}/>
+
+          <div className="s1" >
+            <p>S</p>
           </div>
-          <div>
-            <img src={S}/>
+
+          <div className="s2" >
+            <p>S</p>
           </div>
-          <div>
-            <img src={E}/>
+
+          <div className="e">
+            <p>E</p>
           </div>
+
+        </div>
       </LettersBox>
       
     </Container>
   );
 };
-const slideIn = keyframes`
+const softWiggle = keyframes`
   0% {
-    flex: 0;
-    opacity: 0;
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(0);
+  }
+  75% {
+    transform: rotate(-2deg);
   }
   100% {
-    flex: 2;
-    opacity: 1;
-    
+    transform: rotate(0);
   }
-`;
-const slideOut = keyframes`
-  0% {
-    flex: 2;
-    opacity: 1;
-  }
-  100% {
-    flex: 0;
-    opacity: 0;
-  }
-`;
+`
+
 
 const Container = styled.div`
-padding: 20px;
+padding: 40px;
+padding-top: 20px;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
+background-color: #DCDCDC;
+height:calc(100vh - 70px) ;
+padding-bottom: 150px;
+
 
 .top{
-
+ display: flex;
+ justify-content: space-between;
 }
 `;
 
 const ImgBox = styled.div`
 
+div{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  p{
+    font-family: Authentic60;
+
+  }
+}
+
+img{
+  width: 38vw;
+  height: 18vw;
+  object-fit: cover;
+}
+
 `
-
-
-
 
 const TextBox = styled.div`
   max-width: 815px;
@@ -111,34 +137,50 @@ const TextBox = styled.div`
   font-size: 36px;
   font-family: Authentic60;
   text-transform: uppercase;
-  margin-bottom: 120px;
+  margin-top: 30px;
 `;
 
-
-
 const LettersBox = styled.div`
-  width: 100vw;
-  padding-right: 40px;
-  height: 20vw;
   display: flex;
-
-  .letter {
-    padding: 20px;
-  }
   
+  .box{
+    width: 100%;
 
-  div {
-    height: 100%;
-    flex: 1;
-    margin: 10px;
-
-    img {
-      display: block;
-      width: 100%;
-      height: 100%;
+    p{
+      height: 20vw;
+      transition: 500ms;
+      &:hover{
+      /* animation: ${softWiggle} 1s infinite; */
+      transform:  rotate3d(1, 0.05, 0.1, 20deg);
+    }
     }
   }
+  div {
+    
+    flex: 1;
+    display: flex;
+    font-family: Tagada;
+    align-items: center;
+    justify-content: center;
+    font-size: 27.2vw;
+    
+  }
 
+  .o1{
+    letter-spacing: -1.2vw;
+  }
+  .g1{
+    letter-spacing: -1.5vw;
+  }
+  .g2{
+    letter-spacing: -1.4vw;
+  }
+
+  .e{
+    margin-left: -0.8vw;
+  }
  
+  
+
 `;
 export default Hero;

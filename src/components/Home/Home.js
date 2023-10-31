@@ -1,11 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import Hero from "./Hero";
+import Projects from "./Projects";
 
 const Home = () => {
   return (
     <Container>
       <Hero />
+      <Projects/>
     </Container>
   );
 };

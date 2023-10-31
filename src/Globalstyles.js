@@ -32,7 +32,7 @@ export default createGlobalStyle`
   input, button, select, option,
   h1, h2, h3, h4, h5, h6, 
   text, textarea {
-    font-family: Tagada;
+    font-family: Authentic60;;
     font-weight: 400;
   }
 
@@ -42,11 +42,9 @@ export default createGlobalStyle`
     overflow: hidden;
     overflow-y: scroll;
     background-color: #1E1E1E;
-    color: white;
-    box-sizing: content-box;
-    
-    
+    box-sizing: content-box; 
   }
+  
   
 
 
