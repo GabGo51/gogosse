@@ -1,20 +1,29 @@
 import styled from "styled-components";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import Hero from "./components/Hero";
-
+import Home from "./components/Home/Home";
+import Cursor from "./Cursor";
+import About from "./components/About/About";
+import Contact from "./components/Contact";
 
 function App() {
   return (
-    <Container>
-      <Header/>
-      <Hero/>
-    </Container>
+    <Router>
+      <Cursor />
+      <Container>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+        <Contact />
+      </Container>
+    </Router>
   );
 }
 
-
 const Container = styled.div`
-width: 100vw;
+  width: 100vw;
+`;
 
-`
 export default App;

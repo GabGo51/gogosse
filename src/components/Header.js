@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
+
 const Header = () => {
   return (
     <Container>
@@ -26,8 +27,6 @@ padding: 20px;
 display: flex;
 justify-content: space-between;
 /* align-items: center; */
-font-size: 32px;
-
 
 div{
   width: 100%;
@@ -37,10 +36,12 @@ div{
 h1{
   display: inline-block;
   margin-right:40px ;
+  font-size: 60px;
 }
 
 p{
   display: inline-block;
+  font-size: 20px;
 }
 
 nav{
@@ -57,6 +58,13 @@ li{
     transition: 500ms;
     transform: translateX(-10%);
   }
+}
+
+@media (max-width:900px){
+  h1{
+    font-size: 30px;
+  }
+
 }
 `
 
