@@ -1,13 +1,47 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import proj1 from './img/proj1.png'
+import proj2 from './img/proj2.png'
 const Hero = () => {
   
+  //make variables for the chosen project and change that variable depending on the staTE 
   const [active, setActive] = useState(null);
+  const [img , setImg] = useState(null)
+  const [title , setTitle] = useState(null)
+  const [type , setType] = useState(null)
 
-  const handleHover = (letter) => {
+  const projects = [
+    {
+      title: "Turbine",
+      type: "Web Development",
+      img: proj1
+    },
+    {
+      title: "Turbine2",
+      type: "Mobile App",
+      img: proj2
+    },
+    {
+      title: "PROJET 3",
+      type: "Data Analysis",
+      img: proj2 
+    },
     
+  ];
+
+  
+
+  const handleHover = (projectTitle) => {
+    const selectedProject = projects.find((project) => project.title === projectTitle);
+
+    if (selectedProject) {
+      setImg(selectedProject.img);
+      setTitle(selectedProject.title);
+      setType(selectedProject.type);
+    }
+
     
+    setActive(projectTitle);
     
     
   };
@@ -16,6 +50,8 @@ const Hero = () => {
     setActive(null);
   };
   console.log(active);
+  
+
 
   return (
     <Container>
@@ -30,41 +66,41 @@ const Hero = () => {
         
         <ImgBox>
           <div>
-            <p>yo</p>
-            <p>yeur</p>
+            <p>{title}</p>
+            <p>{type}</p>
           </div>
-          <img src={proj1}/>
+          <img src={img}/>
         </ImgBox>
 
       </div>
       <LettersBox onMouseLeave={handleNotHover}>
         <div className="box">
 
-          <div className="g1">
+          <div className="g1" onMouseEnter={() => handleHover("Turbine")}>
             <p>G</p>
           </div>
 
-          <div className="o1">
+          <div className="o1" onMouseEnter={() => handleHover("Turbine2")}>
             <p>O</p>
           </div>
 
-          <div className="g2">
+          <div className="g2" onMouseEnter={() => handleHover("proj3")}>
             <p>G</p>
           </div>
           
-          <div className="o2">
+          <div className="o2" onMouseEnter={() => handleHover("proj4")}>
             <p>O</p>
           </div>
 
-          <div className="s1" >
+          <div className="s1" onMouseEnter={() => handleHover("proj5")}>
             <p>S</p>
           </div>
 
-          <div className="s2" >
+          <div className="s2" onMouseEnter={() => handleHover("proj6")} >
             <p>S</p>
           </div>
 
-          <div className="e">
+          <div className="e" onMouseEnter={() => handleHover("proj7")}>
             <p>E</p>
           </div>
 
@@ -74,23 +110,7 @@ const Hero = () => {
     </Container>
   );
 };
-const softWiggle = keyframes`
-  0% {
-    transform: rotate(0);
-  }
-  25% {
-    transform: rotate(2deg);
-  }
-  50% {
-    transform: rotate(0);
-  }
-  75% {
-    transform: rotate(-2deg);
-  }
-  100% {
-    transform: rotate(0);
-  }
-`
+
 
 
 const Container = styled.div`
@@ -100,13 +120,19 @@ display: flex;
 flex-direction: column;
 justify-content: space-between;
 background-color: #DCDCDC;
-height:calc(100vh - 70px) ;
-padding-bottom: 150px;
-
-
+padding-bottom: 80px;
 .top{
  display: flex;
  justify-content: space-between;
+}
+
+@media (max-width:1100px){
+  justify-content: center;
+  
+  padding-bottom: 20px;
+  .top{
+    flex-direction: column;
+  }
 }
 `;
 
@@ -116,16 +142,25 @@ div{
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
-  p{
-    font-family: Authentic60;
-
-  }
+  max-width: 38vw;
+  font-family: Authentic90;
 }
 
 img{
   width: 38vw;
   height: 18vw;
   object-fit: cover;
+}
+@media (max-width:1100px){
+
+  div{
+    max-width: 85vw;
+    margin-top: 20px;
+  }
+  img{
+    width: 98%;
+    height: 30vw;
+  }
 }
 
 `
@@ -134,10 +169,13 @@ const TextBox = styled.div`
   max-width: 815px;
   max-height: 485px;
   font-weight: 300;
-  font-size: 36px;
-  font-family: Authentic60;
+  font-size: 2vw;
+  font-family: Authentic60C;
   text-transform: uppercase;
   margin-top: 30px;
+  @media (max-width:1100px){
+    font-size: 12px;
+  }
 `;
 
 const LettersBox = styled.div`
@@ -150,7 +188,7 @@ const LettersBox = styled.div`
       height: 20vw;
       transition: 500ms;
       &:hover{
-      /* animation: ${softWiggle} 1s infinite; */
+      
       transform:  rotate3d(1, 0.05, 0.1, 20deg);
     }
     }
@@ -163,6 +201,9 @@ const LettersBox = styled.div`
     align-items: center;
     justify-content: center;
     font-size: 27.2vw;
+    @media (max-width:1100px){
+    font-size: 20vw;
+  }
     
   }
 
@@ -179,8 +220,5 @@ const LettersBox = styled.div`
   .e{
     margin-left: -0.8vw;
   }
- 
-  
-
 `;
 export default Hero;

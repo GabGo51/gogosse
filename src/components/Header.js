@@ -40,6 +40,7 @@ h1{
   margin-right:40px ;
   font-size: 60px;
   font-family: Tagada;
+  font-weight: 400;
 }
 
 p{

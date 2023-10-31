@@ -1,7 +1,14 @@
 import { createGlobalStyle } from "styled-components";
 import Woke from "./fonts/tagada.otf";
-import Authentic from "./fonts/AUTHENTICSans-60.otf"
+import Authentic60 from "./fonts/AUTHENTICSans-60.otf";
+import Authentic90 from "./fonts/AUTHENTICSans-90.otf";
+import Authentic130 from "./fonts/AUTHENTICSans-130.otf";
+import Authentic150 from "./fonts/AUTHENTICSans-150.otf";
 
+import Authentic130C from "./fonts/AUTHENTICSans-Condensed-130.otf";
+import Authentic150C from "./fonts/AUTHENTICSans-Condensed-150.otf";
+import Authentic60C from "./fonts/AUTHENTICSans-Condensed-60.otf";
+import Authentic90C from "./fonts/AUTHENTICSans-Condensed-90.otf";
 
 export default createGlobalStyle`
 
@@ -12,8 +19,39 @@ export default createGlobalStyle`
 
   @font-face {
       font-family: Authentic60;
-      src: url(${Authentic});
+      src: url(${Authentic60});
   }
+  @font-face {
+      font-family: Authentic90;
+      src: url(${Authentic90});
+  }
+  @font-face {
+      font-family: Authentic130;
+      src: url(${Authentic130});
+  }
+  @font-face {
+      font-family: Authentic150;
+      src: url(${Authentic60});
+  }
+  
+  @font-face {
+        font-family: Authentic60C;
+        src: url(${Authentic60C});
+    }
+  @font-face {
+      font-family: Authentic90C;
+      src: url(${Authentic90C});
+  }
+  @font-face {
+      font-family: Authentic130C;
+      src: url(${Authentic130C});
+  }
+  @font-face {
+      font-family: Authentic150C;
+      src: url(${Authentic150C});
+  }
+  
+  
 
 
 
@@ -28,14 +66,9 @@ export default createGlobalStyle`
     
   }
   
-  html, body, div,
-  input, button, select, option,
-  h1, h2, h3, h4, h5, h6, 
-  text, textarea {
-    font-family: Authentic60;;
-    font-weight: 400;
-  }
+  
 
+  
   html, body {
     width: 100vw;
     padding: 100px;
