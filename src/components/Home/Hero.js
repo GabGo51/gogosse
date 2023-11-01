@@ -1,31 +1,49 @@
 import React, { useState } from "react";
-import styled, { keyframes, css } from "styled-components";
+import styled, { keyframes} from "styled-components";
 import proj1 from './img/proj1.png'
 import proj2 from './img/proj2.png'
+import proj3 from './img/proj3.png'
+import proj4 from './img/proj4.png'
+import proj5 from './img/proj5.png'
+import proj6 from './img/proj6.png'
+import proj7 from './img/proj7.png'
 const Hero = () => {
   
   //make variables for the chosen project and change that variable depending on the staTE 
-  const [active, setActive] = useState("Turbine");
-  const [img , setImg] = useState(proj1)
-  const [title , setTitle] = useState("Turbine")
-  const [type , setType] = useState("Event")
+  const [active, setActive] = useState(null);
+  const [title , setTitle] = useState(null)
+  const [type , setType] = useState(null)
 
   const projects = [
     {
       title: "Turbine",
       type: "Web Development",
-      img: proj1
+      
     },
     {
       title: "Turbine2",
       type: "Mobile App",
-      img: proj2
+      
     },
     {
-      title: "PROJET 3",
+      title: "Turbine3",
       type: "Data Analysis",
-      img: proj2 
+      
     },
+    {
+      title: "Turbine4",
+      type: "Data Analysis",
+      
+    },
+    {
+      title: "Turbine5",
+      type: "Data Analysis",
+      
+    },{
+      title: "Turbine6",
+      type: "Data Analysis",
+      
+    }
     
   ];
 
@@ -35,7 +53,6 @@ const Hero = () => {
     const selectedProject = projects.find((project) => project.title === projectTitle);
 
     if (selectedProject) {
-      setImg(selectedProject.img);
       setTitle(selectedProject.title);
       setType(selectedProject.type);
     }
@@ -71,6 +88,12 @@ const Hero = () => {
 
             {active === 'Turbine' ? <img src={proj1} /> : <img className="fade-out" src={proj1} /> }
             {active === 'Turbine2' ? <img src={proj2} /> : <img className="fade-out" src={proj2} />  }
+            {active === 'Turbine3' ? <img src={proj3} /> : <img className="fade-out" src={proj3} /> }
+            {active === 'Turbine4' ? <img src={proj4} /> : <img className="fade-out" src={proj4} /> }
+            {active === 'Turbine5' ? <img src={proj5} /> : <img className="fade-out" src={proj5} /> }
+            {active === 'Turbine6' ? <img src={proj6} /> : <img className="fade-out" src={proj6} /> }
+            {active === 'Turbine7' ? <img src={proj7} /> : <img className="fade-out" src={proj7} /> }
+
             
           </div> 
         </ImgBox>
@@ -87,23 +110,23 @@ const Hero = () => {
             <p>O</p>
           </div>
 
-          <div className="g2" onMouseEnter={() => handleHover("proj3")}>
+          <div className="g2" onMouseEnter={() => handleHover("Turbine3")}>
             <p>G</p>
           </div>
           
-          <div className="o2" onMouseEnter={() => handleHover("proj4")}>
+          <div className="o2" onMouseEnter={() => handleHover("Turbine4")}>
             <p>O</p>
           </div>
 
-          <div className="s1" onMouseEnter={() => handleHover("proj5")}>
+          <div className="s1" onMouseEnter={() => handleHover("Turbine5")}>
             <p>S</p>
           </div>
 
-          <div className="s2" onMouseEnter={() => handleHover("proj6")} >
+          <div className="s2" onMouseEnter={() => handleHover("Turbine6")} >
             <p>S</p>
           </div>
 
-          <div className="e" onMouseEnter={() => handleHover("proj7")}>
+          <div className="e" onMouseEnter={() => handleHover("Turbine7")}>
             <p>E</p>
           </div>
 
