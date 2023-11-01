@@ -21,8 +21,9 @@ const Projects = () => {
     setBlur(false)
   }
   return (
-    <Container onMouseEnter={handleBlur} onMouseLeave={removeBlur}>
+    <Container >
       <h2>PROJECTS</h2>
+      <div onMouseEnter={handleBlur} onMouseLeave={removeBlur}>
       <ProjectBox className={blur ? 'blurred' : ''}>
         <Project>
           <img src={proj1}/>
@@ -114,6 +115,7 @@ const Projects = () => {
           <p> 2023</p>
         </Project>
       </ProjectBox>
+      </div>
     </Container>
   );
 };
