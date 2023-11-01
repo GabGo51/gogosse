@@ -16,7 +16,7 @@ const Cursor = () => {
       <Dot
         className={cursorType === 'hovered' || 'button' ? cursorType : ''}
         style={{ left: `${x}px`, top: `${y}px` }}
-      > <img src={Hammer}/></Dot>
+      > </Dot>
     </Container>
   );
 };

@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 
 const Header = () => {
+  const [blur, setBlur] = useState(false)
+
+  const handleBlur = () =>{
+    setBlur(true)
+  }
+
+  const removeBlur = () =>{
+    setBlur(false)
+  }
   return (
     <Container>
       <div>
@@ -11,10 +20,10 @@ const Header = () => {
       </div>
       
       <nav>
-        <ul>
-          <li>WORK</li>
-          <li>ABOUT</li>
-          <li>CONTACT</li>
+        <ul onMouseEnter={handleBlur} onMouseLeave={removeBlur}>
+        <li className={blur ? 'blurred' : ''}>WORK</li>
+          <li className={blur ? 'blurred' : ''}>ABOUT</li>
+          <li className={blur ? 'blurred' : ''}>CONTACT</li>
         </ul>
       </nav>
 
@@ -53,17 +62,27 @@ nav{
   font-size: 16px;
   border-bottom: 1px solid black;
   text-align: end;
+  
 }
 
 li{
+  transition: 500ms;
   cursor: pointer;
   &:hover{
-    background-color: black;
-    color: white;
-    transition: 500ms;
+    
     transform: translateX(-10%);
+    font-family: Authentic90C;
+    filter: none;
   }
 }
+
+.blurred{
+  filter: blur(1px);
+}
+
+
+
+
 
 @media (max-width:900px){
   h1{

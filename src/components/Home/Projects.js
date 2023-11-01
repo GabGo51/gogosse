@@ -142,6 +142,7 @@ img{
   left: 13vw;
   top: 2vw;
   scale: 0;
+  filter: blur(10px);
 }
 p{
   flex: 0.2;
@@ -172,6 +173,7 @@ h3{
   }
   img{
     scale: 1;
+    filter: blur(0);
   }
 }
 `;

@@ -10,9 +10,9 @@ import proj7 from './img/proj7.png'
 const Hero = () => {
   
   //make variables for the chosen project and change that variable depending on the staTE 
-  const [active, setActive] = useState(null);
-  const [title , setTitle] = useState(null)
-  const [type , setType] = useState(null)
+  const [active, setActive] = useState('Turbine');
+  const [title , setTitle] = useState("Turbine")
+  const [type , setType] = useState("Web Development")
 
   const projects = [
     {
