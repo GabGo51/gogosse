@@ -69,8 +69,8 @@ const Hero = () => {
           </div>
           <div className="cadre">
 
-            {active === 'Turbine' && <img src={img} /> }
-            {active === 'Turbine2' && <img src={img} /> }
+            {active === 'Turbine' ? <img src={proj1} /> : <img className="fade-out" src={proj1} /> }
+            {active === 'Turbine2' ? <img src={proj2} /> : <img className="fade-out" src={proj2} />  }
             
           </div> 
         </ImgBox>
@@ -133,9 +133,11 @@ const appearAnimation = keyframes`
 const clearAnimation = keyframes`
  0%{
   transform: translateY(0%);
+  opacity: 1;
  }
  100%{
-  transform: translateY(100%);
+  transform: translateY(-110%);
+  opacity: 0.8;
  }
 `
 
@@ -180,10 +182,12 @@ div{
   width: 38vw;
   height: 18vw;
   overflow: hidden;
+  border: none;
 }
 
 img{
   transition: 500ms;
+  border: none;
   width: 38vw;
   height: 18vw;
   position: absolute;
@@ -194,6 +198,10 @@ img{
     scale: 1.3;
     rotate: 5deg;
   }
+}
+
+.fade-out{
+  animation: ${clearAnimation} 500ms forwards;
 }
 @media (max-width:1100px){
 
