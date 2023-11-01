@@ -31,7 +31,7 @@ export default createGlobalStyle`
   }
   @font-face {
       font-family: Authentic150;
-      src: url(${Authentic60});
+      src: url(${Authentic150});
   }
   
   @font-face {
@@ -62,7 +62,7 @@ export default createGlobalStyle`
   *:after {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
-    /* cursor: none; */
+    cursor: none;
     
   }
   

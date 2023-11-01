@@ -1,5 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import proj1 from './img/proj1.png'
+import proj2 from './img/proj1.png'
+import proj3 from './img/proj1.png'
+import proj4 from './img/proj1.png'
+import proj5 from './img/proj1.png'
+import proj6 from './img/proj1.png'
+import proj7 from './img/proj1.png'
 
 const Projects = () => {
   return (
@@ -87,8 +94,9 @@ const Container = styled.div`
 const ProjectBox = styled.section``;
 
 const Project = styled.div`
+transition: 500ms;
 display: flex;
-border-top:  1px solid black;
+border-bottom:  1px solid black;
 padding-top:20px ;
 margin-bottom: 20px;
 p{
@@ -101,6 +109,7 @@ h3{
   flex:.50;
   font-size: 25px;
   font-family: Tagada;
+  
 }
 .description{
   max-width: 400px;
@@ -108,6 +117,15 @@ h3{
   text-align: start;
   font-family: Authentic60C;
   text-transform: uppercase;
+}
+
+
+&:hover{
+  padding-top: 150px;
+  padding-bottom: 150px;
+  h3{
+    font-family: Authentic60C;
+  }
 }
 `;
 

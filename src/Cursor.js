@@ -36,7 +36,7 @@ const Dot = styled.div`
   left: 50%;
   width: 8px;
   height: 8px;
-  background-color: white;
+ 
   mix-blend-mode: difference;
   border-radius: 100%;
   transform: translate(-50%, -50%);

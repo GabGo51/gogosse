@@ -58,8 +58,8 @@ nav{
 li{
   cursor: pointer;
   &:hover{
-    background-color: white;
-    color: black;
+    background-color: black;
+    color: white;
     transition: 500ms;
     transform: translateX(-10%);
   }
