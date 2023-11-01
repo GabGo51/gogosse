@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes, css } from "styled-components";
 import proj1 from './img/proj1.png'
 import proj2 from './img/proj2.png'
 const Hero = () => {
   
   //make variables for the chosen project and change that variable depending on the staTE 
-  const [active, setActive] = useState(null);
-  const [img , setImg] = useState(null)
-  const [title , setTitle] = useState(null)
-  const [type , setType] = useState(null)
+  const [active, setActive] = useState("Turbine");
+  const [img , setImg] = useState(proj1)
+  const [title , setTitle] = useState("Turbine")
+  const [type , setType] = useState("Event")
 
   const projects = [
     {
@@ -46,9 +46,7 @@ const Hero = () => {
     
   };
 
-  const handleNotHover = () => {
-    setActive(null);
-  };
+  
   console.log(active);
   
 
@@ -69,11 +67,16 @@ const Hero = () => {
             <p>{title}</p>
             <p>{type}</p>
           </div>
-          <img src={img}/>
+          <div className="cadre">
+
+            {active === 'Turbine' && <img src={img} /> }
+            {active === 'Turbine2' && <img src={img} /> }
+            
+          </div> 
         </ImgBox>
 
       </div>
-      <LettersBox onMouseLeave={handleNotHover}>
+      <LettersBox >
         <div className="box">
 
           <div className="g1" onMouseEnter={() => handleHover("Turbine")}>
@@ -111,6 +114,32 @@ const Hero = () => {
   );
 };
 
+const appearAnimation = keyframes`
+   0% {
+    transform: translateY(100%);
+  }
+  60% {
+    transform: translateY(-2.5%);
+  }
+  80% {
+    transform: translateY(2.5%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+
+`
+
+const clearAnimation = keyframes`
+ 0%{
+  transform: translateY(0%);
+ }
+ 100%{
+  transform: translateY(100%);
+ }
+`
+
+
 
 
 const Container = styled.div`
@@ -146,16 +175,35 @@ div{
   font-family: Authentic90;
 }
 
-img{
+.cadre{
+  position: relative;
   width: 38vw;
   height: 18vw;
+  overflow: hidden;
+}
+
+img{
+  transition: 500ms;
+  width: 38vw;
+  height: 18vw;
+  position: absolute;
   object-fit: cover;
+  animation: ${appearAnimation} 800ms forwards;
+
+  &:hover{
+    scale: 1.3;
+    rotate: 5deg;
+  }
 }
 @media (max-width:1100px){
 
   div{
     max-width: 85vw;
     margin-top: 20px;
+  }
+  .cadre{
+    width: 98%;
+    height: 30vw;
   }
   img{
     width: 98%;

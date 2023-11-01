@@ -2,6 +2,7 @@ import styled from "styled-components"
 import useMousePosition from "./hooks/useMousePosition";
 import { MouseContext } from "./context/mouseContext";
 import { useContext } from "react";
+import Hammer from './img/Hammer.webp'
 
 
 
@@ -11,62 +12,23 @@ const Cursor = () => {
     // 1.
   const { x, y } = useMousePosition();
   return (
-    <Container>
-            
-      <Ring
-        className={cursorType === 'hovered' || 'button' ? cursorType : ''}
-        style={{ left: `${x}px`, top: `${y}px` }}
-        
-      ></Ring>
-            
+    <Container>     
       <Dot
         className={cursorType === 'hovered' || 'button' ? cursorType : ''}
         style={{ left: `${x}px`, top: `${y}px` }}
-      ></Dot>
+      > <img src={Hammer}/></Dot>
     </Container>
   );
 };
 
 const Container = styled.div`
+position: absolute; //makes it go over everything fuck the static position 
 mix-blend-mode: difference;
 z-index: 999;
 
 `
 
-const Ring = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 35px;
-  height: 35px;
-  border: 2px solid white;
-  border-radius: 100%;
-  transform: translate(-50%, -50%);
-  -webkit-transition-duration: 100ms;
-  transition-duration: 100ms;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-  will-change: width, height, transform, border;
-  pointer-events: none;
-  z-index: 999;
-  
 
-  &.hovered{
-    width: 60px;
-    height: 60px;
-    
-    
-    border-width: 3px;
-  }
-
-  &.button{
-    width: 40px;
-    height: 40px;
-    border-radius: 0;
-  }
-
-  
-`
 
 const Dot = styled.div`
   position: fixed;
@@ -80,6 +42,11 @@ const Dot = styled.div`
   transform: translate(-50%, -50%);
   z-index: 999;
   pointer-events: none;
+
+  img{
+    scale: 0.15;
+    transform: translate(-320%, -320%);
+  }
 
   &.hovered{
     display: none;
