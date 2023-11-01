@@ -69,9 +69,7 @@ li{
   transition: 500ms;
   cursor: pointer;
   &:hover{
-    
     transform: translateX(-10%);
-    font-family: Authentic90C;
     filter: none;
   }
 }
