@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useState } from "react";
 import proj1 from './img/proj1.png'
 import proj2 from './img/proj2.png'
 import proj3 from './img/proj3.png'
@@ -9,10 +10,20 @@ import proj6 from './img/proj6.png'
 import proj7 from './img/proj7.png'
 
 const Projects = () => {
+
+  const [blur, setBlur] = useState(false)
+
+  const handleBlur = () =>{
+    setBlur(true)
+  }
+
+  const removeBlur = () =>{
+    setBlur(false)
+  }
   return (
-    <Container>
+    <Container onMouseEnter={handleBlur} onMouseLeave={removeBlur}>
       <h2>PROJECTS</h2>
-      <ProjectBox>
+      <ProjectBox className={blur ? 'blurred' : ''}>
         <Project>
           <img src={proj1}/>
           <h3>PROJET</h3>
@@ -25,7 +36,7 @@ const Projects = () => {
           <p> 2023</p>
         </Project>
       </ProjectBox>
-      <ProjectBox>
+      <ProjectBox className={blur ? 'blurred' : ''}>
         <Project>
         <img src={proj2}/>
           <h3>PROJET</h3>
@@ -38,7 +49,7 @@ const Projects = () => {
           <p> 2023</p>
         </Project>
       </ProjectBox>
-      <ProjectBox>
+      <ProjectBox className={blur ? 'blurred' : ''}>
         <Project>
         <img src={proj3}/>
           <h3>PROJET</h3>
@@ -51,7 +62,7 @@ const Projects = () => {
           <p> 2023</p>
         </Project>
       </ProjectBox>
-      <ProjectBox>
+      <ProjectBox className={blur ? 'blurred' : ''}>
         <Project>
         <img src={proj4}/>
           <h3>PROJET</h3>
@@ -64,7 +75,7 @@ const Projects = () => {
           <p> 2023</p>
         </Project>
       </ProjectBox>
-      <ProjectBox>
+      <ProjectBox className={blur ? 'blurred' : ''}>
         <Project>
         <img src={proj5}/>
           <h3>PROJET</h3>
@@ -77,7 +88,7 @@ const Projects = () => {
           <p> 2023</p>
         </Project>
       </ProjectBox>
-      <ProjectBox>
+      <ProjectBox className={blur ? 'blurred' : ''}>
         <Project>
         <img src={proj6}/>
           <h3>PROJET</h3>
@@ -90,7 +101,7 @@ const Projects = () => {
           <p> 2023</p>
         </Project>
       </ProjectBox>
-      <ProjectBox>
+      <ProjectBox className={blur ? 'blurred' : ''}>
         <Project>
         <img src={proj7}/>
           <h3>PROJET</h3>
@@ -119,10 +130,20 @@ const Container = styled.div`
     right: 50.5vw;
     font-family: Authentic130;
   }
+
+  .blurred {
+    filter: blur(2px);
+  }
   
 `;
 
-const ProjectBox = styled.section``;
+const ProjectBox = styled.section`
+&:hover{
+  filter: blur(0);
+}
+`;
+
+
 
 const Project = styled.div`
 position: relative;
