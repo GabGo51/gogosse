@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import proj1 from "./img/proj1.webp";
 import proj2 from "./img/proj2.webp";
@@ -11,14 +12,18 @@ import proj7 from "./img/proj7.webp";
 
 const Projects = () => {
   const [blur, setBlur] = useState(false);
-
   const handleBlur = () => {
     setBlur(true);
   };
-
   const removeBlur = () => {
     setBlur(false);
   };
+
+  const navigate = useNavigate();
+  const handleNavigate = (page) => {
+    navigate(page);
+  };
+
   return (
     <Container>
       <h2>PROJECTS & FEATURED WORKS</h2>
@@ -28,8 +33,11 @@ const Projects = () => {
         onMouseLeave={removeBlur}
       >
         <ProjectBox className={blur ? "blurred" : ""}>
-          <Project blur={blur}>
-            <img alt="project" src={proj1} />
+          <Project blur={blur} onClick={() => handleNavigate("/about")}>
+            <img
+              alt="project"
+              src={proj1}
+            />
             <h3>PROJET</h3>
             <p className="description">
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -173,7 +181,7 @@ const Container = styled.div`
     padding: 20px;
 
     .blurred {
-    filter: blur(0px);
+      filter: blur(0px);
     }
   }
 `;
@@ -200,6 +208,10 @@ const Project = styled.div`
   &:hover {
     .description {
       font-size: 20px;
+
+      @media (max-width: 750px) {
+        font-size: 12px;
+      }
     }
   }
 
@@ -210,7 +222,7 @@ const Project = styled.div`
     object-fit: cover;
     position: absolute;
     left: 13vw;
-    top: 0vw;
+    top: 2vw;
     scale: 0;
     filter: blur(10px);
     @media (max-width: 1100px) {
@@ -245,9 +257,7 @@ const Project = styled.div`
   }
 
   &:hover {
-    h3 {
-      font-family: Authentic60C;
-    }
+    
     img {
       scale: 1;
       filter: blur(0);
@@ -257,6 +267,10 @@ const Project = styled.div`
 
     @media (max-width: 1100px) {
       padding: 70px 0px;
+    }
+
+    @media (max-width: 750px) {
+      padding: 0px 0px;
     }
   }
 
@@ -273,26 +287,30 @@ const Project = styled.div`
     &:hover {
       .description {
         font-size: 14px;
+        @media (max-width: 750px) {
+          font-size: 12px;
+        }
       }
     }
   }
   @media (max-width: 750px) {
-    pointer-events: none;
+    &:hover{
+      padding: 20px 0;
+    }
     flex-direction: column;
 
-    
     .blurred {
       filter: blur(0px);
     }
 
-    h3{
+    h3 {
       margin-bottom: 20px;
     }
 
-    img{
+    img {
       scale: 1;
-      width: 400px;
-      height: 210px;
+      width: 180px;
+      height: 180px;
       filter: blur(0px);
       left: 60vw;
     }
@@ -309,10 +327,10 @@ const Project = styled.div`
     }
   }
 
-  @media (max-width:500px){
-    img{
-      width: 180px;
-      height: 180px;
+  @media (max-width: 500px) {
+    
+    img {
+      min-width: 150px;
       left: 45vw;
     }
   }
