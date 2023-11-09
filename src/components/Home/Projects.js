@@ -2,13 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import proj1 from "./img/proj1.webp";
-import proj2 from "./img/proj2.webp";
-import proj3 from "./img/proj3.webp";
-import proj4 from "./img/proj4.webp";
-import proj5 from "./img/proj5.webp";
-import proj6 from "./img/proj6.webp";
-import proj7 from "./img/proj7.webp";
+import projects from "../../data/projectData";
 
 const Projects = () => {
   const [blur, setBlur] = useState(false);
@@ -27,119 +21,22 @@ const Projects = () => {
   return (
     <Container>
       <h2>PROJECTS & FEATURED WORKS</h2>
-      <div
-        className="all-project"
-        onMouseEnter={handleBlur}
-        onMouseLeave={removeBlur}
-      >
-        <ProjectBox className={blur ? "blurred" : ""}>
-          <Project blur={blur} onClick={() => handleNavigate("/about")}>
-            <img
-              alt="project"
-              src={proj1}
-            />
-            <h3>PROJET</h3>
-            <p className="description">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque
-              voluptas sit aspernatur aut odit aut fugit, sed quia consequunt
-            </p>
-            <div className="project-info">
-              <p> Evenement</p>
-              <p> 2023</p>
-            </div>
-          </Project>
-        </ProjectBox>
-        <ProjectBox className={blur ? "blurred" : ""}>
-          <Project>
-            <img alt="project" src={proj2} />
-            <h3>PROJET</h3>
-            <p className="description">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque
-              voluptas sit aspernatur aut odit aut fugit, sed quia consequunt
-            </p>
-            <div className="project-info">
-              <p> Evenement</p>
-              <p> 2023</p>
-            </div>
-          </Project>
-        </ProjectBox>
-        <ProjectBox className={blur ? "blurred" : ""}>
-          <Project>
-            <img alt="project" src={proj3} />
-            <h3>PROJET</h3>
-            <p className="description">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque
-              voluptas sit aspernatur aut odit aut fugit, sed quia consequunt
-            </p>
-            <div className="project-info">
-              <p> Evenement</p>
-              <p> 2023</p>
-            </div>
-          </Project>
-        </ProjectBox>
-        <ProjectBox className={blur ? "blurred" : ""}>
-          <Project>
-            <img alt="project" src={proj4} />
-            <h3>PROJET</h3>
-            <p className="description">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque
-              voluptas sit aspernatur aut odit aut fugit, sed quia consequunt
-            </p>
-            <div className="project-info">
-              <p> Evenement</p>
-              <p> 2023</p>
-            </div>
-          </Project>
-        </ProjectBox>
-        <ProjectBox className={blur ? "blurred" : ""}>
-          <Project>
-            <img alt="project" src={proj5} />
-            <h3>PROJET</h3>
-            <p className="description">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque
-              voluptas sit aspernatur aut odit aut fugit, sed quia consequunt
-            </p>
-            <div className="project-info">
-              <p> Evenement</p>
-              <p> 2023</p>
-            </div>
-          </Project>
-        </ProjectBox>
-        <ProjectBox className={blur ? "blurred" : ""}>
-          <Project>
-            <img alt="project" src={proj6} />
-            <h3>PROJET</h3>
-            <p className="description">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque
-              voluptas sit aspernatur aut odit aut fugit, sed quia consequunt
-            </p>
-            <div className="project-info">
-              <p> Evenement</p>
-              <p> 2023</p>
-            </div>
-          </Project>
-        </ProjectBox>
-        <ProjectBox className={blur ? "blurred" : ""}>
-          <Project>
-            <img alt="project" src={proj7} />
-            <h3>PROJET</h3>
-            <p className="description">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque
-              voluptas sit aspernatur aut odit aut fugit, sed quia consequunt
-            </p>
-            <div className="project-info">
-              <p> Evenement</p>
-              <p> 2023</p>
-            </div>
-          </Project>
-        </ProjectBox>
+      <div className="all-project" onMouseEnter={handleBlur} onMouseLeave={removeBlur}>
+        {projects.map((project) => (
+          <ProjectBox key={project.id} className={blur ? "blurred" : ""}>
+            <Project onClick={() => handleNavigate(`/${project.title}`)}>
+              <img alt="project" src={project.img} />
+              <h3>{project.title}</h3>
+              <p className="description">
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque voluptas sit aspernatur aut odit aut fugit, sed quia consequunt
+              </p>
+              <div className="project-info">
+                <p>Evenement</p>
+                <p>2023</p>
+              </div>
+            </Project>
+          </ProjectBox>
+        ))}
       </div>
 
       <p className="title">Lets Work</p>

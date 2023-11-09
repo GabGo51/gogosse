@@ -1,44 +1,9 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
-import proj1 from "./img/proj1.webp";
-import proj2 from "./img/proj2.webp";
-import proj3 from "./img/proj3.webp";
-import proj4 from "./img/proj4.webp";
-import proj5 from "./img/proj5.webp";
-import proj6 from "./img/proj6.webp";
-import proj7 from "./img/proj7.webp";
-const Hero = () => {
-  //make variables for the chosen project and change that variable depending on the staTE
-  const [active, setActive] = useState("Turbine");
-  const [title, setTitle] = useState("Turbine");
-  const [type, setType] = useState("Web Development");
+import projects from "../../data/projectData";
 
-  const projects = [
-    {
-      title: "Turbine",
-      type: "Web Development",
-    },
-    {
-      title: "Turbine2",
-      type: "Mobile App",
-    },
-    {
-      title: "Turbine3",
-      type: "Data Analysis",
-    },
-    {
-      title: "Turbine4",
-      type: "Data Analysis",
-    },
-    {
-      title: "Turbine5",
-      type: "Data Analysis",
-    },
-    {
-      title: "Turbine6",
-      type: "Data Analysis",
-    },
-  ];
+const Hero = () => {
+  const [activeProject, setActiveProject] = useState(projects[0]);
 
   const handleHover = (projectTitle) => {
     const selectedProject = projects.find(
@@ -46,11 +11,8 @@ const Hero = () => {
     );
 
     if (selectedProject) {
-      setTitle(selectedProject.title);
-      setType(selectedProject.type);
+      setActiveProject(selectedProject);
     }
-
-    setActive(projectTitle);
   };
 
   return (
@@ -62,48 +24,26 @@ const Hero = () => {
           ab illo inventore veritatis et quasi architecto beatae vitae dicta
           sunt explicabo.
         </TextBox>
-
         <ImgBox>
           <div>
-            <p>{title}</p>
-            <p>{type}</p>
+            <p>{activeProject.title}</p>
+            <p>{activeProject.type}</p>
           </div>
           <div className="cadre">
-            {active === "Turbine" ? (
-              <img alt="project" src={proj1} />
-            ) : (
-              <img alt="project" className="fade-out" src={proj1} />
-            )}
-            {active === "Turbine2" ? (
-              <img alt="project" src={proj2} />
-            ) : (
-              <img alt="project" className="fade-out" src={proj2} />
-            )}
-            {active === "Turbine3" ? (
-              <img alt="project" src={proj3} />
-            ) : (
-              <img alt="project" className="fade-out" src={proj3} />
-            )}
-            {active === "Turbine4" ? (
-              <img alt="project" src={proj4} />
-            ) : (
-              <img alt="project" className="fade-out" src={proj4} />
-            )}
-            {active === "Turbine5" ? (
-              <img alt="project" src={proj5} />
-            ) : (
-              <img alt="project" className="fade-out" src={proj5} />
-            )}
-            {active === "Turbine6" ? (
-              <img alt="project" src={proj6} />
-            ) : (
-              <img alt="project" className="fade-out" src={proj6} />
-            )}
-            {active === "Turbine7" ? (
-              <img alt="project" src={proj7} />
-            ) : (
-              <img alt="project" className="fade-out" src={proj7} />
-            )}
+            {projects.map((project) => (
+              <img
+                key={project.title}
+                alt="project"
+                src={
+                  project.title === activeProject.title
+                    ? project.img
+                    : project.img
+                }
+                className={
+                  project.title === activeProject.title ? "" : "fade-out"
+                }
+              />
+            ))}
           </div>
         </ImgBox>
       </div>
@@ -177,6 +117,7 @@ const Container = styled.div`
   justify-content: space-between;
   background-color: #dcdcdc;
   padding-bottom: 80px;
+
   .top {
     display: flex;
     justify-content: space-between;
@@ -184,8 +125,8 @@ const Container = styled.div`
 
   @media (max-width: 1100px) {
     justify-content: center;
-
     padding-bottom: 20px;
+
     .top {
       flex-direction: column;
     }
@@ -201,7 +142,6 @@ const ImgBox = styled.div`
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
-    /* max-width: 38vw; */
     font-family: Authentic90;
   }
 
@@ -216,7 +156,6 @@ const ImgBox = styled.div`
   img {
     transition: 500ms;
     border: none;
-    /* margin-bottom: -100px; */
     width: 38vw;
     height: 18vw;
     position: absolute;
@@ -232,6 +171,7 @@ const ImgBox = styled.div`
   .fade-out {
     animation: ${clearAnimation} 500ms forwards;
   }
+
   @media (max-width: 1100px) {
     div {
       max-width: 91vw;
@@ -241,10 +181,12 @@ const ImgBox = styled.div`
         max-width: 93vw;
       }
     }
+
     .cadre {
       width: 100%;
       height: 40vw;
     }
+
     img {
       width: 100%;
       height: 40vw;
@@ -256,10 +198,12 @@ const ImgBox = styled.div`
       max-width: 90vw;
       margin-top: 20px;
     }
+
     .cadre {
       width: 100%;
       height: 70vw;
     }
+
     img {
       width: 100%;
       height: 70vw;
@@ -276,6 +220,7 @@ const TextBox = styled.div`
   text-transform: uppercase;
   margin-top: 30px;
   margin-right: 50px;
+
   @media (max-width: 1100px) {
     font-size: 16px;
     margin-right: 0px;
@@ -291,6 +236,7 @@ const LettersBox = styled.div`
     p {
       height: 20vw;
       transition: 500ms;
+
       &:hover {
         transform: rotate3d(1, 0.05, 0.1, 20deg);
       }
@@ -303,6 +249,7 @@ const LettersBox = styled.div`
     align-items: center;
     justify-content: center;
     font-size: 27.2vw;
+
     @media (max-width: 1100px) {
       font-size: 20vw;
     }
@@ -311,9 +258,11 @@ const LettersBox = styled.div`
   .o1 {
     letter-spacing: -1.2vw;
   }
+
   .g1 {
     letter-spacing: -1.5vw;
   }
+
   .g2 {
     letter-spacing: -1.4vw;
   }
