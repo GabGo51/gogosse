@@ -19,7 +19,7 @@ const Footer = () => {
   return (
     <Container>
       <Info>
-        <p onClick={() => handleNavigate("/")}>GOGOSSE</p>
+        <button onClick={() => handleNavigate("/")}>GOGOSSE</button>
         <ul onMouseEnter={handleBlur} onMouseLeave={removeBlur}>
           <li className={blur ? "blurred" : ""}>
             <a
@@ -74,11 +74,13 @@ const Info = styled.div`
 
   width: 95vw;
 
-  p {
+  button {
     font-family: Tagada;
     font-size: 64px;
     font-weight: 400;
     cursor: pointer;
+    background-color: transparent;
+    border: none;
   }
 
   li {

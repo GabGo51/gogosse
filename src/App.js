@@ -10,7 +10,7 @@ import Contact from "./components/Contact/Contact";
 function App() {
   return (
     <Router>
-      <Cursor />
+      <Cursor/>
       <Container>
         <Header />
         <Routes>

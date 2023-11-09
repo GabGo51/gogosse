@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import styled, { keyframes} from "styled-components";
-import proj1 from './img/proj1.png'
-import proj2 from './img/proj2.png'
-import proj3 from './img/proj3.png'
-import proj4 from './img/proj4.png'
-import proj5 from './img/proj5.png'
-import proj6 from './img/proj6.png'
-import proj7 from './img/proj7.png'
+import proj1 from './img/proj1.webp'
+import proj2 from './img/proj2.webp'
+import proj3 from './img/proj3.webp'
+import proj4 from './img/proj4.webp'
+import proj5 from './img/proj5.webp'
+import proj6 from './img/proj6.webp'
+import proj7 from './img/proj7.webp'
 const Hero = () => {
   
   //make variables for the chosen project and change that variable depending on the staTE 
@@ -212,6 +212,7 @@ div{
 img{
   transition: 500ms;
   border: none;
+  /* margin-bottom: -100px; */
   width: 38vw;
   height: 18vw;
   position: absolute;
@@ -272,8 +273,10 @@ const TextBox = styled.div`
   font-family: Authentic60C;
   text-transform: uppercase;
   margin-top: 30px;
+  margin-right: 50px;
   @media (max-width:1100px){
     font-size: 16px;
+    margin-right: 0px;
   }
 `;
 

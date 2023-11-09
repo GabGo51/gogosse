@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import { useState } from "react";
-import proj1 from './img/proj1.png'
-import proj2 from './img/proj2.png'
-import proj3 from './img/proj3.png'
-import proj4 from './img/proj4.png'
-import proj5 from './img/proj5.png'
-import proj6 from './img/proj6.png'
-import proj7 from './img/proj7.png'
+import proj1 from './img/proj1.webp'
+import proj2 from './img/proj2.webp'
+import proj3 from './img/proj3.webp'
+import proj4 from './img/proj4.webp'
+import proj5 from './img/proj5.webp'
+import proj6 from './img/proj6.webp'
+import proj7 from './img/proj7.webp'
 
 const Projects = () => {
 

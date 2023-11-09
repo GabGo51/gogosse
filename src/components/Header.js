@@ -13,6 +13,7 @@ const Header = () => {
   const navigate = useNavigate();
   const handleNavigate = (page) => {
     navigate(page);
+    setIsOpen(false)
   };
 
   const [blur, setBlur] = useState(false);
