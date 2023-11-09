@@ -64,7 +64,7 @@ const Hero = () => {
   };
 
   
-  console.log(active);
+  
   
 
 
@@ -86,13 +86,13 @@ const Hero = () => {
           </div>
           <div className="cadre">
 
-            {active === 'Turbine' ? <img src={proj1} /> : <img className="fade-out" src={proj1} /> }
-            {active === 'Turbine2' ? <img src={proj2} /> : <img className="fade-out" src={proj2} />  }
-            {active === 'Turbine3' ? <img src={proj3} /> : <img className="fade-out" src={proj3} /> }
-            {active === 'Turbine4' ? <img src={proj4} /> : <img className="fade-out" src={proj4} /> }
-            {active === 'Turbine5' ? <img src={proj5} /> : <img className="fade-out" src={proj5} /> }
-            {active === 'Turbine6' ? <img src={proj6} /> : <img className="fade-out" src={proj6} /> }
-            {active === 'Turbine7' ? <img src={proj7} /> : <img className="fade-out" src={proj7} /> }
+            {active === 'Turbine' ? <img alt="project" src={proj1} /> : <img alt="project" className="fade-out" src={proj1} /> }
+            {active === 'Turbine2' ? <img alt="project" src={proj2} /> : <img alt="project" className="fade-out" src={proj2} />  }
+            {active === 'Turbine3' ? <img alt="project" src={proj3} /> : <img alt="project" className="fade-out" src={proj3} /> }
+            {active === 'Turbine4' ? <img alt="project" src={proj4} /> : <img alt="project" className="fade-out" src={proj4} /> }
+            {active === 'Turbine5' ? <img alt="project" src={proj5} /> : <img alt="project" className="fade-out" src={proj5} /> }
+            {active === 'Turbine6' ? <img alt="project" src={proj6} /> : <img alt="project" className="fade-out" src={proj6} /> }
+            {active === 'Turbine7' ? <img alt="project" src={proj7} /> : <img alt="project" className="fade-out" src={proj7} /> }
 
             
           </div> 
@@ -196,7 +196,7 @@ div{
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
-  max-width: 38vw;
+  /* max-width: 38vw; */
   font-family: Authentic90;
 }
 
@@ -206,6 +206,7 @@ div{
   height: 18vw;
   overflow: hidden;
   border: none;
+  
 }
 
 img{
@@ -221,6 +222,8 @@ img{
     scale: 1.3;
     rotate: 5deg;
   }
+
+  
 }
 
 .fade-out{
@@ -229,17 +232,34 @@ img{
 @media (max-width:1100px){
 
   div{
-    max-width: 85vw;
+    max-width: 90vw;
     margin-top: 20px;
   }
   .cadre{
-    width: 98%;
-    height: 30vw;
+    width: 100%;
+    height: 40vw;
   }
   img{
-    width: 98%;
-    height: 30vw;
+    width: 100%;
+    height: 40vw;
   }
+}
+
+
+@media (max-width:500px){
+
+div{
+  max-width: 85vw;
+  margin-top: 20px;
+}
+.cadre{
+  width: 100%;
+  height: 70vw;
+}
+img{
+  width: 100%;
+  height: 70vw;
+}
 }
 
 `
@@ -248,12 +268,12 @@ const TextBox = styled.div`
   max-width: 815px;
   max-height: 485px;
   font-weight: 300;
-  font-size: 2vw;
+  font-size: 1.7vw;
   font-family: Authentic60C;
   text-transform: uppercase;
   margin-top: 30px;
   @media (max-width:1100px){
-    font-size: 12px;
+    font-size: 16px;
   }
 `;
 

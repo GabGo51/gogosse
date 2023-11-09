@@ -4,7 +4,8 @@ import Header from "./components/Header";
 import Home from "./components/Home/Home";
 import Cursor from "./Cursor";
 import About from "./components/About/About";
-import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import Contact from "./components/Contact/Contact";
 
 function App() {
   return (
@@ -15,8 +16,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
-        <Contact />
+        <Footer />
       </Container>
     </Router>
   );

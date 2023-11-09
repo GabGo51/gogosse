@@ -22,11 +22,11 @@ const Projects = () => {
   }
   return (
     <Container >
-      <h2>PROJECTS</h2>
-      <div onMouseEnter={handleBlur} onMouseLeave={removeBlur}>
+      <h2>PROJECTS & FEATURED WORKS</h2>
+      <div className="all-project" onMouseEnter={handleBlur} onMouseLeave={removeBlur}>
       <ProjectBox className={blur ? 'blurred' : ''}>
-        <Project>
-          <img src={proj1}/>
+        <Project blur = {blur}>
+          <img alt="project" src={proj1}/>
           <h3>PROJET</h3>
           <p className="description">
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -39,7 +39,7 @@ const Projects = () => {
       </ProjectBox>
       <ProjectBox className={blur ? 'blurred' : ''}>
         <Project>
-        <img src={proj2}/>
+        <img alt="project" src={proj2}/>
           <h3>PROJET</h3>
           <p className="description">
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -52,7 +52,7 @@ const Projects = () => {
       </ProjectBox>
       <ProjectBox className={blur ? 'blurred' : ''}>
         <Project>
-        <img src={proj3}/>
+        <img alt="project" src={proj3}/>
           <h3>PROJET</h3>
           <p className="description">
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -65,7 +65,7 @@ const Projects = () => {
       </ProjectBox>
       <ProjectBox className={blur ? 'blurred' : ''}>
         <Project>
-        <img src={proj4}/>
+        <img alt="project" src={proj4}/>
           <h3>PROJET</h3>
           <p className="description">
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -78,7 +78,7 @@ const Projects = () => {
       </ProjectBox>
       <ProjectBox className={blur ? 'blurred' : ''}>
         <Project>
-        <img src={proj5}/>
+        <img alt="project" src={proj5}/>
           <h3>PROJET</h3>
           <p className="description">
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -91,7 +91,7 @@ const Projects = () => {
       </ProjectBox>
       <ProjectBox className={blur ? 'blurred' : ''}>
         <Project>
-        <img src={proj6}/>
+        <img alt="project" src={proj6}/>
           <h3>PROJET</h3>
           <p className="description">
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -104,7 +104,7 @@ const Projects = () => {
       </ProjectBox>
       <ProjectBox className={blur ? 'blurred' : ''}>
         <Project>
-        <img src={proj7}/>
+        <img alt="project" src={proj7}/>
           <h3>PROJET</h3>
           <p className="description">
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -116,6 +116,8 @@ const Projects = () => {
         </Project>
       </ProjectBox>
       </div>
+
+      <p className='title'>Lets Work</p>
     </Container>
   );
 };
@@ -124,22 +126,37 @@ const Container = styled.div`
   background-color: white;
   padding: 40px;
   position: relative;
-  padding-top: 100px;
+  padding-top: 20px;
 
   h2{
-    position: absolute;
-    top: 40px;
-    right: 50.5vw;
-    font-family: Authentic130;
+    
+    font-family: Authentic130C;
+    width: 100vw;
+    margin: 50px 0px;
   }
 
   .blurred {
     filter: blur(2px);
   }
+
+  .title{
+  font-size: 50px;
+  font-weight: 600;
+  margin-bottom: 50px;
+  font-family: Authentic60;
+  width: 100vw;
+  text-align: center;
+  margin-top: 100px;
+  
+}
+
+.box{
+  margin-top: 100px;
+}
   
 `;
 
-const ProjectBox = styled.section`
+const ProjectBox = styled.div`
 &:hover{
   filter: blur(0);
 }
@@ -152,9 +169,15 @@ position: relative;
 transition: 500ms;
 display: flex;
 border-bottom:  1px solid black;
-padding-top:20px ;
-padding-bottom: 20px;
+padding-top:50px ;
+padding-bottom: 50px;
 margin-bottom: 20px;
+
+&:hover{
+  .description{
+    font-size: 20px;
+  }
+}
 
 img{
   transition: 500ms;
@@ -163,7 +186,7 @@ img{
   object-fit: cover;
   position: absolute;
   left: 13vw;
-  top: 2vw;
+  top: 0vw;
   scale: 0;
   filter: blur(10px);
 }
@@ -175,22 +198,26 @@ p{
 }
 h3{
   flex:.50;
-  font-size: 25px;
+  font-size: 20px;
   font-family: Tagada;
   
 }
 .description{
+  transition: 500ms;
   max-width: 400px;
+  font-size: 1px; // change font from 1 to big for cool effect
   flex: 1;
   text-align: start;
   font-family: Authentic60C;
   text-transform: uppercase;
+  
+  
 }
 
 
 &:hover{
-  padding-top: 150px;
-  padding-bottom: 150px;
+  padding-top: 100px;
+  padding-bottom: 100px;
   h3{
     font-family: Authentic60C;
   }

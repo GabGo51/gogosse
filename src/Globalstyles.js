@@ -74,7 +74,7 @@ export default createGlobalStyle`
     padding: 100px;
     overflow: hidden;
     overflow-y: scroll;
-    background-color: #1E1E1E;
+    background-color:#DCDCDC;
     box-sizing: content-box; 
   }
   

@@ -2,7 +2,6 @@ import styled from "styled-components"
 import useMousePosition from "./hooks/useMousePosition";
 import { MouseContext } from "./context/mouseContext";
 import { useContext } from "react";
-import Hammer from './img/Hammer.webp'
 
 
 
