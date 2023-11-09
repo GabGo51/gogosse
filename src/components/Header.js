@@ -129,6 +129,9 @@ const Container = styled.header`
       font-size: 30px;
     }
   }
+  @media (max-width:750px){
+    padding: 20px;
+  }
 
   @media (max-width: 500px) {
     i {
