@@ -43,7 +43,7 @@ const Footer = () => {
             </a>
           </li>
         </ul>
-        <ul onMouseEnter={handleBlur} onMouseLeave={removeBlur}>
+        <ul className="contact" onMouseEnter={handleBlur} onMouseLeave={removeBlur}>
           <li className={blur ? "blurred" : ""}>ggssestudio@outlook.com</li>
           <li className={blur ? "blurred" : ""}>450 822 5550</li>
         </ul>
@@ -81,12 +81,17 @@ const Info = styled.div`
     cursor: pointer;
     background-color: transparent;
     border: none;
+
+    
   }
+
+  
 
   li {
     transition: 500ms;
     font-size: 18px;
     font-family: Authentic90;
+    line-height: 24px;
     
     a {
       cursor: pointer;
@@ -98,6 +103,26 @@ const Info = styled.div`
       filter: none;
       transform: translateX(-10%);
     }
+  }
+
+  .contact{
+    text-align: end;
+  }
+
+  @media (max-width:800px){
+      button{
+        display: none;
+      }
+
+      li{
+        font-size: 14px;
+        line-height: 30px;
+      }
+
+      ul{
+        margin: 0px 20px;
+      }
+      
   }
 `;
 export default Footer;
