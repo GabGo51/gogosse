@@ -37,10 +37,19 @@ const Container = styled.div`
 padding: 40px;
 
 p{
-  font-size: 2vw;
+  font-size: 40px;
   text-transform: uppercase;
   font-family: Authentic60;
   margin-bottom: 100px;
+
+  @media (max-width:1100px){
+    font-size: 24px;
+    
+  }
+  @media (max-width:700px){
+    font-size: 16px;
+    ;
+  }
 }
 div{
   border-bottom: 1px solid black;
