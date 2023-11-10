@@ -45,7 +45,7 @@ const Projects = () => {
         ))}
       </div>
 
-      <p className="title">Lets Work</p>
+      <p className="lets-work">Lets Work</p>
     </Container>
   );
 };
@@ -55,6 +55,7 @@ const Container = styled.div`
   padding: 40px;
   position: relative;
   padding-top: 20px;
+  width: 100vw;
 
   h2 {
     font-family: Authentic130C;
@@ -66,7 +67,7 @@ const Container = styled.div`
     filter: blur(2px);
   }
 
-  .title {
+  .lets-work {
     font-size: 50px;
     font-weight: 600;
     margin-bottom: 50px;
@@ -76,11 +77,7 @@ const Container = styled.div`
     margin-top: 100px;
   }
 
-  .box {
-    margin-top: 100px;
-  }
-
-  @media (max-width: 750px) {
+  @media (max-width: 800px) {
     padding: 20px;
 
     .blurred {
@@ -104,45 +101,34 @@ const Project = styled.div`
   padding: 50px 0;
   margin-bottom: 20px;
 
-  @media (max-width: 1100px) {
-    padding: 20px 0;
-  }
-
-  &:hover {
-    .description {
-      font-size: 20px;
-
-      @media (max-width: 750px) {
-        font-size: 12px;
-      }
-    }
-  }
-
   img {
     transition: 500ms;
-    /* width: 18vw;
-    height: 18vw; */
     margin: 0 10px;
     width: 0;
     height: 0;
     object-fit: cover;
     scale: 0;
     filter: blur(10px);
+
+    // Responsive styles
     @media (max-width: 1100px) {
       top: 50px;
     }
   }
+
   p {
     text-align: end;
     font-family: Authentic130C;
     font-size: 18px;
   }
+
   h3 {
     flex: 0.25;
     font-size: 20px;
     font-family: Tagada;
     text-transform: uppercase;
   }
+
   .description {
     transition: 500ms;
     max-width: 400px;
@@ -151,6 +137,19 @@ const Project = styled.div`
     text-align: start;
     font-family: Authentic60C;
     text-transform: uppercase;
+
+    // Responsive styles
+    @media (max-width: 1100px) {
+      max-width: 300px;
+    }
+
+    &:hover {
+      font-size: 14px;
+
+      @media (max-width: 800px) {
+        font-size: 12px;
+      }
+    }
   }
 
   .project-info {
@@ -158,18 +157,32 @@ const Project = styled.div`
     flex: 0.2;
     justify-content: space-between;
     width: 250px;
+
+    // Responsive styles
+    @media (max-width: 1100px) {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   &:hover {
     img {
       scale: 1;
       filter: blur(0);
-      width: 18vw;
-      height: 18vw;
+      width: 22vw;
+      height: 22vw;
 
-      @media (max-width:750px){
-        width: 180px;
-        height: 180px;
+      @media (max-width: 800px) {
+        width: clamp(180px, 40vw, 380px);
+      height: 180px;
+      }
+    }
+
+    .description {
+      font-size: 20px;
+
+      @media (max-width: 800px) {
+        font-size: 12px;
       }
     }
 
@@ -179,34 +192,12 @@ const Project = styled.div`
       padding: 70px 0px;
     }
 
-    @media (max-width: 750px) {
-      padding: 0px 0px;
+    @media (max-width: 800px) {
+      padding: 20px 0px;
     }
   }
 
-  @media (max-width: 1100px) {
-    .project-info {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .description {
-      max-width: 300px;
-    }
-
-    &:hover {
-      .description {
-        font-size: 14px;
-        @media (max-width: 750px) {
-          font-size: 12px;
-        }
-      }
-    }
-  }
-  @media (max-width: 750px) {
-    &:hover {
-      padding: 20px 0;
-    }
+  @media (max-width: 800px) {
     flex-direction: column;
 
     .blurred {
@@ -220,10 +211,10 @@ const Project = styled.div`
     img {
       position: absolute;
       scale: 1;
-      width: 180px;
+      width: clamp(180px, 40vw, 380px);
       height: 180px;
       filter: blur(0px);
-      left: 60vw;
+      left: 40vw;
     }
 
     .project-info {
@@ -231,27 +222,32 @@ const Project = styled.div`
       flex-direction: row;
       width: 150px;
     }
+
     .description {
       max-width: 150px;
       font-size: 12px;
       margin-bottom: 20px;
     }
   }
-  @media (max-width: 500px){
-    img{
+
+  @media (max-width: 1100px) {
+    padding: 20px 0;
+  }
+
+  // Responsive styles
+  @media (max-width: 500px) {
+    img {
       left: 45vw;
     }
   }
 
-
+  // Responsive styles
   @media (max-width: 350px) {
     img {
       width: 150px;
       left: 55vw;
     }
   }
-
-  
 `;
 
 export default Projects;

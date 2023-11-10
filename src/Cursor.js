@@ -6,7 +6,7 @@ import { useContext } from "react";
 
 
 const Cursor = () => {
-  const { cursorType, cursorChangeHandler } = useContext(MouseContext);
+  const { cursorType} = useContext(MouseContext);
   
     // 1.
   const { x, y } = useMousePosition();
@@ -64,7 +64,7 @@ const Ring = styled.div`
     border-radius: 0;
   }
 
-  @media (max-width:500px){
+  @media (max-width:800px){
     display: none;
   }
 `
@@ -89,7 +89,7 @@ const Dot = styled.div`
   &.button{
     display: none;
   }
-  @media (max-width:500px){
+  @media (max-width:800px){
     display: none;
   }
 ` 

@@ -53,23 +53,23 @@ const Hero = () => {
             <p>G</p>
           </div>
 
-          <div className="o1" onMouseEnter={() => handleHover("Turbine2")}>
+          <div className="o1" onMouseEnter={() => handleHover("Salon Aventure et Plein-Air")}>
             <p>O</p>
           </div>
 
-          <div className="g2" onMouseEnter={() => handleHover("Turbine3")}>
+          <div className="g2" onMouseEnter={() => handleHover("Lapies")}>
             <p>G</p>
           </div>
 
-          <div className="o2" onMouseEnter={() => handleHover("Turbine4")}>
+          <div className="o2" onMouseEnter={() => handleHover("Petits Budgets Grands Gouts")}>
             <p>O</p>
           </div>
 
-          <div className="s1" onMouseEnter={() => handleHover("Turbine5")}>
+          <div className="s1" onMouseEnter={() => handleHover("Horizon")}>
             <p>S</p>
           </div>
 
-          <div className="s2" onMouseEnter={() => handleHover("Turbine6")}>
+          <div className="s2" onMouseEnter={() => handleHover("Festival International de Jazz de Montreal")}>
             <p>S</p>
           </div>
 
