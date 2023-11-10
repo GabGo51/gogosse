@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import projects from "../../data/projectData";
@@ -45,10 +45,16 @@ const Projects = () => {
         ))}
       </div>
 
-      <p className="lets-work">Lets Work</p>
+      <p className="lets-work">Lets <div>W</div>ork</p>
     </Container>
   );
 };
+
+const rotate = keyframes`
+to{
+  transform: rotate(90deg);
+}
+`
 
 const Container = styled.div`
   background-color: white;
@@ -68,14 +74,26 @@ const Container = styled.div`
   }
 
   .lets-work {
+    cursor: pointer;
+    display: flex;
     font-size: 50px;
     font-weight: 600;
     margin-bottom: 50px;
     font-family: Authentic60;
-    width: 100vw;
+    width: 300px;
     text-align: center;
     margin-top: 100px;
+    div{
+      margin-left: 30px;
+    }
+
+    &:hover{
+      div{
+        animation: ${rotate} 500ms forwards;
+      }
+    }
   }
+  
 
   @media (max-width: 800px) {
     padding: 20px;

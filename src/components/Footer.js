@@ -78,7 +78,7 @@ const Info = styled.div`
     font-family: Tagada;
     font-size: 64px;
     font-weight: 400;
-    cursor: pointer;
+    
     background-color: transparent;
     border: none;
 

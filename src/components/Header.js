@@ -76,7 +76,7 @@ const Container = styled.header`
 
   h1 {
     display: inline-block;
-    cursor: pointer;
+    
     margin-right: 40px;
     font-size: 30px;
     font-family: Tagada;
@@ -112,7 +112,7 @@ const Container = styled.header`
 
   li {
     transition: 500ms;
-    cursor: pointer;
+    
     margin-left: 30px;
     &:hover {
       transform: translateX(-10%);

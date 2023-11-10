@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import projects from "../../data/projectData";
+import { useContext } from "react";
+import { MouseContext } from "../../context/mouseContext";
 
 const Hero = () => {
+  const {cursorChangeHandler } = useContext(MouseContext);
+
   const [activeProject, setActiveProject] = useState(projects[0]);
 
   const handleHover = (projectTitle) => {
+    cursorChangeHandler('hover')
     const selectedProject = projects.find(
       (project) => project.title === projectTitle
     );
@@ -15,6 +20,7 @@ const Hero = () => {
     }
   };
 
+  
   return (
     <Container>
       <div className="top">
@@ -42,13 +48,15 @@ const Hero = () => {
                 className={
                   project.title === activeProject.title ? "" : "fade-out"
                 }
+                onMouseEnter={() => cursorChangeHandler("hover")}
+                onMouseLeave={() => cursorChangeHandler("")}
               />
             ))}
           </div>
         </ImgBox>
       </div>
       <LettersBox>
-        <div className="box">
+        <div className="box" onMouseLeave={() => cursorChangeHandler("")}>
           <div className="g1" onMouseEnter={() => handleHover("Turbine")}>
             <p>G</p>
           </div>
