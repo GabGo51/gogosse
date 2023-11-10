@@ -141,6 +141,7 @@ const Project = styled.div`
     flex: 0.4;
     font-size: 20px;
     font-family: Tagada;
+    text-transform: uppercase;
   }
   .description {
     transition: 500ms;
