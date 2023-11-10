@@ -125,14 +125,14 @@ const clearAnimation = keyframes`
 `;
 
 const Container = styled.div`
-  height: calc(100vh - 30px);
+  height: calc(100vh - 40px);
   padding: 40px;
   padding-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background-color: #dcdcdc;
-  padding-bottom: 80px;
+  padding-bottom: 100px;
 
   .top {
     display: flex;
@@ -148,8 +148,9 @@ const Container = styled.div`
     }
   }
 
-  @media (max-width: 750px) {
-    padding: 20px;
+  @media (max-width: 800px) {
+    height: 650px;
+    padding-bottom: 20px;
   }
 `;
 
