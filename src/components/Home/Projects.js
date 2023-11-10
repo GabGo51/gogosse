@@ -51,13 +51,14 @@ const Projects = () => {
         ))}
       </div>
 
-      <p
+      <button
         onMouseEnter={() => cursorChangeHandler("hover")}
         onMouseLeave={() => cursorChangeHandler("")}
+        onClick={() => handleNavigate(`/contact`)}
         className="lets-work"
       >
         Lets <div>W</div>ork
-      </p>
+      </button>
     </Container>
   );
 };
@@ -94,6 +95,8 @@ const Container = styled.div`
     width: 300px;
     text-align: center;
     margin-top: 100px;
+    background-color: white;
+    border: none;
     div {
       margin-left: 30px;
     }
@@ -213,16 +216,7 @@ const Project = styled.div`
         font-size: 12px;
       }
     }
-
-    padding: 100px 0px;
-
-    @media (max-width: 1100px) {
-      padding: 70px 0px;
-    }
-
-    @media (max-width: 800px) {
-      padding: 20px 0px;
-    }
+    
   }
 
   @media (max-width: 800px) {

@@ -3,6 +3,7 @@ import styled, { keyframes } from "styled-components";
 import projects from "../../data/projectData";
 import { useContext } from "react";
 import { MouseContext } from "../../context/mouseContext";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
   const {cursorChangeHandler } = useContext(MouseContext);
@@ -18,6 +19,11 @@ const Hero = () => {
     if (selectedProject) {
       setActiveProject(selectedProject);
     }
+  };
+
+  const navigate = useNavigate();
+  const handleNavigate = (page) => {
+    navigate(page);
   };
 
   
@@ -50,6 +56,7 @@ const Hero = () => {
                 }
                 onMouseEnter={() => cursorChangeHandler("hover")}
                 onMouseLeave={() => cursorChangeHandler("")}
+                onClick={() => handleNavigate(`/${project.title}`)}
               />
             ))}
           </div>
@@ -57,31 +64,31 @@ const Hero = () => {
       </div>
       <LettersBox>
         <div className="box" onMouseLeave={() => cursorChangeHandler("")}>
-          <div className="g1" onMouseEnter={() => handleHover("Turbine")}>
+          <div className="g1" onMouseEnter={() => handleHover(projects[0].title)}>
             <p>G</p>
           </div>
 
-          <div className="o1" onMouseEnter={() => handleHover("Salon Aventure et Plein-Air")}>
+          <div className="o1" onMouseEnter={() => handleHover(projects[1].title)}>
             <p>O</p>
           </div>
 
-          <div className="g2" onMouseEnter={() => handleHover("Lapies")}>
+          <div className="g2" onMouseEnter={() => handleHover(projects[2].title)}>
             <p>G</p>
           </div>
 
-          <div className="o2" onMouseEnter={() => handleHover("Petits Budgets Grands Gouts")}>
+          <div className="o2" onMouseEnter={() => handleHover(projects[3].title)}>
             <p>O</p>
           </div>
 
-          <div className="s1" onMouseEnter={() => handleHover("Horizon")}>
+          <div className="s1" onMouseEnter={() => handleHover(projects[4].title)}>
             <p>S</p>
           </div>
 
-          <div className="s2" onMouseEnter={() => handleHover("Festival International de Jazz de Montreal")}>
+          <div className="s2" onMouseEnter={() => handleHover(projects[5].title)}>
             <p>S</p>
           </div>
 
-          <div className="e" onMouseEnter={() => handleHover("Turbine7")}>
+          <div className="e" onMouseEnter={() => handleHover(projects[6].title)}>
             <p>E</p>
           </div>
         </div>
