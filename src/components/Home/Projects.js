@@ -54,7 +54,10 @@ const Projects = () => {
       <button
         onMouseEnter={() => cursorChangeHandler("hover")}
         onMouseLeave={() => cursorChangeHandler("")}
-        onClick={() => handleNavigate(`/contact`)}
+        onClick={() => {
+          handleNavigate(`/contact`);
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
         className="lets-work"
       >
         Lets <div>W</div>ork

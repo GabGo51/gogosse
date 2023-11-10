@@ -6,7 +6,10 @@ import { MouseContext } from "../../context/mouseContext";
 const Contact = () => {
   const { cursorChangeHandler } = useContext(MouseContext);
 
-  const handleSubmit = () => {};
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log('suck');
+  };
   return (
     <Container>
       <p>

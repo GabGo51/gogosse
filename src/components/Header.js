@@ -12,8 +12,6 @@ const Header = () => {
     setIsOpen(!isOpen);
   };
 
-  console.log(isOpen);
-
   const navigate = useNavigate();
   const handleNavigate = (page) => {
     navigate(page);

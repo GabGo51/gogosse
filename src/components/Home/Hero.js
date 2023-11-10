@@ -125,6 +125,7 @@ const clearAnimation = keyframes`
 `;
 
 const Container = styled.div`
+  height: calc(100vh- 10px);
   padding: 40px;
   padding-top: 20px;
   display: flex;
