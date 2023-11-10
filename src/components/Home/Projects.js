@@ -21,14 +21,20 @@ const Projects = () => {
   return (
     <Container>
       <h2>PROJECTS & FEATURED WORKS</h2>
-      <div className="all-project" onMouseEnter={handleBlur} onMouseLeave={removeBlur}>
+      <div
+        className="all-project"
+        onMouseEnter={handleBlur}
+        onMouseLeave={removeBlur}
+      >
         {projects.map((project) => (
           <ProjectBox key={project.id} className={blur ? "blurred" : ""}>
             <Project onClick={() => handleNavigate(`/${project.title}`)}>
               <img alt="project" src={project.img} />
               <h3>{project.title}</h3>
               <p className="description">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque voluptas sit aspernatur aut odit aut fugit, sed quia consequunt
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                accusantium doloremque laudantium, totam rem aperiam, eaque
+                voluptas sit aspernatur aut odit aut fugit, sed quia consequunt
               </p>
               <div className="project-info">
                 <p>Evenement</p>
@@ -154,7 +160,6 @@ const Project = styled.div`
   }
 
   &:hover {
-    
     img {
       scale: 1;
       filter: blur(0);
@@ -191,7 +196,7 @@ const Project = styled.div`
     }
   }
   @media (max-width: 750px) {
-    &:hover{
+    &:hover {
       padding: 20px 0;
     }
     flex-direction: column;
@@ -225,7 +230,6 @@ const Project = styled.div`
   }
 
   @media (max-width: 500px) {
-    
     img {
       min-width: 150px;
       left: 45vw;
