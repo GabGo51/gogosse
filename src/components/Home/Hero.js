@@ -64,31 +64,31 @@ const Hero = () => {
       </div>
       <LettersBox>
         <div className="box" onMouseLeave={() => cursorChangeHandler("")}>
-          <div className="g1" onMouseEnter={() => handleHover(projects[0].title)}>
+          <div className="g1" onMouseEnter={() => handleHover(projects[0].title)} onClick={() => handleNavigate(`/${projects[0].title}`)}>
             <p>G</p>
           </div>
 
-          <div className="o1" onMouseEnter={() => handleHover(projects[1].title)}>
+          <div className="o1" onMouseEnter={() => handleHover(projects[1].title)} onClick={() => handleNavigate(`/${projects[1].title}`)}>
             <p>O</p>
           </div>
 
-          <div className="g2" onMouseEnter={() => handleHover(projects[2].title)}>
+          <div className="g2" onMouseEnter={() => handleHover(projects[2].title)} onClick={() => handleNavigate(`/${projects[2].title}`)}>
             <p>G</p>
           </div>
 
-          <div className="o2" onMouseEnter={() => handleHover(projects[3].title)}>
+          <div className="o2" onMouseEnter={() => handleHover(projects[3].title)} onClick={() => handleNavigate(`/${projects[3].title}`)}>
             <p>O</p>
           </div>
 
-          <div className="s1" onMouseEnter={() => handleHover(projects[4].title)}>
+          <div className="s1" onMouseEnter={() => handleHover(projects[4].title)} onClick={() => handleNavigate(`/${projects[4].title}`)}>
             <p>S</p>
           </div>
 
-          <div className="s2" onMouseEnter={() => handleHover(projects[5].title)}>
+          <div className="s2" onMouseEnter={() => handleHover(projects[5].title)} onClick={() => handleNavigate(`/${projects[5].title}`)}>
             <p>S</p>
           </div>
 
-          <div className="e" onMouseEnter={() => handleHover(projects[6].title)}>
+          <div className="e" onMouseEnter={() => handleHover(projects[6].title)} onClick={() => handleNavigate(`/${projects[6].title}`)}>
             <p>E</p>
           </div>
         </div>
