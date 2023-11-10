@@ -29,8 +29,8 @@ const Projects = () => {
         {projects.map((project) => (
           <ProjectBox key={project.id} className={blur ? "blurred" : ""}>
             <Project onClick={() => handleNavigate(`/${project.title}`)}>
-              <img alt="project" src={project.img} />
               <h3>{project.title}</h3>
+              <img alt="project" src={project.img} />
               <p className="description">
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                 accusantium doloremque laudantium, totam rem aperiam, eaque
@@ -120,12 +120,12 @@ const Project = styled.div`
 
   img {
     transition: 500ms;
-    width: 18vw;
-    height: 18vw;
+    /* width: 18vw;
+    height: 18vw; */
+    margin: 0 10px;
+    width: 0;
+    height: 0;
     object-fit: cover;
-    position: absolute;
-    left: 13vw;
-    top: 2vw;
     scale: 0;
     filter: blur(10px);
     @media (max-width: 1100px) {
@@ -138,7 +138,7 @@ const Project = styled.div`
     font-size: 18px;
   }
   h3 {
-    flex: 0.4;
+    flex: 0.25;
     font-size: 20px;
     font-family: Tagada;
     text-transform: uppercase;
@@ -164,6 +164,13 @@ const Project = styled.div`
     img {
       scale: 1;
       filter: blur(0);
+      width: 18vw;
+      height: 18vw;
+
+      @media (max-width:750px){
+        width: 180px;
+        height: 180px;
+      }
     }
 
     padding: 100px 0px;
@@ -211,6 +218,7 @@ const Project = styled.div`
     }
 
     img {
+      position: absolute;
       scale: 1;
       width: 180px;
       height: 180px;
@@ -229,13 +237,21 @@ const Project = styled.div`
       margin-bottom: 20px;
     }
   }
-
-  @media (max-width: 500px) {
-    img {
-      min-width: 150px;
+  @media (max-width: 500px){
+    img{
       left: 45vw;
     }
   }
+
+
+  @media (max-width: 350px) {
+    img {
+      width: 150px;
+      left: 55vw;
+    }
+  }
+
+  
 `;
 
 export default Projects;
