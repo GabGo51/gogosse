@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { useContext } from "react";
+import { MouseContext } from "../context/mouseContext";
 
 const Header = () => {
+  const {cursorChangeHandler } = useContext(MouseContext);
+  
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -18,9 +22,11 @@ const Header = () => {
 
   const [blur, setBlur] = useState(false);
   const handleBlur = () => {
+    cursorChangeHandler('hover')
     setBlur(true);
   };
   const removeBlur = () => {
+    cursorChangeHandler('')
     setBlur(false);
   };
 
@@ -129,7 +135,7 @@ const Container = styled.header`
       font-size: 30px;
     }
   }
-  @media (max-width:750px){
+  @media (max-width:800px){
     padding: 20px;
   }
 

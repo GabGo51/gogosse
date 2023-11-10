@@ -3,13 +3,19 @@ import styled, { keyframes } from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import projects from "../../data/projectData";
+import { useContext } from "react";
+import { MouseContext } from "../../context/mouseContext";
 
 const Projects = () => {
+  const { cursorChangeHandler } = useContext(MouseContext);
+
   const [blur, setBlur] = useState(false);
   const handleBlur = () => {
+    cursorChangeHandler("hover");
     setBlur(true);
   };
   const removeBlur = () => {
+    cursorChangeHandler("");
     setBlur(false);
   };
 
@@ -45,7 +51,13 @@ const Projects = () => {
         ))}
       </div>
 
-      <p className="lets-work">Lets <div>W</div>ork</p>
+      <p
+        onMouseEnter={() => cursorChangeHandler("hover")}
+        onMouseLeave={() => cursorChangeHandler("")}
+        className="lets-work"
+      >
+        Lets <div>W</div>ork
+      </p>
     </Container>
   );
 };
@@ -54,7 +66,7 @@ const rotate = keyframes`
 to{
   transform: rotate(90deg);
 }
-`
+`;
 
 const Container = styled.div`
   background-color: white;
@@ -74,7 +86,6 @@ const Container = styled.div`
   }
 
   .lets-work {
-    cursor: pointer;
     display: flex;
     font-size: 50px;
     font-weight: 600;
@@ -83,17 +94,16 @@ const Container = styled.div`
     width: 300px;
     text-align: center;
     margin-top: 100px;
-    div{
+    div {
       margin-left: 30px;
     }
 
-    &:hover{
-      div{
+    &:hover {
+      div {
         animation: ${rotate} 500ms forwards;
       }
     }
   }
-  
 
   @media (max-width: 800px) {
     padding: 20px;
@@ -192,7 +202,7 @@ const Project = styled.div`
 
       @media (max-width: 800px) {
         width: clamp(180px, 40vw, 380px);
-      height: 180px;
+        height: 180px;
       }
     }
 

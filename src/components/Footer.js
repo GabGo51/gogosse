@@ -2,12 +2,19 @@ import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useContext } from "react";
+import { MouseContext } from "../context/mouseContext";
+
 const Footer = () => {
+  const { cursorChangeHandler } = useContext(MouseContext);
+
   const [blur, setBlur] = useState(false);
   const handleBlur = () => {
+    cursorChangeHandler("hover");
     setBlur(true);
   };
   const removeBlur = () => {
+    cursorChangeHandler("");
     setBlur(false);
   };
 
@@ -19,7 +26,13 @@ const Footer = () => {
   return (
     <Container>
       <Info>
-        <button onClick={() => handleNavigate("/")}>GOGOSSE</button>
+        <button
+          onMouseEnter={() => cursorChangeHandler("hover")}
+          onMouseLeave={() => cursorChangeHandler("")}
+          onClick={() => handleNavigate("/")}
+        >
+          GOGOSSE
+        </button>
         <ul onMouseEnter={handleBlur} onMouseLeave={removeBlur}>
           <li className={blur ? "blurred" : ""}>
             <a
@@ -43,7 +56,11 @@ const Footer = () => {
             </a>
           </li>
         </ul>
-        <ul className="contact" onMouseEnter={handleBlur} onMouseLeave={removeBlur}>
+        <ul
+          className="contact"
+          onMouseEnter={handleBlur}
+          onMouseLeave={removeBlur}
+        >
           <li className={blur ? "blurred" : ""}>ggssestudio@outlook.com</li>
           <li className={blur ? "blurred" : ""}>450 822 5550</li>
         </ul>
@@ -57,14 +74,18 @@ const Container = styled.footer`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 50px 20px;
+  padding: 40px 40px;
   background-color: transparent;
   width: 100vw;
   font-weight: 700;
   font-family: Authentic60;
-  .blurred{
-  filter: blur(1px);
-}
+  .blurred {
+    filter: blur(1px);
+  }
+
+  @media (max-width:800px){
+    padding: 20px;
+  }
 `;
 
 const Info = styled.div`
@@ -72,29 +93,24 @@ const Info = styled.div`
   justify-content: space-between;
   align-items: start;
 
-  width: 95vw;
+  width: 100%;
 
   button {
     font-family: Tagada;
     font-size: 64px;
     font-weight: 400;
-    
+
     background-color: transparent;
     border: none;
-
-    
   }
-
-  
 
   li {
     transition: 500ms;
     font-size: 18px;
     font-family: Authentic90;
     line-height: 24px;
-    
+
     a {
-      cursor: pointer;
       text-decoration: none;
       color: black;
     }
@@ -105,24 +121,23 @@ const Info = styled.div`
     }
   }
 
-  .contact{
+  .contact {
     text-align: end;
   }
 
-  @media (max-width:800px){
-      button{
-        display: none;
-      }
+  @media (max-width: 800px) {
+    button {
+      display: none;
+    }
 
-      li{
-        font-size: 14px;
-        line-height: 30px;
-      }
+    li {
+      font-size: 14px;
+      line-height: 30px;
+    }
 
-      ul{
-        margin: 0px 20px;
-      }
-      
+    ul {
+      margin: 0px 20px;
+    }
   }
 `;
 export default Footer;
