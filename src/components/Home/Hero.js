@@ -147,6 +147,10 @@ const Container = styled.div`
       flex-direction: column;
     }
   }
+  @media (max-width: 1200px) {
+    height: 750px;
+    
+  }
 
   @media (max-width: 800px) {
     height: 650px;
@@ -230,7 +234,7 @@ const ImgBox = styled.div`
 
 const TextBox = styled.div`
   max-width: 815px;
-  max-height: 485px;
+  height: 100%;
   font-weight: 300;
   font-size: 1.7vw;
   font-family: Authentic60C;
