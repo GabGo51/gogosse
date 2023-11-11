@@ -1,15 +1,43 @@
 import React from "react";
+import { useState } from "react";
 import styled from "styled-components";
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { MouseContext } from "../../context/mouseContext";
+import emailjs from "@emailjs/browser";
+
 
 const Contact = () => {
   const { cursorChangeHandler } = useContext(MouseContext);
 
+  const gogosseForm = useRef();
+
+  const [loading, setLoading] = useState(false);
+  const [sent, setSent] = useState(false);
+
   const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log('suck');
+    e.preventDefault();
+    setLoading(true);
+
+    emailjs
+      .sendForm(
+        "service_zw14vwu",
+        "template_5nfy78a",
+        gogosseForm.current,
+        "VaZSX-PGbVyX__Gv8"
+      )
+      .then(
+        function (response) {
+          setLoading(false);
+          console.log("SUCCESS!", response.status, response.text);
+          gogosseForm.current.reset();
+          setSent(true);
+        },
+        function (error) {
+          console.log("FAILED...", error);
+        }
+      );
   };
+
   return (
     <Container>
       <p>
@@ -17,7 +45,7 @@ const Contact = () => {
         accusantium doloremque laudantium, totam rem aperiam, eaque voluptas sit
         aspernatur aut odit aut fugit, sed quia consequunt
       </p>
-      <form onSubmit={handleSubmit}>
+      <form ref={gogosseForm} onSubmit={handleSubmit}>
         <div>
           <label>NAME</label>
           <input
