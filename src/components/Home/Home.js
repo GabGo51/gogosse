@@ -2,10 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import Hero from "./Hero";
 import Projects from "./Projects";
+import Intro from "../Intro";
 
 const Home = () => {
   return (
     <Container>
+      {/* <Intro/> */}
       <Hero />
       <div className="gradient"></div>
       <Projects/>

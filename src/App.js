@@ -6,7 +6,7 @@ import Cursor from "./Cursor";
 import About from "./components/About/About";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact/Contact";
-
+import Intro from "./components/Intro";
 function App() {
   return (
     <Router>
