@@ -5,8 +5,8 @@ import { useContext } from "react";
 import { MouseContext } from "../context/mouseContext";
 
 const Header = () => {
-  const {cursorChangeHandler } = useContext(MouseContext);
-  
+  const { cursorChangeHandler } = useContext(MouseContext);
+
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -15,24 +15,36 @@ const Header = () => {
   const navigate = useNavigate();
   const handleNavigate = (page) => {
     navigate(page);
-    setIsOpen(false)
+    setIsOpen(false);
   };
 
   const [blur, setBlur] = useState(false);
   const handleBlur = () => {
-    cursorChangeHandler('hover')
+    cursorChangeHandler("hover");
     setBlur(true);
   };
   const removeBlur = () => {
-    cursorChangeHandler('')
+    cursorChangeHandler("");
     setBlur(false);
   };
 
   return (
     <Container>
-      <div>
-        <h1 onClick={() => handleNavigate("/")}>GOGOSSE</h1>
-      </div>
+      <h1 onClick={() => handleNavigate("/")}>GOGOSSE</h1>
+
+      <p>
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+        accusantium doloremque laudantium, totam rem aperiam.
+      </p>
+
+      <ul
+        className="contact"
+        onMouseEnter={handleBlur}
+        onMouseLeave={removeBlur}
+      >
+        <li className={blur ? "blurred" : ""}>ggssestudio@outlook.com</li>
+        <li className={blur ? "blurred" : ""}>450 822 5550</li>
+      </ul>
 
       <nav>
         <i className="fa-solid fa-bars" onClick={toggleMenu}></i>
@@ -75,29 +87,36 @@ const Container = styled.header`
   position: relative;
   div {
     width: 100%;
-    border-bottom: 1px solid black;
   }
 
   h1 {
     display: inline-block;
-    
-    margin-right: 40px;
     font-size: 30px;
     font-family: Tagada;
     font-weight: 400;
   }
 
   p {
+    font-family: Authentic60C;
+    text-transform: uppercase;
     display: inline-block;
-    font-size: 20px;
+    font-size: 18px;
+    max-width: 400px;
+
+    @media (max-width:1000px){
+      display: none;
+    }
   }
 
   nav {
-    font-family: Authentic60;
-    font-size: 16px;
-    border-bottom: 1px solid black;
-    text-align: end;
     
+    font-size: 16px;
+    text-align: end;
+
+    ul{
+      font-family: Authentic90;
+      font-size: 14px;
+    }
   }
 
   i {
@@ -112,11 +131,14 @@ const Container = styled.header`
   }
   ul {
     display: flex;
+    flex-direction: column;
+    font-family: Authentic60C;
+    font-size: 18px;
+    text-transform: uppercase;
   }
 
   li {
     transition: 500ms;
-    
     margin-left: 30px;
     &:hover {
       transform: translateX(-10%);
@@ -133,7 +155,7 @@ const Container = styled.header`
       font-size: 30px;
     }
   }
-  @media (max-width:800px){
+  @media (max-width: 800px) {
     padding: 20px;
   }
 
@@ -148,8 +170,8 @@ const Container = styled.header`
       position: absolute;
       top: 100%;
       right: 40px;
-      background-color: #DCDCDC;
-      
+      background-color: #dcdcdc;
+
       border: 1px solid black;
     }
 
@@ -159,7 +181,6 @@ const Container = styled.header`
       padding: 10px;
       width: 100%;
       /* text-align: center; */
-      
     }
 
     /* Show the menu when isOpen state is true */
