@@ -2,13 +2,16 @@ import React from "react";
 import styled from "styled-components";
 import Hero from "./Hero";
 import Projects from "./Projects";
-import Intro from "../Intro";
+import Header from './Header'
 
 const Home = () => {
   return (
     <Container>
-      {/* <Intro/> */}
-      <Hero />
+      <div className="top-section">
+        <Header/>
+        <Hero />
+      </div>
+      
       <div className="gradient"></div>
       <Projects/>
       <div className="gradient2"></div>
@@ -17,6 +20,13 @@ const Home = () => {
 };
 
 const Container = styled.div`
+
+.top-section{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
 .gradient{
   background: rgb(220,220,220);

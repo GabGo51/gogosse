@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { useContext } from "react";
-import { MouseContext } from "../context/mouseContext";
+import { MouseContext } from "../../context/mouseContext";
 
 const Header = () => {
   const { cursorChangeHandler } = useContext(MouseContext);

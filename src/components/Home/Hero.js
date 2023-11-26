@@ -57,6 +57,7 @@ const Hero = () => {
   return (
     <Container>
       <ImgBox animate={{x: mouseX}} transition={spring}>
+        <div className="top">
         <div>
           {projects.map((project) => (
             <img
@@ -81,6 +82,9 @@ const Hero = () => {
             <p>{activeProject.title}</p>
             <p>{activeProject.type}</p>
         </div>
+
+        </div>
+        
       </ImgBox>
 
       <LettersBox>
@@ -179,15 +183,14 @@ const Container = styled.div`
   padding-top: 20px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   background-color: #dcdcdc;
 
   @media (max-width: 1100px) {
     justify-content: center;
     padding-bottom: 20px;
 
-    .top {
-      flex-direction: column;
-    }
+    
   }
   @media (max-width: 1200px) {
     height: 750px;
@@ -201,6 +204,12 @@ const Container = styled.div`
 
 const ImgBox = styled(motion.div)`
   padding-top: 50px;
+  .top{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+  }
   div {
     display: flex;
     justify-content: space-between;
@@ -228,7 +237,7 @@ const ImgBox = styled(motion.div)`
   }
 
   .project-text{
-    height: 20px;
+    height: 30px;
   }
 
   .fade-out {
@@ -236,8 +245,12 @@ const ImgBox = styled(motion.div)`
   }
 
   @media (max-width: 1100px) {
+
+    display: flex;
+  align-items: end;
+  justify-content: end;
+    
     div {
-      
       max-width: 71vw;
       margin-top: 20px;
 
@@ -248,26 +261,27 @@ const ImgBox = styled(motion.div)`
 
     div {
       width: 100%;
-      height: 40vw;
+      height:400px;
     }
 
     img {
       width: 100%;
-      height: 40vw;
+      height: 400px;
     }
   }
 
   @media (max-width: 500px) {
+    padding-top: 0;
     div {
       width: 100%;
-      height: 70vw;
+      height: 50vh;
     }
 
     
 
     img {
       width: 100%;
-      height: 70vw;
+      height: 50vh;
     }
   }
 `;
