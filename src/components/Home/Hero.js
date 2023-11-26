@@ -80,7 +80,7 @@ const Hero = () => {
         </div>
         <div className="project-text">
             <p>{activeProject.title}</p>
-            <p>{activeProject.type}</p>
+            <p className="type">{activeProject.type}</p>
         </div>
 
         </div>
@@ -179,7 +179,7 @@ const clearAnimation = keyframes`
 
 const Container = styled.div`
   height: calc(100vh - 40px);
-  padding: 40px;
+  padding: 20px;
   padding-top: 20px;
   display: flex;
   flex-direction: column;
@@ -198,7 +198,7 @@ const Container = styled.div`
 
   @media (max-width: 800px) {
     height: 650px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
   }
 `;
 
@@ -217,7 +217,7 @@ const ImgBox = styled(motion.div)`
     font-family: Authentic90;
     position: relative;
     width: 600px;
-    height: 250px;
+    height: 350px;
     overflow: hidden;
     border: none;
   }
@@ -225,7 +225,7 @@ const ImgBox = styled(motion.div)`
     transition: 500ms;
     border: none;
     width: 600px;
-    height: 250px;
+    height: 350px;
     position: absolute;
     object-fit: cover;
     animation: ${appearAnimation} 800ms forwards;
@@ -237,7 +237,15 @@ const ImgBox = styled(motion.div)`
   }
 
   .project-text{
-    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    p{
+      width: 160px;
+    }
+    .type{
+      text-align: end;
+    }
   }
 
   .fade-out {
@@ -272,39 +280,25 @@ const ImgBox = styled(motion.div)`
 
   @media (max-width: 500px) {
     padding-top: 0;
+    margin-top: -200px;
     div {
       width: 100%;
-      height: 50vh;
+      height: 500px;
     }
 
     
 
     img {
       width: 100%;
-      height: 50vh;
+      height: 500px;
     }
   }
 `;
 
-const TextBox = styled.div`
-  max-width: 815px;
-  height: 100%;
-  font-weight: 300;
-  font-size: 1.7vw;
-  font-family: Authentic60C;
-  text-transform: uppercase;
-  margin-top: 30px;
-  margin-right: 50px;
-
-  @media (max-width: 1100px) {
-    font-size: 16px;
-    margin-right: 0px;
-  }
-`;
 
 const LettersBox = styled.div`
   display: flex;
-
+  margin-top: -50px;
   .box {
     width: 100%;
 

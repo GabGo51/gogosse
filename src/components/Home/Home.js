@@ -22,7 +22,7 @@ const Home = () => {
 const Container = styled.div`
 
 .top-section{
-  height: 100vh;
+  height: 95vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -33,6 +33,11 @@ const Container = styled.div`
 background: linear-gradient(180deg, rgba(220,220,220,1) 0%, rgba(255,255,255,1) 100%);
 width: 100vw;
 height: 150px;
+@media (max-width: 700px) {
+    height: 80px;
+
+    
+  }
 }
 
 

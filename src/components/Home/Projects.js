@@ -31,10 +31,10 @@ const Projects = () => {
         className="all-project"
         onMouseEnter={handleBlur}
         onMouseLeave={removeBlur}
-      >
+      ><ProjectBox  className={blur ? "blurred" : ""}>
         {projects.map((project) => (
-          <ProjectBox key={project.id} className={blur ? "blurred" : ""}>
-            <Project onClick={() => handleNavigate(`/${project.title}`)}>
+          
+            <Project key={project.id} onClick={() => handleNavigate(`/${project.title}`)}>
               <h3>{project.title}</h3>
               <img alt="project" src={project.img} />
               <p className="description">
@@ -47,8 +47,8 @@ const Projects = () => {
                 <p>2023</p>
               </div>
             </Project>
-          </ProjectBox>
-        ))}
+          
+        ))}</ProjectBox>
       </div>
 
       <button
@@ -75,9 +75,8 @@ to{
 
 const Container = styled.div`
   background-color: white;
-  padding: 40px;
+  padding: 20px;
   position: relative;
-  padding-top: 20px;
   width: 100vw;
 
   h2 {
@@ -114,9 +113,7 @@ const Container = styled.div`
 
   
 
-  @media (max-width: 800px) {
-    padding: 20px;
-
+  @media (max-width: 900px) {
     .blurred {
       filter: blur(0px);
     }
@@ -124,9 +121,17 @@ const Container = styled.div`
 `;
 
 const ProjectBox = styled.div`
+
   &:hover {
     filter: blur(0);
   }
+
+  @media (max-width: 900px) {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+    }
 `;
 
 const Project = styled.div`
@@ -150,13 +155,19 @@ const Project = styled.div`
     // Responsive styles
     @media (max-width: 1100px) {
       top: 50px;
+      padding: 0;
     }
+    
   }
 
   p {
     text-align: end;
     font-family: Authentic130C;
     font-size: 18px;
+
+    @media (max-width: 900px) {
+      display: none;
+    }
   }
 
   h3 {
@@ -164,6 +175,9 @@ const Project = styled.div`
     font-size: 20px;
     font-family: Tagada;
     text-transform: uppercase;
+    @media (max-width: 900px) {
+      font-size: 14px;
+    }
   }
 
   .description {
@@ -183,7 +197,7 @@ const Project = styled.div`
     &:hover {
       font-size: 14px;
 
-      @media (max-width: 800px) {
+      @media (max-width: 900px) {
         font-size: 12px;
       }
     }
@@ -209,24 +223,33 @@ const Project = styled.div`
       width: 22vw;
       height: 22vw;
 
-      @media (max-width: 800px) {
-        width: clamp(180px, 40vw, 380px);
-        height: 180px;
+      @media (max-width: 900px) {
+        margin: 0;
+      margin-bottom: 10px;
+      scale: 1;
+      width: 95%;
+      height: 180px;
+      filter: blur(0px);
+        
       }
     }
 
     .description {
       font-size: 20px;
 
-      @media (max-width: 800px) {
+      @media (max-width: 900px) {
         font-size: 12px;
       }
     }
     
   }
 
-  @media (max-width: 800px) {
-    flex-direction: column;
+  @media (max-width: 900px) {
+    flex-direction: column-reverse;
+    height: 250px;
+    max-width: 400px;
+    border-bottom: none;
+    width: 50%;
 
     .blurred {
       filter: blur(0px);
@@ -237,12 +260,13 @@ const Project = styled.div`
     }
 
     img {
-      position: absolute;
+      margin: 0;
+      margin-bottom: 10px;
       scale: 1;
-      width: clamp(180px, 40vw, 380px);
+      width: 95%;
       height: 180px;
       filter: blur(0px);
-      left: 40vw;
+      
     }
 
     .project-info {
@@ -258,9 +282,7 @@ const Project = styled.div`
     }
   }
 
-  @media (max-width: 1100px) {
-    padding: 20px 0;
-  }
+  
 
   // Responsive styles
   @media (max-width: 500px) {

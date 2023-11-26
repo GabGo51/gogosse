@@ -78,7 +78,7 @@ const Header = () => {
 };
 
 const Container = styled.header`
-  padding: 40px;
+  padding: 20px;
   padding-bottom: 10px;
   padding-top: 20px;
   display: flex;
