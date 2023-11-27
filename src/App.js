@@ -15,6 +15,7 @@ import Header from "./components/Home/Header";
 import OtherHeader from "./components/OtherHeader";
 import EspaceFine from "./components/Projects/EspaceFine/EspaceFine";
 
+
 function App() {
   return (
     <Router>
@@ -37,7 +38,7 @@ function InnerApp() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/Espace Fine" element={<EspaceFine />} />
-          <Route path="/Horizon" element={<Contact />} />
+          <Route path="/Horizon" element={<Contact/>} />
           <Route path="/Lapies" element={<Contact />} />
           <Route path="/SAP" element={<Contact />} />
           <Route path="/Petit Budget Grand Gout" element={<Contact />} />

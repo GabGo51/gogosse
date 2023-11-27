@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import ProjectIntro from "../ProjectIntro";
+
 import img1 from "./img/img1.webp";
 import img2 from "./img/img2.webp";
 import img3 from "./img/img3.webp";
@@ -50,7 +50,7 @@ const EspaceFine = () => {
   ];
   return (
     <Container>
-      <ProjectIntro />
+      
       <img className="fullscreen" src={img1} />
       <div className="section1">
         <img className="big" src={img2} />

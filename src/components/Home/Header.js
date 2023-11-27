@@ -16,6 +16,10 @@ const Header = () => {
   const handleNavigate = (page) => {
     navigate(page);
     setIsOpen(false);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   };
 
   const [blur, setBlur] = useState(false);

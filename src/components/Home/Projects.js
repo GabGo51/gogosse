@@ -27,6 +27,10 @@ const Projects = () => {
   const navigate = useNavigate();
   const handleNavigate = (page) => {
     navigate(page);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   };
 
   const spring = {
@@ -48,7 +52,7 @@ const Projects = () => {
         <ProjectBox className={blur ? "blurred" : ""}>
           {projects.map((project) => (
             <Project
-              key={project.id}
+              key={project.title}
               onClick={() => handleNavigate(`/${project.title}`)}
             >
               <h3>{project.title}</h3>

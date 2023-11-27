@@ -31,6 +31,10 @@ const Hero = () => {
   const navigate = useNavigate();
   const handleNavigate = (page) => {
     navigate(page);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   };
 
   useEffect(() => {
