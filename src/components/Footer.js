@@ -74,7 +74,7 @@ const Container = styled.footer`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px 40px;
+  padding: 50px 20px;
   background-color: transparent;
   width: 100vw;
   font-weight: 700;

@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { useContext } from "react";
-import { MouseContext } from "../../context/mouseContext";
+import { MouseContext } from "../context/mouseContext";
 
-const Header = () => {
+const OtherHeader = () => {
   const { cursorChangeHandler } = useContext(MouseContext);
 
   const [isOpen, setIsOpen] = useState(false);
@@ -32,10 +32,7 @@ const Header = () => {
     <Container>
       <h1 onClick={() => handleNavigate("/")}>GOGOSSE</h1>
 
-      <p>
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-        accusantium doloremque laudantium, totam rem aperiam.
-      </p>
+      
 
       <ul
         className="contact"
@@ -94,18 +91,6 @@ const Container = styled.header`
     font-size: 30px;
     font-family: Tagada;
     font-weight: 400;
-  }
-
-  p {
-    font-family: Authentic60C;
-    text-transform: uppercase;
-    display: inline-block;
-    font-size: 18px;
-    max-width: 400px;
-
-    @media (max-width: 1000px) {
-      display: none;
-    }
   }
 
   nav {
@@ -189,4 +174,4 @@ const Container = styled.header`
   }
 `;
 
-export default Header;
+export default OtherHeader;

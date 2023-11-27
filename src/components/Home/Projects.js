@@ -5,9 +5,12 @@ import { useState } from "react";
 import projects from "../../data/projectData";
 import { useContext } from "react";
 import { MouseContext } from "../../context/mouseContext";
+import useMousePosition from "../../hooks/useMousePosition";
+import { motion } from "framer-motion";
 
 const Projects = () => {
   const { cursorChangeHandler } = useContext(MouseContext);
+  const mousePosition = useMousePosition();
 
   const [blur, setBlur] = useState(false);
   const handleBlur = () => {
@@ -24,6 +27,14 @@ const Projects = () => {
     navigate(page);
   };
 
+  const spring = {
+    type: "spring",
+    damping: 9,
+    stiffness: 40,
+  };
+
+  
+
   return (
     <Container>
       <h2>PROJECTS & FEATURED WORKS</h2>
@@ -31,10 +42,13 @@ const Projects = () => {
         className="all-project"
         onMouseEnter={handleBlur}
         onMouseLeave={removeBlur}
-      ><ProjectBox  className={blur ? "blurred" : ""}>
-        {projects.map((project) => (
-          
-            <Project key={project.id} onClick={() => handleNavigate(`/${project.title}`)}>
+      >
+        <ProjectBox className={blur ? "blurred" : ""}>
+          {projects.map((project) => (
+            <Project
+              key={project.id}
+              onClick={() => handleNavigate(`/${project.title}`)}
+            >
               <h3>{project.title}</h3>
               <img alt="project" src={project.img} />
               <p className="description">
@@ -47,11 +61,13 @@ const Projects = () => {
                 <p>2023</p>
               </div>
             </Project>
-          
-        ))}</ProjectBox>
+          ))}
+        </ProjectBox>
       </div>
 
-      <button
+      <motion.button
+        animate={{ x: mousePosition.x -120 }}
+        transition={spring}
         onMouseEnter={() => cursorChangeHandler("hover")}
         onMouseLeave={() => cursorChangeHandler("")}
         onClick={() => {
@@ -60,9 +76,8 @@ const Projects = () => {
         }}
         className="lets-work"
       >
-        Lets <div>W</div>ork
-      </button>
-      
+        Let's <div>W</div>ork
+      </motion.button>
     </Container>
   );
 };
@@ -90,28 +105,35 @@ const Container = styled.div`
   }
 
   .lets-work {
+    transition: 300ms;
     display: flex;
-    font-size: 50px;
-    font-weight: 600;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    font-size: 30px;
+    font-weight: 400;
     margin-bottom: 50px;
+    border: 1px solid black;
+    border-radius: 39px;
     font-family: Authentic60;
-    width: 300px;
+    width: 225px;
+    height: 100px;
     text-align: center;
     margin-top: 100px;
-    background-color: white;
-    border: none;
+    text-transform: uppercase;
     div {
-      margin-left: 30px;
+      margin-left: 10px;
     }
 
     &:hover {
+      
+      background-color: black;
+      color: white;
       div {
         animation: ${rotate} 500ms forwards;
       }
     }
   }
-
-  
 
   @media (max-width: 900px) {
     .blurred {
@@ -121,17 +143,16 @@ const Container = styled.div`
 `;
 
 const ProjectBox = styled.div`
-
   &:hover {
     filter: blur(0);
   }
 
   @media (max-width: 900px) {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-around;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+  }
 `;
 
 const Project = styled.div`
@@ -157,7 +178,6 @@ const Project = styled.div`
       top: 50px;
       padding: 0;
     }
-    
   }
 
   p {
@@ -226,12 +246,11 @@ const Project = styled.div`
 
       @media (max-width: 900px) {
         margin: 0;
-      margin-bottom: 10px;
-      scale: 1;
-      width: 95%;
-      height: 180px;
-      filter: blur(0px);
-        
+        margin-bottom: 10px;
+        scale: 1;
+        width: 95%;
+        height: 180px;
+        filter: blur(0px);
       }
     }
 
@@ -242,7 +261,6 @@ const Project = styled.div`
         font-size: 12px;
       }
     }
-    
   }
 
   @media (max-width: 900px) {
@@ -269,7 +287,6 @@ const Project = styled.div`
       width: 95%;
       min-height: 180px;
       filter: blur(0px);
-      
     }
 
     .project-info {
@@ -284,8 +301,6 @@ const Project = styled.div`
       margin-bottom: 20px;
     }
   }
-
-  
 
   // Responsive styles
   @media (max-width: 500px) {

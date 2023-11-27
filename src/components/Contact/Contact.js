@@ -6,6 +6,7 @@ import { MouseContext } from "../../context/mouseContext";
 import emailjs from "@emailjs/browser";
 
 
+
 const Contact = () => {
   const { cursorChangeHandler } = useContext(MouseContext);
 
@@ -40,6 +41,7 @@ const Contact = () => {
 
   return (
     <Container>
+      
       <p>
         Sed ut perspiciatis unde omnis iste natus error sit voluptatem
         accusantium doloremque laudantium, totam rem aperiam, eaque voluptas sit
@@ -90,7 +92,7 @@ const Contact = () => {
 };
 
 const Container = styled.div`
-  padding: 40px;
+  padding: 20px;
 
   p {
     font-size: 40px;
