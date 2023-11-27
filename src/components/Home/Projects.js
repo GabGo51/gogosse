@@ -59,7 +59,7 @@ const Projects = () => {
                 voluptas sit aspernatur aut odit aut fugit, sed quia consequunt
               </p>
               <div className="project-info">
-                <p>Evenement</p>
+                <p>{project.type}</p>
                 <p>2023</p>
               </div>
             </Project>

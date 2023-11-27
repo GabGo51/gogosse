@@ -34,14 +34,7 @@ const OtherHeader = () => {
 
       
 
-      <ul
-        className="contact"
-        onMouseEnter={handleBlur}
-        onMouseLeave={removeBlur}
-      >
-        <li className={blur ? "blurred" : ""}>ggssestudio@outlook.com</li>
-        <li className={blur ? "blurred" : ""}>450 822 5550</li>
-      </ul>
+      
 
       <nav>
         <i className="fa-solid fa-bars" onClick={toggleMenu}></i>

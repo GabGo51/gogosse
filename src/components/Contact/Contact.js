@@ -4,11 +4,19 @@ import styled from "styled-components";
 import { useContext, useRef } from "react";
 import { MouseContext } from "../../context/mouseContext";
 import emailjs from "@emailjs/browser";
-
+import { motion } from "framer-motion";
+import useMousePosition from "../../hooks/useMousePosition";
 
 
 const Contact = () => {
   const { cursorChangeHandler } = useContext(MouseContext);
+  const mousePosition = useMousePosition();
+  const isWideScreen = window.innerWidth > 1100;
+  const spring = {
+    type: "spring",
+    damping: 9,
+    stiffness: 40,
+  };
 
   const gogosseForm = useRef();
 
@@ -79,13 +87,15 @@ const Contact = () => {
             required
           />
         </div>
-        <button
+        <motion.button
+        {...(isWideScreen && { animate: { x: mousePosition.x - 120 } })}
+        transition={spring}
           onMouseEnter={() => cursorChangeHandler("hover")}
           onMouseLeave={() => cursorChangeHandler("")}
           type="submit"
         >
-          GRIND TIME
-        </button>
+          SUMBIT
+        </motion.button>
       </form>
     </Container>
   );
@@ -98,7 +108,7 @@ const Container = styled.div`
     font-size: 40px;
     text-transform: uppercase;
     font-family: Authentic60;
-    margin-bottom: 100px;
+    margin: 100px 0px;
 
     @media (max-width: 1100px) {
       font-size: 24px;
@@ -179,6 +189,41 @@ const Container = styled.div`
 
   @media (max-width: 800px) {
     padding: 20px;
+  }
+
+  button{
+    transition: 300ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 50px;
+    border: 1px solid black;
+    border-radius: 25px;
+    margin-top: 40px;
+    font-family: Authentic60;
+    color: black;
+    height: 70px;
+    width: 170px;
+    text-align: center;
+    
+    text-transform: uppercase;
+
+    &:hover {
+      
+      background-color: black;
+      color: white;
+      
+    }
+    @media (max-width: 500px) {
+    font-size: 18px;
+    height: 50px;
+    width: 120px;
+    border-radius: 20px;
+    margin-bottom: 0px;
+  }
   }
 `;
 export default Contact;
