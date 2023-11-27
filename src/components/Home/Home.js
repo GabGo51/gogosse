@@ -50,6 +50,10 @@ const Container = styled.div`
     );
     height: 150px;
     width: 100vw;
+
+    @media (max-width: 700px) {
+      height: 80px;
+    }
   }
 
   a {

@@ -58,7 +58,7 @@ const Hero = () => {
     <Container>
       <ImgBox animate={{x: mouseX}} transition={spring}>
         <div className="top">
-        <div>
+        <div className="cadre">
           {projects.map((project) => (
             <img
               key={project.title}
@@ -281,16 +281,24 @@ const ImgBox = styled(motion.div)`
   @media (max-width: 500px) {
     padding-top: 0;
     margin-top: -200px;
+
+    
     div {
+      
       width: 100%;
-      height: 500px;
+      height: 550px;
     }
 
     
 
     img {
+      
       width: 100%;
-      height: 500px;
+      height: 550px;
+    }
+
+    .project-text{
+      margin-top: 5px;
     }
   }
 `;

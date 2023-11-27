@@ -116,6 +116,7 @@ const Container = styled.div`
     border: 1px solid black;
     border-radius: 39px;
     font-family: Authentic60;
+    color: black;
     width: 225px;
     height: 100px;
     text-align: center;
@@ -133,6 +134,13 @@ const Container = styled.div`
         animation: ${rotate} 500ms forwards;
       }
     }
+    @media (max-width: 500px) {
+    font-size: 20px;
+    height: 70px;
+    width: 170px;
+    border-radius: 25px;
+    margin-bottom: 0px;
+  }
   }
 
   @media (max-width: 900px) {
