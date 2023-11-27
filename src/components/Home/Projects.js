@@ -208,6 +208,7 @@ const Project = styled.div`
     flex: 0.2;
     justify-content: space-between;
     width: 250px;
+    height: 0px;
 
     // Responsive styles
     @media (max-width: 1100px) {
@@ -246,10 +247,12 @@ const Project = styled.div`
 
   @media (max-width: 900px) {
     flex-direction: column-reverse;
-    height: 250px;
+    height: 240px;
     max-width: 400px;
     border-bottom: none;
     width: 50%;
+    padding: 0;
+    margin-bottom: 0;
 
     .blurred {
       filter: blur(0px);
@@ -264,7 +267,7 @@ const Project = styled.div`
       margin-bottom: 10px;
       scale: 1;
       width: 95%;
-      height: 180px;
+      min-height: 180px;
       filter: blur(0px);
       
     }
@@ -286,8 +289,9 @@ const Project = styled.div`
 
   // Responsive styles
   @media (max-width: 500px) {
+    width: 100vw;
     img {
-      left: 45vw;
+      width: 100%;
     }
   }
 

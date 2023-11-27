@@ -37,7 +37,7 @@ const Hero = () => {
     const handleMouseMove = (e) => {
       const adjustedMouseX = e.clientX - 340;
       const minX = 0;
-      const maxX = window.innerWidth - 670;
+      const maxX = window.innerWidth - 640;
 
       if (window.innerWidth > 1100) {
         
