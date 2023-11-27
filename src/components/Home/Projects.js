@@ -12,6 +12,8 @@ const Projects = () => {
   const { cursorChangeHandler } = useContext(MouseContext);
   const mousePosition = useMousePosition();
 
+  const isWideScreen = window.innerWidth > 1100;
+
   const [blur, setBlur] = useState(false);
   const handleBlur = () => {
     cursorChangeHandler("hover");
@@ -66,7 +68,7 @@ const Projects = () => {
       </div>
 
       <motion.button
-        animate={{ x: mousePosition.x -120 }}
+        {...(isWideScreen && { animate: { x: mousePosition.x - 120 } })}
         transition={spring}
         onMouseEnter={() => cursorChangeHandler("hover")}
         onMouseLeave={() => cursorChangeHandler("")}

@@ -210,6 +210,12 @@ const ImgBox = styled(motion.div)`
     justify-content: space-between;
     
   }
+
+  .cadre{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   div {
     display: flex;
     justify-content: space-between;
