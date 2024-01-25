@@ -14,7 +14,7 @@ import Contact from "./components/Contact/Contact";
 import Header from "./components/Home/Header";
 import OtherHeader from "./components/OtherHeader";
 import EspaceFine from "./components/Projects/EspaceFine/EspaceFine";
-
+import SAP from "./components/Projects/SAP/SAP";
 
 function App() {
   return (
@@ -40,7 +40,7 @@ function InnerApp() {
           <Route path="/Espace Fine" element={<EspaceFine />} />
           <Route path="/Horizon" element={<Contact/>} />
           <Route path="/Lapies" element={<Contact />} />
-          <Route path="/SAP" element={<Contact />} />
+          <Route path="/SAP" element={<SAP/>} />
           <Route path="/Petit Budget Grand Gout" element={<Contact />} />
           <Route path="/Turbine" element={<Contact />} />
           <Route path="/Festival de Jazz" element={<Contact />} />

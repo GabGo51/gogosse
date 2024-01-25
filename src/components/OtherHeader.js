@@ -68,6 +68,7 @@ const OtherHeader = () => {
 };
 
 const Container = styled.header`
+position: absolute;
   padding: 20px;
   padding-bottom: 10px;
   padding-top: 20px;
@@ -75,6 +76,7 @@ const Container = styled.header`
   justify-content: space-between;
   background-color: #dcdcdc;
   position: relative;
+  z-index: 999;
   div {
     width: 100%;
   }
