@@ -76,7 +76,7 @@ position: absolute;
   justify-content: space-between;
   background-color: #dcdcdc;
   position: relative;
-  z-index: 999;
+  z-index: 100;
   div {
     width: 100%;
   }

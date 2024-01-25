@@ -3,8 +3,11 @@ import styled, { keyframes } from "styled-components";
 import projects from "../../data/projectData";
 import { MouseContext } from "../../context/mouseContext";
 import { useNavigate } from "react-router-dom";
-import {motion} from "framer-motion"
-
+import { motion } from "framer-motion";
+import G from './img/G.png'
+import O from './img/O.png'
+import S from './img/S.png'
+import E from './img/E.png'
 const Hero = () => {
   const [mouseX, setMouseX] = useState(0);
   const { cursorChangeHandler } = useContext(MouseContext);
@@ -14,8 +17,8 @@ const Hero = () => {
   const spring = {
     type: "spring",
     damping: 9,
-    stiffness: 50
-  }
+    stiffness: 50,
+  };
 
   const handleHover = (projectTitle) => {
     cursorChangeHandler("hover");
@@ -33,7 +36,7 @@ const Hero = () => {
     navigate(page);
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
 
@@ -44,10 +47,9 @@ const Hero = () => {
       const maxX = window.innerWidth - 640;
 
       if (window.innerWidth > 1100) {
-        
         setMouseX(Math.max(minX, Math.min(adjustedMouseX, maxX)));
-      }else{
-        setMouseX(0)
+      } else {
+        setMouseX(0);
       }
     };
     document.addEventListener("mousemove", handleMouseMove);
@@ -56,49 +58,43 @@ const Hero = () => {
     };
   }, []);
 
-  
-
   return (
     <Container>
-      <ImgBox animate={{x: mouseX}} transition={spring}>
+      <ImgBox animate={{ x: mouseX }} transition={spring}>
         <div className="top">
-        <div className="cadre">
-          {projects.map((project) => (
-            <img
-              key={project.title}
-              alt="project"
-              src={
-                project.title === activeProject.title
-                  ? project.img
-                  : project.img
-              }
-              className={
-                project.title === activeProject.title ? "" : "fade-out"
-              }
-              onMouseEnter={() => cursorChangeHandler("hover")}
-              onMouseLeave={() => cursorChangeHandler("")}
-              onClick={() => handleNavigate(`/${project.title}`)}
-            />
-          ))}
-          
-        </div>
-        <div className="project-text">
+          <div className="cadre">
+            {projects.map((project) => (
+              <img
+                key={project.title}
+                alt="project"
+                src={
+                  project.title === activeProject.title
+                    ? project.img
+                    : project.img
+                }
+                className={
+                  project.title === activeProject.title ? "" : "fade-out"
+                }
+                onMouseEnter={() => cursorChangeHandler("hover")}
+                onMouseLeave={() => cursorChangeHandler("")}
+                onClick={() => handleNavigate(`/${project.title}`)}
+              />
+            ))}
+          </div>
+          <div className="project-text">
             <p>{activeProject.title}</p>
             <p className="type">{activeProject.type}</p>
+          </div>
         </div>
-
-        </div>
-        
       </ImgBox>
 
-      <LettersBox>
-        <div className="box" onMouseLeave={() => cursorChangeHandler("")}>
+      <LettersBox>   
           <div
             className="g1"
             onMouseEnter={() => handleHover(projects[0].title)}
             onClick={() => handleNavigate(`/${projects[0].title}`)}
           >
-            <p>G</p>
+            <img src={G}/>
           </div>
 
           <div
@@ -106,7 +102,7 @@ const Hero = () => {
             onMouseEnter={() => handleHover(projects[1].title)}
             onClick={() => handleNavigate(`/${projects[1].title}`)}
           >
-            <p>O</p>
+            <img src={O}/>
           </div>
 
           <div
@@ -114,7 +110,7 @@ const Hero = () => {
             onMouseEnter={() => handleHover(projects[2].title)}
             onClick={() => handleNavigate(`/${projects[2].title}`)}
           >
-            <p>G</p>
+            <img src={G}/>
           </div>
 
           <div
@@ -122,7 +118,7 @@ const Hero = () => {
             onMouseEnter={() => handleHover(projects[3].title)}
             onClick={() => handleNavigate(`/${projects[3].title}`)}
           >
-            <p>O</p>
+            <img src={O}/>
           </div>
 
           <div
@@ -130,7 +126,7 @@ const Hero = () => {
             onMouseEnter={() => handleHover(projects[4].title)}
             onClick={() => handleNavigate(`/${projects[4].title}`)}
           >
-            <p>S</p>
+            <img src={S}/>
           </div>
 
           <div
@@ -138,7 +134,7 @@ const Hero = () => {
             onMouseEnter={() => handleHover(projects[5].title)}
             onClick={() => handleNavigate(`/${projects[5].title}`)}
           >
-            <p>S</p>
+            <img src={S}/>
           </div>
 
           <div
@@ -146,9 +142,9 @@ const Hero = () => {
             onMouseEnter={() => handleHover(projects[6].title)}
             onClick={() => handleNavigate(`/${projects[6].title}`)}
           >
-            <p>E</p>
+            <img src={E}/>
           </div>
-        </div>
+        
       </LettersBox>
     </Container>
   );
@@ -182,9 +178,7 @@ const clearAnimation = keyframes`
 `;
 
 const Container = styled.div`
-  height: calc(100vh - 40px);
   padding: 20px;
-  padding-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -193,29 +187,18 @@ const Container = styled.div`
   @media (max-width: 1100px) {
     justify-content: center;
     padding-bottom: 20px;
-
-    
-  }
-  @media (max-width: 1200px) {
-    height: 750px;
-  }
-
-  @media (max-width: 800px) {
-    height: 650px;
-    padding-bottom: 10px;
   }
 `;
 
 const ImgBox = styled(motion.div)`
-  padding-top: 50px;
-  .top{
+  
+  .top {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
   }
 
-  .cadre{
+  .cadre {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -246,14 +229,16 @@ const ImgBox = styled(motion.div)`
     }
   }
 
-  .project-text{
+  .project-text {
     display: flex;
     justify-content: space-between;
-    height: 100px;
-    p{
+    height: 60px;
+    p {
       width: 160px;
+
+      
     }
-    .type{
+    .type {
       text-align: end;
     }
   }
@@ -263,11 +248,10 @@ const ImgBox = styled(motion.div)`
   }
 
   @media (max-width: 1100px) {
-
     display: flex;
-  align-items: end;
-  justify-content: end;
-    
+    align-items: end;
+    justify-content: end;
+
     div {
       max-width: 71vw;
       margin-top: 20px;
@@ -279,7 +263,7 @@ const ImgBox = styled(motion.div)`
 
     div {
       width: 100%;
-      height:400px;
+      height: 400px;
     }
 
     img {
@@ -290,72 +274,53 @@ const ImgBox = styled(motion.div)`
 
   @media (max-width: 500px) {
     padding-top: 0;
-    margin-top: -200px;
+    margin-top: -50px;
 
-    
     div {
-      
       width: 100%;
       height: 550px;
     }
-
-    
 
     img {
-      
       width: 100%;
       height: 550px;
     }
 
-    .project-text{
+    .project-text {
       margin-top: 5px;
     }
   }
 `;
 
-
 const LettersBox = styled.div`
+display: flex;
+justify-content: space-between;
+padding:  20px;
+@media (max-width:1000px){
+    padding: 0;
+  }
+
+div{
+ 
   display: flex;
-  margin-top: -50px;
-  .box {
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width:1000px){
+    
+  }
+  img{
+    transition: 500ms;
     width: 100%;
-
-    p {
-      height: 20vw;
-      transition: 500ms;
-
-      &:hover {
-        transform: rotate3d(1, 0.05, 0.1, 20deg);
-      }
+    height: auto;
+    &:hover{
+      transform: rotate3d(0.1,0.2, 0.2, 0.02turn);
     }
   }
-  div {
-    flex: 1;
-    display: flex;
-    font-family: Tagada;
-    align-items: center;
-    justify-content: center;
-    font-size: 27.2vw;
+}
 
-    @media (max-width: 1100px) {
-      font-size: 20vw;
-    }
-  }
-
-  .o1 {
-    letter-spacing: -1.2vw;
-  }
-
-  .g1 {
-    letter-spacing: -1.5vw;
-  }
-
-  .g2 {
-    letter-spacing: -1.4vw;
-  }
-
-  .e {
-    margin-left: -0.8vw;
-  }
-`;
+.o2{
+  margin-right: 1.5vw;
+}
+`
 export default Hero;

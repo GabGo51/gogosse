@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Hero from "./Hero";
 import Projects from "./Projects";
 import Header from "./Header";
+import gray from '../../img/gray.jpg'
 
 const Home = () => {
   return (
@@ -11,8 +12,6 @@ const Home = () => {
         <Header />
         <Hero />
       </div>
-
-      <div className="gradient"></div>
       <Projects />
       <div className="gradient2"></div>
     </Container>
@@ -21,40 +20,17 @@ const Home = () => {
 
 const Container = styled.div`
   .top-section {
-    height: 95vh;
+    
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    
   }
-
-  .gradient {
-    background: rgb(220, 220, 220);
-    background: linear-gradient(
-      180deg,
-      rgba(220, 220, 220, 1) 0%,
-      rgba(255, 255, 255, 1) 100%
-    );
+  img{
     width: 100vw;
-    height: 150px;
-    @media (max-width: 700px) {
-      height: 80px;
-    }
+    height: 200px;
   }
 
-  .gradient2 {
-    background: rgb(255, 255, 255);
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(220, 220, 220, 1) 100%
-    );
-    height: 150px;
-    width: 100vw;
-
-    @media (max-width: 700px) {
-      height: 80px;
-    }
-  }
+  
 
   a {
     transition: 500ms;

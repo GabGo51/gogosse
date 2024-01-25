@@ -162,7 +162,7 @@ const Container = styled.header`
     padding: 20px;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     i {
       display: block;
     }

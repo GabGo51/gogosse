@@ -69,14 +69,7 @@ export default createGlobalStyle`
   
 
   
-  html, body {
-    width: 100vw;
-    padding: 100px;
-    overflow: hidden;
-    overflow-y: scroll;
-    background-color:#DCDCDC;
-    box-sizing: content-box; 
-  }
+  
   
   
 
@@ -97,7 +90,6 @@ export default createGlobalStyle`
   menu, nav, output, ruby, section, summary,
   time, mark, audio, video {
     margin: 0;
-    padding: 0;
     border: 0;
     vertical-align: baseline;
   }
@@ -119,5 +111,16 @@ export default createGlobalStyle`
     content: none;
   }
 
-  
+  html, body {
+    width: 100vw;
+    overflow: hidden;
+    overflow-y: scroll;
+    background-color:white;
+    box-sizing: content-box; 
+  }
+
+  .fullscreen-image{
+    width: 100vw;
+  }
+
 `;
