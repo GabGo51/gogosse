@@ -8,6 +8,7 @@ import G from './img/G.png'
 import O from './img/O.png'
 import S from './img/S.png'
 import E from './img/E.png'
+
 const Hero = () => {
   const [mouseX, setMouseX] = useState(0);
   const { cursorChangeHandler } = useContext(MouseContext);
@@ -146,6 +147,7 @@ const Hero = () => {
           </div>
         
       </LettersBox>
+      
     </Container>
   );
 };
@@ -172,21 +174,22 @@ const clearAnimation = keyframes`
   opacity: 1;
  }
  100%{
-  transform: translateY(-110%);
+  transform: translateY(-120%);
   opacity: 0.8;
  }
 `;
 
 const Container = styled.div`
   padding: 20px;
+  padding-bottom: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background-color: #dcdcdc;
-
+ z-index: 3;
   @media (max-width: 1100px) {
     justify-content: center;
-    padding-bottom: 20px;
+    
   }
 `;
 
@@ -196,13 +199,18 @@ const ImgBox = styled(motion.div)`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding: 0;
   }
 
   .cadre {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    height: 100%;
   }
+
+
   div {
     display: flex;
     justify-content: space-between;
@@ -217,8 +225,8 @@ const ImgBox = styled(motion.div)`
   img {
     transition: 500ms;
     border: none;
-    width: 600px;
-    height: 350px;
+    width: 100%;
+    height: 100%;
     position: absolute;
     object-fit: cover;
     animation: ${appearAnimation} 800ms forwards;
@@ -295,7 +303,7 @@ const ImgBox = styled(motion.div)`
 const LettersBox = styled.div`
 display: flex;
 justify-content: space-between;
-padding:  20px;
+padding:0  20px;
 @media (max-width:1000px){
     padding: 0;
   }
