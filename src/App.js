@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import Contact from "./components/Contact/Contact";
 import EspaceFine from "./components/Projects/EspaceFine/EspaceFine";
 import SAP from "./components/Projects/SAP/SAP";
+import Lapies from "./components/Projects/Lapies/Lapies";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/Espace Fine" element={<EspaceFine />} />
           <Route path="/Horizon" element={<Contact />} />
-          <Route path="/Lapies" element={<Contact />} />
+          <Route path="/Lapies" element={<Lapies />} />
           <Route path="/SAP 2024" element={<SAP />} />
           <Route path="/Petit Budget Grand Gout" element={<Contact />} />
           <Route path="/Turbine" element={<Contact />} />

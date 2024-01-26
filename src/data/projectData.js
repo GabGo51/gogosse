@@ -9,6 +9,7 @@ import proj7 from "../img/proj7.webp";
 import proj8 from "../img/proj8.webp";
 import proj9 from "../img/proj9.webp";
 import s1 from "..//img/S_01.jpg";
+import rock from '../img/ROCKKK.jpg'
 
 const projects = [
   {
@@ -25,13 +26,6 @@ const projects = [
       "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque voluptas sit aspernatur aut odit aut fugit, sed quia consequuntSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque voluptas sit aspernatur aut odit aut fugit, sed quia consequunt",
     img: proj8,
   },
-  {
-    title: "Lapies",
-    type: "Branding",
-    description:
-      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque voluptas sit aspernatur aut odit aut fugit, sed quia consequuntSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque voluptas sit aspernatur aut odit aut fugit, sed quia consequunt",
-    img: proj2,
-  },
 
   {
     title: "Petit Budget Grand Gout",
@@ -46,6 +40,13 @@ const projects = [
     description:
       "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque voluptas sit aspernatur aut odit aut fugit, sed quia consequuntSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque voluptas sit aspernatur aut odit aut fugit, sed quia consequunt",
     img: proj1,
+  },
+  {
+    title: "LAPIÈS",
+    type: "Branding",
+    description:
+      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque voluptas sit aspernatur aut odit aut fugit, sed quia consequuntSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque voluptas sit aspernatur aut odit aut fugit, sed quia consequunt",
+    img: rock,
   },
   {
     title: "SAP 2024",
