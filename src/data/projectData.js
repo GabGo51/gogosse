@@ -10,6 +10,7 @@ import proj8 from "../img/proj8.webp";
 import proj9 from "../img/proj9.webp";
 import t1 from "..//img/T_01.jpg";
 import s1 from "..//img/S_01.jpg";
+import h1 from "..//img//h1.jpg";
 import rock from '../img/ROCKKK.jpg'
 
 const projects = [
@@ -19,6 +20,13 @@ const projects = [
     description:
       " Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque voluptas sit aspernatur aut odit aut fugit, sed quia consequuntSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque voluptas sit aspernatur aut odit aut fugit, sed quia consequunt",
     img: proj,
+  },
+  {
+    title: "HERITAGE",
+    type: "Edition",
+    description:
+      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque voluptas sit aspernatur aut odit aut fugit, sed quia consequuntSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque voluptas sit aspernatur aut odit aut fugit, sed quia consequunt",
+    img: h1,
   },
   {
     title: "HORIZON",

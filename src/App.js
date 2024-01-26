@@ -11,7 +11,7 @@ import EspaceFine from "./components/Projects/EspaceFine/EspaceFine";
 import SAP from "./components/Projects/SAP/SAP";
 import Lapies from "./components/Projects/Lapies/Lapies";
 import Turbine from "./components/Projects/Turbine/Turbine";
-
+import Heritage from "./components/Projects/Heritage/Heritage";
 function App() {
   return (
     <Router>
@@ -21,6 +21,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/HERITAGE" element={<Heritage />} />
           <Route path="/ESPACE FINE" element={<EspaceFine />} />
           <Route path="/HORIZON" element={<Contact />} />
           <Route path="/LAPIÈS" element={<Lapies />} />
