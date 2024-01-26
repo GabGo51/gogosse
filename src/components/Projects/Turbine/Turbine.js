@@ -35,7 +35,7 @@ const Turbine = () => {
       <div className="frame">
         <img className="fullscreen-image " src={t7} />
       </div>
-      <img className="middle-screen" src={t8} />
+      <img className="t8" src={t8} />
       
 
       <WorkButton />
@@ -59,17 +59,28 @@ display: flex;
   .t1{
     width: 45%;
     margin-top: 10vw;
+
+    @media (max-width:1100px){
+      width: 62%;
+    }
   }
   .t2{
     width: 32%;
+    @media (max-width:1100px){
+      width: 45%;
+    }
   }
   .t3{
     width: 31%;
     margin-bottom: 10vw;
+    @media (max-width:1100px){
+      width: 44%;
+    }
   }
 
   .t6{
     margin: 10vw 0;
+    
   }
 
   .frame{
@@ -80,9 +91,9 @@ display: flex;
     }
   }
 
-  .middle-screen{
+  .t8{
     width: 50%;
-    margin-top: 8vw;
+    margin:8vw 0;
   }
 `
 
