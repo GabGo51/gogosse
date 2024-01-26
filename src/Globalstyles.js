@@ -118,6 +118,19 @@ export default createGlobalStyle`
     box-sizing: content-box; 
   }
 
+  .direction{
+    width: 100%;
+    padding:100px 20px;
+    
+    font-size: clamp(16px, 3vw, 20px);
+    h3{
+      font-family: Authentic130;
+    }
+    p{
+      font-family: Authentic60;
+    }
+  }
+
   .fullscreen-image{
     width: 100vw;
   }

@@ -7,6 +7,7 @@ import { useContext } from "react";
 import { MouseContext } from "../../context/mouseContext";
 import useMousePosition from "../../hooks/useMousePosition";
 import { motion } from "framer-motion";
+import WorkButton from "../WorkButton";
 
 const Projects = () => {
   const { cursorChangeHandler } = useContext(MouseContext);
@@ -71,19 +72,7 @@ const Projects = () => {
         </ProjectBox>
       </div>
 
-      <motion.button
-        {...(isWideScreen && { animate: { x: mousePosition.x - 120 } })}
-        transition={spring}
-        onMouseEnter={() => cursorChangeHandler("hover")}
-        onMouseLeave={() => cursorChangeHandler("")}
-        onClick={() => {
-          handleNavigate(`/contact`);
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }}
-        className="lets-work"
-      >
-        Let's <div>W</div>ork
-      </motion.button>
+      <WorkButton/>
     </Container>
   );
 };

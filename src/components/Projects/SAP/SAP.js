@@ -8,11 +8,12 @@ import gradient from "../SAP/img/gradient.jpg";
 import SlidingImg from "../SlidingImg";
 import s2 from "./img/S_02.gif";
 import s3 from "./img/S_03.jpg";
-import s4 from './img/S_04.gif'
-import s5 from './img/S_05.jpg'
-import s6 from './img/S_06.gif'
-import s7 from './img/S_07.jpg'
-import s8 from './img/S_08.jpg'
+import s4 from "./img/S_04.gif";
+import s5 from "./img/S_05.jpg";
+import s6 from "./img/S_06.gif";
+import s7 from "./img/S_07.jpg";
+import s8 from "./img/S_08.jpg";
+import WorkButton from "../../WorkButton";
 const project = projects[5];
 
 const SAP = () => {
@@ -41,8 +42,6 @@ const SAP = () => {
         <div>
           <img src={s2} />
         </div>
-        
-        
       </div>
       <img className="fullscreen-image" src={s3} />
       <img className="almost-fullscreen" src={s4} />
@@ -50,6 +49,13 @@ const SAP = () => {
       <img className="fullscreen-image" src={s6} />
       <img className="almost-fullscreen" src={s7} />
       <img className="almost-fullscreen" src={s8} />
+
+      <WorkButton />
+
+      <div className="direction">
+        <h3>ARTISTIC DIRECTION</h3>
+        <p>NICOLAS GOSSELIN</p>
+      </div>
     </Container>
   );
 };
@@ -65,11 +71,11 @@ const Container = styled.div`
     background-position: bottom;
   }
 
-  .middle-screen{
+  .middle-screen {
     margin-bottom: 6vw;
   }
 
-  .fullscreen-image{
+  .fullscreen-image {
     margin-bottom: 4vw;
   }
 `;
