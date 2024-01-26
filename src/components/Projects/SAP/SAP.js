@@ -20,7 +20,7 @@ const SAP = () => {
   return (
     <Container>
       <div className="top-section">
-        <OtherHeader />
+        <OtherHeader name={'SALON AVENTURE & PLEIN-AIR'} />
         <Intro
           title={project.title}
           description={project.description}

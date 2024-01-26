@@ -8,19 +8,20 @@ import proj6 from "../img/proj6.webp";
 import proj7 from "../img/proj7.webp";
 import proj8 from "../img/proj8.webp";
 import proj9 from "../img/proj9.webp";
+import t1 from "..//img/T_01.jpg";
 import s1 from "..//img/S_01.jpg";
 import rock from '../img/ROCKKK.jpg'
 
 const projects = [
   {
-    title: "Espace Fine",
+    title: "ESPACE FINE",
     type: "Events",
     description:
       " Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque voluptas sit aspernatur aut odit aut fugit, sed quia consequuntSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque voluptas sit aspernatur aut odit aut fugit, sed quia consequunt",
     img: proj,
   },
   {
-    title: "Horizon",
+    title: "HORIZON",
     type: "Edition",
     description:
       "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque voluptas sit aspernatur aut odit aut fugit, sed quia consequuntSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque voluptas sit aspernatur aut odit aut fugit, sed quia consequunt",
@@ -28,18 +29,18 @@ const projects = [
   },
 
   {
-    title: "Petit Budget Grand Gout",
+    title: "PBGG",
     type: "Edition",
     description:
       "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque voluptas sit aspernatur aut odit aut fugit, sed quia consequuntSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque voluptas sit aspernatur aut odit aut fugit, sed quia consequunt",
     img: proj9,
   },
   {
-    title: "Turbine",
+    title: "TURBINE",
     type: "Branding",
     description:
       "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque voluptas sit aspernatur aut odit aut fugit, sed quia consequuntSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque voluptas sit aspernatur aut odit aut fugit, sed quia consequunt",
-    img: proj1,
+    img: t1,
   },
   {
     title: "LAPIÈS",
@@ -56,7 +57,7 @@ const projects = [
     img: s1,
   },
   {
-    title: "Festival de Jazz",
+    title: "FESTIVAL DE JAZZ",
     type: "Events",
     description:
       "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque voluptas sit aspernatur aut odit aut fugit, sed quia consequuntSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque voluptas sit aspernatur aut odit aut fugit, sed quia consequunt",

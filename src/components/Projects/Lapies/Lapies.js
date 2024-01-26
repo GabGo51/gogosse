@@ -22,7 +22,7 @@ const Lapies = () => {
   return (
     <Container>
       <div className="top-section">
-        <OtherHeader />
+        <OtherHeader name={project.title} />
         <Intro
           title={project.title}
           description={project.description}

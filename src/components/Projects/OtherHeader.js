@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { useContext } from "react";
 import { MouseContext } from "../../context/mouseContext";
 
-const OtherHeader = () => {
+const OtherHeader = ({ name }) => {
   const { cursorChangeHandler } = useContext(MouseContext);
 
   const [isOpen, setIsOpen] = useState(false);
@@ -33,31 +33,34 @@ const OtherHeader = () => {
       <h1 onClick={() => handleNavigate("/")}>GOGOSSE</h1>
 
       <nav>
-        <i className="fa-solid fa-bars" onClick={toggleMenu}></i>
-        <ul
-          onMouseEnter={handleBlur}
-          onMouseLeave={removeBlur}
-          className={isOpen ? "open" : ""}
-        >
-          <li
-            onClick={() => handleNavigate("/")}
-            className={blur ? "blurred" : ""}
+        <p>{name}</p>
+        <div>
+          <i className="fa-solid fa-bars" onClick={toggleMenu}></i>
+          <ul
+            onMouseEnter={handleBlur}
+            onMouseLeave={removeBlur}
+            className={isOpen ? "open" : ""}
           >
-            WORK
-          </li>
-          <li
-            onClick={() => handleNavigate("/about")}
-            className={blur ? "blurred" : ""}
-          >
-            ABOUT
-          </li>
-          <li
-            onClick={() => handleNavigate("/contact")}
-            className={blur ? "blurred" : ""}
-          >
-            CONTACT
-          </li>
-        </ul>
+            <li
+              onClick={() => handleNavigate("/")}
+              className={blur ? "blurred" : ""}
+            >
+              WORK
+            </li>
+            <li
+              onClick={() => handleNavigate("/about")}
+              className={blur ? "blurred" : ""}
+            >
+              ABOUT
+            </li>
+            <li
+              onClick={() => handleNavigate("/contact")}
+              className={blur ? "blurred" : ""}
+            >
+              CONTACT
+            </li>
+          </ul>
+        </div>
       </nav>
     </Container>
   );
@@ -70,9 +73,9 @@ const Container = styled.header`
   padding-top: 20px;
   display: flex;
   justify-content: space-between;
- 
   position: relative;
   z-index: 100;
+
   div {
     width: 100%;
   }
@@ -83,18 +86,27 @@ const Container = styled.header`
     font-family: Tagada;
     font-weight: 400;
 
-    @media (max-width:1100px){
+    @media (max-width: 1100px) {
       font-size: 24px;
     }
   }
 
   nav {
+    width: 50%;
+    display: flex;
     font-size: 16px;
     text-align: end;
+
+    p{
+      font-size: clamp(14px, 3vw, 20px);
+      font-family: Authentic60;
+      text-align: start;
+    }
 
     ul {
       font-family: Authentic90;
       font-size: 14px;
+      
     }
   }
 
@@ -108,19 +120,14 @@ const Container = styled.header`
       scale: 1.3;
     }
   }
-  ul {
-    display: flex;
-    flex-direction: column;
-    font-family: Authentic60C;
-    font-size: 18px;
-    text-transform: uppercase;
-  }
+  
 
   li {
     transition: 500ms;
     margin-left: 30px;
+    margin-bottom: 5px;
     &:hover {
-      transform: translateX(-10%);
+      padding-left: 60px;
       filter: none;
     }
   }
@@ -129,7 +136,6 @@ const Container = styled.header`
     filter: blur(1px);
   }
 
-  
   @media (max-width: 800px) {
     padding: 20px;
   }
