@@ -15,8 +15,6 @@ const Intro = ({ title, description, tag1, tag2, src }) => {
             <p>{tag2}</p>
           </div>
         </div>
-
-        <img src={src} />
       </div>
     </Container>
   );
@@ -26,39 +24,68 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin: 40px 20px;
+  padding: 40px 20px;
 
-  h1{
+  h1 {
     font-family: Authentic90C;
     font-weight: 400;
-    font-size: clamp(40px, 3vw,80px);
+    font-size: clamp(50px, 3vw, 80px);
   }
 
   .middle {
     align-items: flex-end;
     justify-content: end;
-    max-width:800px;
+    width: 50%;
 
-    .top{
+    .top {
       display: flex;
       justify-content: space-between;
       margin-bottom: 50px;
     }
     .description {
       width: 70%;
-      font-family: Authentic90;
+      font-family: Authentic60;
       text-transform: uppercase;
-      font-size: 14px;
-      font-weight: 600px;
+      font-size: 18px;
     }
 
-    .type{
+    .type {
       font-family: Authentic60;
       text-transform: uppercase;
       font-size: 14px;
     }
     img {
       width: 100%;
+    }
+  }
+
+  @media (max-width: 1100px) {
+    flex-direction: column;
+    padding-bottom: 0;
+
+    h1 {
+      margin-bottom: 60px;
+      width: 100%;
+      text-align: justify;
+    }
+
+    .middle {
+      width: 100%;
+      margin-bottom: 0;
+
+      .top {
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 20px;
+        align-items: end;
+      }
+
+      .description {
+        font-size: 14px;
+      }
+      .type {
+        font-size: 10px;
+      }
     }
   }
 `;

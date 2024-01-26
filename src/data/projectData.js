@@ -8,6 +8,7 @@ import proj6 from "../img/proj6.webp";
 import proj7 from "../img/proj7.webp";
 import proj8 from "../img/proj8.webp";
 import proj9 from "../img/proj9.webp";
+import s1 from "..//img/S_01.jpg";
 
 const projects = [
   {
@@ -47,11 +48,11 @@ const projects = [
     img: proj1,
   },
   {
-    title: "SAP",
+    title: "SAP 2024",
     type: "Branding",
     description:
       "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque voluptas sit aspernatur aut odit aut fugit, sed quia consequuntSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque voluptas sit aspernatur aut odit aut fugit, sed quia consequunt",
-    img: proj4,
+    img: s1,
   },
   {
     title: "Festival de Jazz",

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { useContext } from "react";
-import { MouseContext } from "../context/mouseContext";
+import { MouseContext } from "../../context/mouseContext";
 
 const OtherHeader = () => {
   const { cursorChangeHandler } = useContext(MouseContext);
@@ -31,10 +31,6 @@ const OtherHeader = () => {
   return (
     <Container>
       <h1 onClick={() => handleNavigate("/")}>GOGOSSE</h1>
-
-      
-
-      
 
       <nav>
         <i className="fa-solid fa-bars" onClick={toggleMenu}></i>
@@ -68,13 +64,13 @@ const OtherHeader = () => {
 };
 
 const Container = styled.header`
-position: absolute;
+  position: absolute;
   padding: 20px;
-  padding-bottom: 10px;
+  padding-bottom: 60px;
   padding-top: 20px;
   display: flex;
   justify-content: space-between;
-  background-color: #dcdcdc;
+ 
   position: relative;
   z-index: 100;
   div {
@@ -86,6 +82,10 @@ position: absolute;
     font-size: 30px;
     font-family: Tagada;
     font-weight: 400;
+
+    @media (max-width:1100px){
+      font-size: 24px;
+    }
   }
 
   nav {
@@ -129,11 +129,7 @@ position: absolute;
     filter: blur(1px);
   }
 
-  @media (max-width: 900px) {
-    h1 {
-      font-size: 30px;
-    }
-  }
+  
   @media (max-width: 800px) {
     padding: 20px;
   }

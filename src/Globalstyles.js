@@ -4,7 +4,6 @@ import Authentic60 from "./fonts/AUTHENTICSans-60.otf";
 import Authentic90 from "./fonts/AUTHENTICSans-90.otf";
 import Authentic130 from "./fonts/AUTHENTICSans-130.otf";
 import Authentic150 from "./fonts/AUTHENTICSans-150.otf";
-
 import Authentic130C from "./fonts/AUTHENTICSans-Condensed-130.otf";
 import Authentic150C from "./fonts/AUTHENTICSans-Condensed-150.otf";
 import Authentic60C from "./fonts/AUTHENTICSans-Condensed-60.otf";
@@ -121,6 +120,49 @@ export default createGlobalStyle`
 
   .fullscreen-image{
     width: 100vw;
+  }
+
+  .almost-fullscreen{
+    width: 90%;
+    margin-bottom: 8vw;
+  }
+  .middle-screen{
+    width: 70%;
+  }
+
+  .right-section{
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: end;
+    padding-right: 20px;
+    div{
+      width: 50%;
+      margin-bottom: 60px;
+
+      p{
+        width: 70%;
+        font-size: clamp(14px, 3vw, 18px);
+        font-family:Authentic60 ;
+        text-transform: uppercase;
+      }
+    }
+    img{
+      width: 80%;
+    }
+
+    @media (max-width:1100px){
+      margin-top: 50px;
+      div{
+        width: 80%;
+        p{
+          width: 90%;
+        }
+      }
+    }
+
+    
   }
 
 `;

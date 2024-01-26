@@ -80,7 +80,7 @@ const Container = styled.footer`
   justify-content: center;
   padding: 50px 20px;
   background-color: transparent;
-  width: 100vw;
+  width: 100%;
   font-weight: 700;
   font-family: Authentic60;
   .blurred {
@@ -88,7 +88,7 @@ const Container = styled.footer`
   }
 
   @media (max-width:800px){
-    padding: 20px;
+    padding: 0;
   }
 `;
 
@@ -130,6 +130,7 @@ const Info = styled.div`
   }
 
   @media (max-width: 800px) {
+    padding: 20px;
     button {
       display: none;
     }
@@ -140,7 +141,9 @@ const Info = styled.div`
     }
 
     ul {
-      margin: 0px 20px;
+      margin: 0px 0px;
+      text-align: start;
+      padding: 0;
     }
   }
 `;
