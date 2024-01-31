@@ -9,6 +9,7 @@ import useMousePosition from "../../hooks/useMousePosition";
 import Header from "../Home/Header";
 import gradient from "./img/gradient.png";
 
+
 const Contact = () => {
   const { cursorChangeHandler } = useContext(MouseContext);
   const mousePosition = useMousePosition();
@@ -57,6 +58,8 @@ const Contact = () => {
           <div className="textarea">
             <label>LET'S WORK</label>
             <textarea
+            name="user_project"
+            autoFocus
               onMouseEnter={() => cursorChangeHandler("hover")}
               onMouseLeave={() => cursorChangeHandler("")}
               placeholder="Tell me about yourself, your project, and what you aim to achieve. Please provide your contact information so we can get in touch and discuss your project needs further. Can't wait to hear about your project and putting it to life!"
@@ -80,13 +83,14 @@ const Contact = () => {
 };
 
 const Container = styled.div`
-
+  
   .frame {
     padding: 0 20px;
     margin-top: -100px;
     display: flex;
     flex-direction: column;
     width: 100%;
+    height:100%;
   }
   .gradient {
     margin-top: -10px;
@@ -101,7 +105,7 @@ const Container = styled.div`
   label {
     font-family: Authentic90C;
     font-size: 40px;
-    margin-right: 30px;
+    margin-bottom: 50px;
 
     @media (max-width: 1100px) {
       font-size: 30px;
@@ -121,7 +125,7 @@ const Container = styled.div`
 
     textarea {
       transition: 1s;
-      border: 1px solid white;
+      border: none;
       max-width: 800px;
       resize: none;
       font-size: 24px;
@@ -130,12 +134,10 @@ const Container = styled.div`
       
       outline: none;
       width: 100%;
-      height: 200px;
-      padding: 10px;
+      height: 180px;
+      
 
-      &:hover{
-        border: 1px solid black;
-      }
+      
 
       @media (max-width: 1100px) {
         font-size: 24px;

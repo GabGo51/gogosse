@@ -17,27 +17,37 @@ function App() {
     <Router>
       <Cursor />
       <Container>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/HERITAGE" element={<Heritage />} />
-          <Route path="/ESPACE FINE" element={<EspaceFine />} />
-          <Route path="/HORIZON" element={<Contact />} />
-          <Route path="/LAPIÈS" element={<Lapies />} />
-          <Route path="/SAP 2024" element={<SAP />} />
-          <Route path="/PBGG" element={<Contact />} />
-          <Route path="/TURBINE" element={<Turbine />} />
-          <Route path="/FESTIVAL DE JAZZ" element={<Contact />} />
-        </Routes>
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/HERITAGE" element={<Heritage />} />
+            <Route path="/ESPACE FINE" element={<EspaceFine />} />
+            <Route path="/HORIZON" element={<Contact />} />
+            <Route path="/LAPIÈS" element={<Lapies />} />
+            <Route path="/SAP 2024" element={<SAP />} />
+            <Route path="/PBGG" element={<Contact />} />
+            <Route path="/TURBINE" element={<Turbine />} />
+            <Route path="/FESTIVAL DE JAZZ" element={<Contact />} />
+          </Routes>
+        </div>
         <Footer />
       </Container>
     </Router>
   );
 }
 
+
+//this makes sure that the page is always full screen when content is too small 
 const Container = styled.div`
   width: 100vw;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  .content {
+    flex: 1;
+  }
 `;
 
 export default App;

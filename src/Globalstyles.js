@@ -116,6 +116,7 @@ export default createGlobalStyle`
     overflow-y: scroll;
     background-color:white;
     box-sizing: content-box; 
+    height: 100%;
   }
 
   body[data-theme="dark"] {
