@@ -1,134 +1,98 @@
-// import React from "react";
-// import styled from "styled-components";
+import React, { useEffect } from "react";
+import styled from "styled-components";
+import OtherHeader from "../OtherHeader";
+import Intro from "../Intro";
+import SlidingImg from "../SlidingImg";
+import projects from "../../../data/projectData";
+import WorkButton from "../../WorkButton";
+import E_1 from "./img/E-1.jpg";
+import E_2 from "./img/E-2.jpg";
+import E_3 from "./img/E-3.jpg";
+import E_4 from "./img/E-4.jpg";
+import E_5 from "./img/E-5.jpg";
+import E_6 from "./img/E-6.jpg";
+import E_7 from "./img/E-7.jpg";
 
-// import img1 from "./img/img1.webp";
-// import img2 from "./img/img2.webp";
-// import img3 from "./img/img3.webp";
-// import img4 from "./img/img4.webp";
-// import img5 from "./img/img5.webp";
-// import img6 from "./img/img6.webp";
-// import img7 from "./img/img7.webp";
-// import img8 from "./img/img8.webp";
-// import img9 from "./img/img9.webp";
-// import img10 from "./img/img10.webp";
-// import img11 from "./img/img11.webp";
-// import img12 from "./img/img12.webp";
-// import img13 from "./img/img13.webp";
-// import img14 from "./img/img14.webp";
-// import img15 from "./img/img15.webp";
-// import img16 from "./img/img16.webp";
-// import img17 from "./img/img17.webp";
-// import img18 from "./img/img18.webp";
-// import img19 from "./img/img19.webp";
-// import img20 from "./img/img20.webp";
-// import img21 from "./img/img21.webp";
-// import img22 from "./img/img22.webp";
-// import img23 from "./img/img23.webp";
-// import img24 from "./img/img24.webp";
+import { useLocation } from "react-router-dom";
 
-// const EspaceFine = () => {
-//   const pages = [
-//     img6,
-//     img7,
-//     img8,
-//     img9,
-//     img10,
-//     img11,
-//     img12,
-//     img13,
-//     img14,
-//     img15,
-//     img16,
-//     img17,
-//     img18,
-//     img19,
-//     img20,
-//     img21,
-//     img22,
-//     img23,
-//     img24,
-//   ];
-//   return (
-//     <Container>
-      
-//       <img className="fullscreen" src={img1} />
-//       <div className="section1">
-//         <img className="big" src={img2} />
-//         <img className="small" src={img3} />
-//       </div>
-//       <img className="fullscreen" src={img4} />
-//       <div className="section2">
-//         <img src={img5} />
-//       </div>
-//       <div className="section3">
-//         {pages.map((page, index) => (
-//           <img key={index} src={page} />
-//         ))}
-//       </div>
-//     </Container>
-//   );
-// };
+const project = projects[0];
 
-// const Container = styled.div`
-//   .fullscreen {
-//     width: 100vw;
-//     margin-top: 100px;
+const EspaceFine = () => {
+  const location = useLocation();
+  const isDarkTheme = location.pathname === "/ESPACE%20FINE";
+  useEffect(() => {
+    if (location.pathname === "/ESPACE%20FINE") {
+      document.body.setAttribute("data-theme", "dark");
+    } else {
+      document.body.removeAttribute("data-theme");
+    }
 
-//     @media (max-width: 1100px) {
-//       margin-top: 50px;
-//     }
-//   }
+    // Cleanup when the component unmounts
+    return () => {
+      document.body.removeAttribute("data-theme");
+    };
+  }, [location.pathname]);
+  return (
+    <Container>
+      <div className="top-section">
+        <OtherHeader name={project.title} />
+        <Intro
+          title={project.title}
+          description={project.description}
+          tag1={project.type}
+        />
+      </div>
+      <SlidingImg src={project.img} />
+      <div className="row">
+        <img className="fullscreen-image top-img" src={E_2} />
+      </div>
 
-//   .section1 {
-//     width: 100%;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     flex-wrap: nowrap;
-//     margin-top: 100px;
+      <div className="row">
+        <img className="rowimg1" src={E_3} />
+        <img className="rowimg2" src={E_4} />
+      </div>
+      <div className="row">
+        <img className="fullscreen-image" src={E_5} />
+      </div>
+      <div className="row">
+        <img className="fullscreen-image" src={E_6} />
+      </div>
+      <div className="row">
+        <img className="fullscreen-image" src={E_7} />
+      </div>
 
-//     img {
-//       margin-right: 10px;
-//       max-height: 800px;
-//     }
-//     .big {
-//       width: 40%;
-//     }
-//     .small {
-//       width: 31.55%;
-//     }
-//     @media (max-width: 1100px) {
-//       margin-top: 50px;
-//     }
-//   }
+      <WorkButton darkTheme={isDarkTheme} />
 
-//   .section2 {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     margin: 100px 0px;
-//     img {
-//       width: 80%;
-//     }
+      <div className="direction">
+        <h3>ARTISTIC DIRECTION</h3>
+        <p>FERNANDO PEZO SALAS</p>
+        <p>CHRISTELLE GUIMONT</p>
+        <p>NICOLAS GOSSELIN</p>
+        <p>CERYL BENZEKRI</p>
+        
+      </div>
+    </Container>
+  );
+};
 
-//     @media (max-width: 1100px) {
-//       margin: 50px 0;
-//     }
-//   }
+const Container = styled.div`
+  .row {
+    display: flex;
+    justify-content: space-between;
+    padding: 13px 20px;
 
-//   .section3 {
-//     background-color: #161616;
-//     display: flex;
-//     flex-wrap: wrap;
-//     padding: 50px;
-//     gap: 20px;
-//     align-items: center;
-//     justify-content: center;
-//     img{
-//       width: 45%;
-//       box-sizing: border-box;
-//     }
-//   }
-// `;
+    .rowimg1{
+      width: 44.7%;
+    }
 
-// export default EspaceFine;
+    .rowimg2{
+      width: 54%;
+    }
+  }
+
+  .top-img{
+    margin-top: 10vw;
+  }
+`;
+
+export default EspaceFine;

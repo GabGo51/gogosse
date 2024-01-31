@@ -128,6 +128,10 @@ export default createGlobalStyle`
     
   }
 
+  img{
+    object-fit: cover;
+  }
+
   .direction{
     width: 100%;
     padding:100px 20px;
@@ -135,6 +139,7 @@ export default createGlobalStyle`
     font-size: clamp(16px, 3vw, 20px);
     h3{
       font-family: Authentic130;
+      margin-bottom: 20px;
     }
     p{
       font-family: Authentic60;
@@ -144,11 +149,7 @@ export default createGlobalStyle`
   .fullscreen-image{
     width: 100%;
   }
-  .direction{
-    h3{
-      margin-bottom: 20px;
-    }
-  }
+  
 
   .almost-fullscreen{
     width: 90%;

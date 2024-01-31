@@ -10,7 +10,7 @@ const Footer = () => {
   const { cursorChangeHandler } = useContext(MouseContext);
 
   const location = useLocation();
-  const isDarkTheme = location.pathname === "/HERITAGE" || location.pathname === "/HORIZON";
+  const isDarkTheme = location.pathname === "/HERITAGE" || location.pathname === "/HORIZON"|| location.pathname === "/ESPACE%20FINE";
   console.log(isDarkTheme);
   
   
