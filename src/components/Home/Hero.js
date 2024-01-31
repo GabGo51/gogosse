@@ -89,62 +89,62 @@ const Hero = () => {
         </div>
       </ImgBox>
 
-      <LettersBox>   
-          <div
+      <LettersBox >   
+          <motion.div initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} transition={{duration:0.5, delay:0.1}}
             className="g1"
             onMouseEnter={() => handleHover(projects[0].title)}
             onClick={() => handleNavigate(`/${projects[0].title}`)}
           >
             <img src={G}/>
-          </div>
+          </motion.div>
 
-          <div
+          <motion.div initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} transition={{duration:0.5, delay:0.2}}
             className="o1"
             onMouseEnter={() => handleHover(projects[1].title)}
             onClick={() => handleNavigate(`/${projects[1].title}`)}
           >
             <img src={O}/>
-          </div>
+          </motion.div>
 
-          <div
+          <motion.div initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} transition={{duration:0.5, delay:0.3}}
             className="g2"
             onMouseEnter={() => handleHover(projects[2].title)}
             onClick={() => handleNavigate(`/${projects[2].title}`)}
           >
             <img src={G}/>
-          </div>
+          </motion.div>
 
-          <div
+          <motion.div initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} transition={{duration:0.5, delay:0.4}}
             className="o2"
             onMouseEnter={() => handleHover(projects[3].title)}
             onClick={() => handleNavigate(`/${projects[3].title}`)}
           >
             <img src={O}/>
-          </div>
+          </motion.div>
 
-          <div
+          <motion.div initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} transition={{duration:0.5, delay:0.5}}
             className="s1"
             onMouseEnter={() => handleHover(projects[4].title)}
             onClick={() => handleNavigate(`/${projects[4].title}`)}
           >
             <img src={S}/>
-          </div>
+          </motion.div>
 
-          <div
+          <motion.div initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} transition={{duration:0.5, delay:0.6}}
             className="s2"
             onMouseEnter={() => handleHover(projects[5].title)}
             onClick={() => handleNavigate(`/${projects[5].title}`)}
           >
             <img src={S}/>
-          </div>
+          </motion.div>
 
-          <div
+          <motion.div initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} transition={{duration:0.5, delay:0.7}}
             className="e"
             onMouseEnter={() => handleHover(projects[6].title)}
             onClick={() => handleNavigate(`/${projects[6].title}`)}
           >
             <img src={E}/>
-          </div>
+          </motion.div>
         
       </LettersBox>
       
@@ -300,7 +300,7 @@ const ImgBox = styled(motion.div)`
   }
 `;
 
-const LettersBox = styled.div`
+const LettersBox = styled(motion.div)`
 display: flex;
 justify-content: space-between;
 padding:0  20px;
