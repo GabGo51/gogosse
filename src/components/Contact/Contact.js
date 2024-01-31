@@ -6,7 +6,8 @@ import { MouseContext } from "../../context/mouseContext";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 import useMousePosition from "../../hooks/useMousePosition";
-
+import Header from "../Home/Header";
+import gradient from "./img/gradient.png";
 
 const Contact = () => {
   const { cursorChangeHandler } = useContext(MouseContext);
@@ -49,85 +50,56 @@ const Contact = () => {
 
   return (
     <Container>
-      
-      <p>
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-        accusantium doloremque laudantium, totam rem aperiam, eaque voluptas sit
-        aspernatur aut odit aut fugit, sed quia consequunt
-      </p>
-      <form ref={gogosseForm} onSubmit={handleSubmit}>
-        <div>
-          <label>NAME</label>
-          <input
+      <Header />
+      <img src={gradient} alt="gradient" className="gradient" />
+      <div className="frame">
+        <form ref={gogosseForm} onSubmit={handleSubmit}>
+          <div className="textarea">
+            <label>LET'S WORK</label>
+            <textarea
+              onMouseEnter={() => cursorChangeHandler("hover")}
+              onMouseLeave={() => cursorChangeHandler("")}
+              placeholder="Tell me about yourself, your project, and what you aim to achieve. Please provide your contact information so we can get in touch and discuss your project needs further. Can't wait to hear about your project and putting it to life!"
+              required
+              
+            />
+          </div>
+          <motion.button
+            {...(isWideScreen && { animate: { x: mousePosition.x - 120 } })}
+            transition={spring}
             onMouseEnter={() => cursorChangeHandler("hover")}
             onMouseLeave={() => cursorChangeHandler("")}
-            required
-          />
-        </div>
-        <div>
-          <label>COMPAGNY</label>
-          <input
-            onMouseEnter={() => cursorChangeHandler("hover")}
-            onMouseLeave={() => cursorChangeHandler("")}
-          />
-        </div>
-        <div>
-          <label>BUDGET</label>
-          <input
-            onMouseEnter={() => cursorChangeHandler("hover")}
-            onMouseLeave={() => cursorChangeHandler("")}
-            required
-          />
-        </div>
-        <div className="textarea">
-          <label>PROJECT DESCRIPTION</label>
-          <textarea
-            onMouseEnter={() => cursorChangeHandler("hover")}
-            onMouseLeave={() => cursorChangeHandler("")}
-            required
-          />
-        </div>
-        <motion.button
-        {...(isWideScreen && { animate: { x: mousePosition.x - 120 } })}
-        transition={spring}
-          onMouseEnter={() => cursorChangeHandler("hover")}
-          onMouseLeave={() => cursorChangeHandler("")}
-          type="submit"
-        >
-          SUMBIT
-        </motion.button>
-      </form>
+            type="submit"
+          >
+            SUMBIT
+          </motion.button>
+        </form>
+      </div>
     </Container>
   );
 };
 
 const Container = styled.div`
-  padding: 20px;
 
-  p {
-    font-size: 40px;
-    text-transform: uppercase;
-    font-family: Authentic60;
-    margin: 100px 0px;
-
-    @media (max-width: 1100px) {
-      font-size: 24px;
-    }
-    @media (max-width: 700px) {
-      font-size: 16px;
-    }
-  }
-  div {
-    border-bottom: 1px solid black;
-    padding-bottom: 5px;
+  .frame {
+    padding: 0 20px;
+    margin-top: -100px;
     display: flex;
-    align-items: center;
-    position: relative;
-    margin-bottom: 20px;
+    flex-direction: column;
+    width: 100%;
+  }
+  .gradient {
+    margin-top: -10px;
+    height: 200px;
+    width: 100vw;
+
+    @media (max-width: 500px) {
+      height: 150px;
+    }
   }
 
   label {
-    font-family: Tagada;
+    font-family: Authentic90C;
     font-size: 40px;
     margin-right: 30px;
 
@@ -139,44 +111,31 @@ const Container = styled.div`
     }
   }
 
-  input {
-    height: 40px;
-    font-size: 34px;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    font-family: Authentic60;
-    border: none;
-    outline: none;
-    padding-left: 220px;
-    text-transform: uppercase;
-
-    @media (max-width: 1100px) {
-      font-size: 24px;
-      padding-left: 170px;
-    }
-    @media (max-width: 800px) {
-      font-size: 16px;
-      padding-left: 120px;
-    }
-  }
+  
 
   .textarea {
-    border-bottom: none;
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
+    width: clamp(80%, 3vw, 50%);
 
     textarea {
-      background-color: #2e2e2e;
-      color: white;
+      transition: 1s;
+      border: 1px solid white;
+      max-width: 800px;
       resize: none;
       font-size: 24px;
       font-family: Authentic60;
       text-transform: uppercase;
+      
+      outline: none;
       width: 100%;
       height: 200px;
       padding: 10px;
+
+      &:hover{
+        border: 1px solid black;
+      }
 
       @media (max-width: 1100px) {
         font-size: 24px;
@@ -187,11 +146,7 @@ const Container = styled.div`
     }
   }
 
-  @media (max-width: 800px) {
-    padding: 20px;
-  }
-
-  button{
+  button {
     transition: 300ms;
     display: flex;
     align-items: center;
@@ -208,22 +163,20 @@ const Container = styled.div`
     height: 70px;
     width: 170px;
     text-align: center;
-    
+
     text-transform: uppercase;
 
     &:hover {
-      
       background-color: black;
       color: white;
-      
     }
     @media (max-width: 500px) {
-    font-size: 18px;
-    height: 50px;
-    width: 120px;
-    border-radius: 20px;
-    margin-bottom: 0px;
-  }
+      font-size: 18px;
+      height: 50px;
+      width: 120px;
+      border-radius: 20px;
+      margin-bottom: 0px;
+    }
   }
 `;
 export default Contact;

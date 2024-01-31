@@ -35,14 +35,6 @@ const projects = [
       "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque voluptas sit aspernatur aut odit aut fugit, sed quia consequuntSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque voluptas sit aspernatur aut odit aut fugit, sed quia consequunt",
     img: proj8,
   },
-
-  {
-    title: "PBGG",
-    type: "Edition",
-    description:
-      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque voluptas sit aspernatur aut odit aut fugit, sed quia consequuntSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque voluptas sit aspernatur aut odit aut fugit, sed quia consequunt",
-    img: proj9,
-  },
   {
     title: "TURBINE",
     type: "Branding",
@@ -70,6 +62,13 @@ const projects = [
     description:
       "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque voluptas sit aspernatur aut odit aut fugit, sed quia consequuntSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque voluptas sit aspernatur aut odit aut fugit, sed quia consequunt",
     img: proj4,
+  },
+  {
+    title: "PBGG",
+    type: "Edition",
+    description:
+      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque voluptas sit aspernatur aut odit aut fugit, sed quia consequuntSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque voluptas sit aspernatur aut odit aut fugit, sed quia consequunt",
+    img: proj9,
   },
 ];
 

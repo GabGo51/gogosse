@@ -4,9 +4,15 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useContext } from "react";
 import { MouseContext } from "../context/mouseContext";
+import { useLocation } from "react-router-dom";
 
 const Footer = () => {
   const { cursorChangeHandler } = useContext(MouseContext);
+
+  const location = useLocation();
+  const isDarkTheme = location.pathname === "/HERITAGE" || location.pathname === "HORIZON";
+  
+  
 
   const [blur, setBlur] = useState(false);
   const handleBlur = () => {
@@ -29,7 +35,7 @@ const Footer = () => {
 
   return (
     <Container>
-      <Info>
+      <Info darkTheme={isDarkTheme}>
         <button
           onMouseEnter={() => cursorChangeHandler("hover")}
           onMouseLeave={() => cursorChangeHandler("")}
@@ -103,7 +109,7 @@ const Info = styled.div`
     font-family: Tagada;
     font-size: 64px;
     font-weight: 400;
-
+    color: ${props => props.darkTheme ? 'white' : 'black'};
     background-color: transparent;
     border: none;
   }
@@ -116,7 +122,8 @@ const Info = styled.div`
 
     a {
       text-decoration: none;
-      color: black;
+      
+      color: ${props => props.darkTheme ? 'white' : 'black'};
     }
 
     &:hover {

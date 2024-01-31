@@ -118,6 +118,14 @@ export default createGlobalStyle`
     box-sizing: content-box; 
   }
 
+  body[data-theme="dark"] {
+    transition: 1s;
+    background-color: #161616  ;
+    color: white;
+
+    
+  }
+
   .direction{
     width: 100%;
     padding:100px 20px;

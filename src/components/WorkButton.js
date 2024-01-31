@@ -7,9 +7,10 @@ import { MouseContext } from "../context/mouseContext";
 import useMousePosition from "../hooks/useMousePosition";
 import { motion } from "framer-motion";
 
-const WorkButton = () => {
+const WorkButton = ({darkTheme}) => {
   const { cursorChangeHandler } = useContext(MouseContext);
   const mousePosition = useMousePosition();
+  
 
   const isWideScreen = window.innerWidth > 1100;
 
@@ -29,8 +30,8 @@ const WorkButton = () => {
   };
 
   return (
-    <Container>
-      <motion.button
+    <Container darkTheme={darkTheme}>
+      <motion.button 
       {...(isWideScreen && { animate: { x: mousePosition.x - 120 } })}
       transition={spring}
       onMouseEnter={() => cursorChangeHandler("hover")}
@@ -56,6 +57,8 @@ to{
 
 const Container = styled(motion.div)`
 width: 95%;
+
+
   button {
     transition: 300ms;
     display: flex;
@@ -65,10 +68,10 @@ width: 95%;
     font-size: 30px;
     font-weight: 400;
     margin-bottom: 50px;
-    border: 1px solid black;
+    border: 1px solid ${props => props.darkTheme ? 'white' : 'black'};
     border-radius: 39px;
     font-family: Authentic60;
-    color: black;
+    color: ${props => props.darkTheme ? 'white' : 'black'};
     width: 225px;
     height: 100px;
     text-align: center;
@@ -79,8 +82,8 @@ width: 95%;
     }
 
     &:hover {
-      background-color: black;
-      color: white;
+      background-color:${props => props.darkTheme ? 'white' : 'black'};
+      color: ${props => props.darkTheme ? 'black' : 'white'};
       div {
         animation: ${rotate} 500ms forwards;
       }
@@ -93,6 +96,8 @@ width: 95%;
       margin-bottom: 0px;
     }
   }
+
+ 
 `;
 
 export default WorkButton;
