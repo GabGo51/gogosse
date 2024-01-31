@@ -121,8 +121,9 @@ export default createGlobalStyle`
 
   body[data-theme="dark"] {
     transition: 1s;
-    background-color: #161616  ;
-    color: white;
+    background-color: #000000 ;
+    color: #f2f2f2;
+    /* color: white; */
 
     
   }
@@ -141,7 +142,12 @@ export default createGlobalStyle`
   }
 
   .fullscreen-image{
-    width: 100vw;
+    width: 100%;
+  }
+  .direction{
+    h3{
+      margin-bottom: 20px;
+    }
   }
 
   .almost-fullscreen{

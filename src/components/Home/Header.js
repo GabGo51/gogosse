@@ -95,7 +95,7 @@ const Container = styled.header`
 
   h1 {
     display: inline-block;
-    font-size: 30px;
+    font-size: clamp(20px, 3vw, 40px);
     font-family: Tagada;
     font-weight: 400;
   }
@@ -107,7 +107,7 @@ const Container = styled.header`
     font-size: 18px;
     max-width: 400px;
 
-    @media (max-width: 1000px) {
+    @media (max-width: 1100px) {
       display: none;
     }
   }
@@ -153,11 +153,7 @@ const Container = styled.header`
     filter: blur(1px);
   }
 
-  @media (max-width: 900px) {
-    h1 {
-      font-size: 30px;
-    }
-  }
+  
   @media (max-width: 800px) {
     padding: 20px;
   }

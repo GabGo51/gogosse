@@ -196,7 +196,7 @@ const Project = styled.div`
   h3 {
     flex: 0.25;
     font-size: 20px;
-    font-family: Tagada;
+    font-family: Authentic90C;
     text-transform: uppercase;
     @media (max-width: 900px) {
       font-size: 14px;

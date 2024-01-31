@@ -12,6 +12,8 @@ import SAP from "./components/Projects/SAP/SAP";
 import Lapies from "./components/Projects/Lapies/Lapies";
 import Turbine from "./components/Projects/Turbine/Turbine";
 import Heritage from "./components/Projects/Heritage/Heritage";
+import Horizon from "./components/Projects/Horizon/Horizon";
+
 function App() {
   return (
     <Router>
@@ -24,7 +26,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/HERITAGE" element={<Heritage />} />
             <Route path="/ESPACE FINE" element={<EspaceFine />} />
-            <Route path="/HORIZON" element={<Contact />} />
+            <Route path="/HORIZON" element={<Horizon />} />
             <Route path="/LAPIÈS" element={<Lapies />} />
             <Route path="/SAP 2024" element={<SAP />} />
             <Route path="/PBGG" element={<Contact />} />

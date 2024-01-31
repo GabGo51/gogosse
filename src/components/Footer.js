@@ -10,7 +10,8 @@ const Footer = () => {
   const { cursorChangeHandler } = useContext(MouseContext);
 
   const location = useLocation();
-  const isDarkTheme = location.pathname === "/HERITAGE" || location.pathname === "HORIZON";
+  const isDarkTheme = location.pathname === "/HERITAGE" || location.pathname === "/HORIZON";
+  console.log(isDarkTheme);
   
   
 
@@ -110,7 +111,7 @@ const Info = styled.div`
     font-family: Tagada;
     font-size: 64px;
     font-weight: 400;
-    color: ${props => props.darkTheme ? 'white' : 'black'};
+    color: ${props => props.darkTheme ? '#f2f2f2' : 'black'};
     background-color: transparent;
     border: none;
   }
@@ -124,7 +125,7 @@ const Info = styled.div`
     a {
       text-decoration: none;
       
-      color: ${props => props.darkTheme ? 'white' : 'black'};
+      color: ${props => props.darkTheme ? '#f2f2f2' : 'black'};
     }
 
     &:hover {

@@ -30,11 +30,8 @@ const Container = styled.div`
     justify-content: space-between;
     width: 100%;
     height: 100%;
-
-
-
     p{
-      font-size: 40px;
+      font-size: clamp(20px, 3vw, 40px);
       font-family: Authentic60;
       text-transform: uppercase;
       width: 50%;
@@ -43,7 +40,22 @@ const Container = styled.div`
 
     img{
       width: 30%;
+      
+      object-fit: cover;
     }
+
+    @media (max-width:1100px){
+    flex-direction: column;
+    align-items: center;
+    p{
+      width: 100%;
+      margin-bottom: 40px;
+    }
+
+    img{
+      width: 100%;
+    }
+  }
   }
   .gradient {
     margin-top: -10px;
@@ -54,6 +66,8 @@ const Container = styled.div`
       height: 150px;
     }
   }
+
+  
 `;
 
 export default About;
