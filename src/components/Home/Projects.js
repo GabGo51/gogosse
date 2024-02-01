@@ -5,15 +5,12 @@ import { useState } from "react";
 import projects from "../../data/projectData";
 import { useContext } from "react";
 import { MouseContext } from "../../context/mouseContext";
-import useMousePosition from "../../hooks/useMousePosition";
-import { motion } from "framer-motion";
+
+
 import WorkButton from "../WorkButton";
 
 const Projects = () => {
   const { cursorChangeHandler } = useContext(MouseContext);
-  const mousePosition = useMousePosition();
-
-  const isWideScreen = window.innerWidth > 1100;
 
   const [blur, setBlur] = useState(false);
   const handleBlur = () => {
@@ -27,20 +24,14 @@ const Projects = () => {
 
   const navigate = useNavigate();
   const handleNavigate = (page) => {
-    navigate(page);
+    cursorChangeHandler("");
+    
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
+    navigate(page);
   };
-
-  const spring = {
-    type: "spring",
-    damping: 9,
-    stiffness: 40,
-  };
-
-  
 
   return (
     <Container>
@@ -72,7 +63,7 @@ const Projects = () => {
         </ProjectBox>
       </div>
 
-      <WorkButton/>
+      <WorkButton />
     </Container>
   );
 };
@@ -122,7 +113,6 @@ const Container = styled.div`
     }
 
     &:hover {
-      
       background-color: black;
       color: white;
       div {
@@ -130,12 +120,12 @@ const Container = styled.div`
       }
     }
     @media (max-width: 500px) {
-    font-size: 20px;
-    height: 70px;
-    width: 170px;
-    border-radius: 25px;
-    margin-bottom: 0px;
-  }
+      font-size: 20px;
+      height: 70px;
+      width: 170px;
+      border-radius: 25px;
+      margin-bottom: 0px;
+    }
   }
 
   @media (max-width: 900px) {

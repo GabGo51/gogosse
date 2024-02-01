@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import projects from "../../data/projectData";
 
-const Intro = ({ title, description, tag1, tag2, src }) => {
+
+const Intro = ({ title, description, tag1, tag2}) => {
   return (
     <Container>
       <h1>{title}</h1>
@@ -21,10 +21,12 @@ const Intro = ({ title, description, tag1, tag2, src }) => {
 };
 
 const Container = styled.div`
+
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   padding: 40px 20px;
+  height: 500px;
 
   h1 {
     font-family: Authentic90C;

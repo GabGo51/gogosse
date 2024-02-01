@@ -16,6 +16,8 @@ import L9 from "./img/L_06.jpg";
 import L10 from "./img/L_07.jpg";
 import L11 from "./img/woody.jpg";
 import WorkButton from "../../WorkButton";
+import gradient from '../img/gradient.jpg'
+
 const project = projects[4];
 
 const Lapies = () => {
@@ -30,22 +32,21 @@ const Lapies = () => {
         />
       </div>
       <SlidingImg src={project.img} />
-      <img className="start middle-screen" src={L1} />
-      <img className="middle-screen" src={L2} />
-      <img className="middle-screen" src={L6} />
+      <img alt="lapies" className="start middle-screen" src={L1} />
+      <img alt="lapies" className="middle-screen" src={L2} />
+      <img alt="lapies" className="middle-screen" src={L6} />
       <div className="row">
-      <img className="rowimg" src={L4} />
-      <img className="rowimg"  src={L3} />
-      <img className="rowimg"  src={L5} />
+        <img alt="lapies" className="rowimg" src={L4} />
+        <img alt="lapies" className="rowimg" src={L3} />
+        <img alt="lapies" className="rowimg" src={L5} />
       </div>
-      <img className="fullscreen-image" src={L7} />
-      <img className="fullscreen-image" src={L8} />
-      <img className="fullscreen-image" src={L9} />
-      <img className="middle-screen l10" src={L10} />
+      <img alt="lapies" className="fullscreen-image" src={L7} />
+      <img alt="lapies" className="fullscreen-image" src={L8} />
+      <img alt="lapies" className="fullscreen-image" src={L9} />
+      <img alt="lapies" className="middle-screen l10" src={L10} />
       <div className="full">
-        <img className="" src={L11} />
+        <img alt="lapies" className="" src={L11} />
       </div>
-      
 
       <WorkButton />
 
@@ -62,6 +63,11 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
 
+  .top-section {
+    background-image: url(${gradient});
+    background-size: cover;
+  }
+
   .middle-screen {
     width: 40%;
     margin: 1vw 0;
@@ -70,28 +76,27 @@ const Container = styled.div`
     margin-top: 200px;
   }
 
-  .row{
+  .row {
     margin-top: 8vw;
     display: flex;
     justify-content: space-between;
     width: 100%;
     padding: 20px;
 
-    .rowimg{
+    .rowimg {
       width: 32.5%;
     }
-
   }
 
-  .l10{
+  .l10 {
     margin: 8vw 0;
   }
 
-  .full{
+  .full {
     width: 100%;
     padding: 20px;
     margin-bottom: 6vw;
-    img{
+    img {
       width: 100%;
     }
   }

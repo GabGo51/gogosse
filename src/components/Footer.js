@@ -11,7 +11,7 @@ const Footer = () => {
 
   const location = useLocation();
   const isDarkTheme = location.pathname === "/HERITAGE" || location.pathname === "/HORIZON"|| location.pathname === "/ESPACE%20FINE";
-  console.log(isDarkTheme);
+  
   
   
 
@@ -29,7 +29,7 @@ const Footer = () => {
   const handleNavigate = (page) => {
     navigate(page);
     window.scrollTo({
-      top: 0,
+      top:0,
       behavior: 'smooth',
     });
   };

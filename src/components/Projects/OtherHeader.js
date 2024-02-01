@@ -14,6 +14,7 @@ const OtherHeader = ({ name }) => {
 
   const navigate = useNavigate();
   const handleNavigate = (page) => {
+    cursorChangeHandler('')
     navigate(page);
     setIsOpen(false);
   };
@@ -30,30 +31,38 @@ const OtherHeader = ({ name }) => {
 
   return (
     <Container>
-      <h1 onClick={() => handleNavigate("/")}>GOGOSSE</h1>
+      <h1
+        onMouseEnter={() => cursorChangeHandler("hover")}
+        onMouseLeave={() => cursorChangeHandler("")}
+        onClick={() => handleNavigate("/")}
+      >
+        GOGOSSE
+      </h1>
 
       <nav>
-        <p>{name}</p>
+        <p className="name">{name}</p>
         <div>
           <i className="fa-solid fa-bars" onClick={toggleMenu}></i>
-          <ul
-            onMouseEnter={handleBlur}
-            onMouseLeave={removeBlur}
-            className={isOpen ? "open" : ""}
-          >
+          <ul className={isOpen ? "open" : ""}>
             <li
+              onMouseEnter={handleBlur}
+              onMouseLeave={removeBlur}
               onClick={() => handleNavigate("/")}
               className={blur ? "blurred" : ""}
             >
               WORK
             </li>
             <li
+              onMouseEnter={handleBlur}
+              onMouseLeave={removeBlur}
               onClick={() => handleNavigate("/about")}
               className={blur ? "blurred" : ""}
             >
               ABOUT
             </li>
             <li
+              onMouseEnter={handleBlur}
+              onMouseLeave={removeBlur}
               onClick={() => handleNavigate("/contact")}
               className={blur ? "blurred" : ""}
             >
@@ -76,6 +85,10 @@ const Container = styled.header`
   position: relative;
   z-index: 100;
 
+  .name {
+    width: 100%;
+  }
+
   div {
     width: 100%;
   }
@@ -85,6 +98,7 @@ const Container = styled.header`
     font-size: 30px;
     font-family: Tagada;
     font-weight: 400;
+    height: 30px;
 
     @media (max-width: 1100px) {
       font-size: 24px;
@@ -94,10 +108,11 @@ const Container = styled.header`
   nav {
     width: 50%;
     display: flex;
+    justify-content: space-between;
     font-size: 16px;
     text-align: end;
 
-    p{
+    p {
       font-size: clamp(14px, 3vw, 20px);
       font-family: Authentic60;
       text-align: start;
@@ -106,7 +121,11 @@ const Container = styled.header`
     ul {
       font-family: Authentic90;
       font-size: 14px;
-      
+
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      align-items: end;
     }
   }
 
@@ -120,14 +139,13 @@ const Container = styled.header`
       scale: 1.3;
     }
   }
-  
 
   li {
     transition: 500ms;
-    margin-left: 30px;
     margin-bottom: 5px;
+    width: 90px;
     &:hover {
-      padding-left: 60px;
+      padding-right: 20px;
       filter: none;
     }
   }
@@ -143,6 +161,7 @@ const Container = styled.header`
   @media (max-width: 500px) {
     i {
       display: block;
+      width: 100%;
     }
 
     ul {

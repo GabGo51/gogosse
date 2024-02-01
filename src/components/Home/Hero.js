@@ -10,6 +10,7 @@ import S from './img/S.png'
 import E from './img/E.png'
 
 const Hero = () => {
+  
   const [mouseX, setMouseX] = useState(0);
   const { cursorChangeHandler } = useContext(MouseContext);
 
@@ -34,6 +35,7 @@ const Hero = () => {
 
   const navigate = useNavigate();
   const handleNavigate = (page) => {
+    cursorChangeHandler('')
     navigate(page);
     window.scrollTo({
       top: 0,

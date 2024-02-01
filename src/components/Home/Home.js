@@ -28,7 +28,7 @@ const Container = styled.div`
   }
 
   .gradient{
-    margin-top: -10px;
+    margin-top: 0px;
     height: 200px;
     width: 100vw;
 

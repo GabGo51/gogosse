@@ -14,40 +14,49 @@ export default createGlobalStyle`
   @font-face {
       font-family: Tagada;
       src: url(${Woke});
+      font-display: swap;
   }
 
   @font-face {
       font-family: Authentic60;
       src: url(${Authentic60});
+      font-display: swap;
   }
   @font-face {
       font-family: Authentic90;
       src: url(${Authentic90});
+      font-display: swap;
   }
   @font-face {
       font-family: Authentic130;
       src: url(${Authentic130});
+      font-display: swap;
   }
   @font-face {
       font-family: Authentic150;
       src: url(${Authentic150});
+      font-display: swap;
   }
   
   @font-face {
         font-family: Authentic60C;
         src: url(${Authentic60C});
+        font-display: swap;
     }
   @font-face {
       font-family: Authentic90C;
       src: url(${Authentic90C});
+      font-display: swap;
   }
   @font-face {
       font-family: Authentic130C;
       src: url(${Authentic130C});
+
   }
   @font-face {
       font-family: Authentic150C;
       src: url(${Authentic150C});
+      font-display: swap;
   }
   
   
@@ -116,7 +125,8 @@ export default createGlobalStyle`
     overflow-y: scroll;
     background-color:white;
     box-sizing: content-box; 
-    height: 100%;
+    
+    
   }
 
   body[data-theme="dark"] {

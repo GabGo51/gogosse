@@ -5,13 +5,15 @@ import Intro from "../Intro";
 import SlidingImg from "../SlidingImg";
 import projects from "../../../data/projectData";
 import WorkButton from "../../WorkButton";
-import E_1 from "./img/E-1.jpg";
+
 import E_2 from "./img/E-2.jpg";
 import E_3 from "./img/E-3.jpg";
 import E_4 from "./img/E-4.jpg";
 import E_5 from "./img/E-5.jpg";
 import E_6 from "./img/E-6.jpg";
 import E_7 from "./img/E-7.jpg";
+
+
 
 import { useLocation } from "react-router-dom";
 
@@ -44,21 +46,21 @@ const EspaceFine = () => {
       </div>
       <SlidingImg src={project.img} />
       <div className="row">
-        <img className="fullscreen-image top-img" src={E_2} />
+        <img alt="espace fine" className="fullscreen-image top-img" src={E_2} />
       </div>
 
       <div className="row">
-        <img className="rowimg1" src={E_3} />
-        <img className="rowimg2" src={E_4} />
+        <img alt="espace fine" className="rowimg1" src={E_3} />
+        <img alt="espace fine" className="rowimg2" src={E_4} />
       </div>
       <div className="row">
-        <img className="fullscreen-image" src={E_5} />
+        <img alt="espace fine" className="fullscreen-image" src={E_5} />
       </div>
       <div className="row">
-        <img className="fullscreen-image" src={E_6} />
+        <img alt="espace fine" className="fullscreen-image" src={E_6} />
       </div>
       <div className="row">
-        <img className="fullscreen-image" src={E_7} />
+        <img alt="espace fine" className="fullscreen-image" src={E_7} />
       </div>
 
       <WorkButton darkTheme={isDarkTheme} />
@@ -76,6 +78,7 @@ const EspaceFine = () => {
 };
 
 const Container = styled.div`
+
   .row {
     display: flex;
     justify-content: space-between;

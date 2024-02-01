@@ -6,6 +6,7 @@ import { MouseContext } from "../../context/mouseContext";
 
 const Header = () => {
   const { cursorChangeHandler } = useContext(MouseContext);
+  
 
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
@@ -18,7 +19,7 @@ const Header = () => {
     setIsOpen(false);
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
 
@@ -34,7 +35,13 @@ const Header = () => {
 
   return (
     <Container>
-      <h1 onClick={() => handleNavigate("/")}>GOGOSSE</h1>
+      <h1
+        onMouseEnter={() => cursorChangeHandler("hover")}
+        onMouseLeave={() => cursorChangeHandler("")}
+        onClick={() => handleNavigate("/")}
+      >
+        GOGOSSE
+      </h1>
 
       <p>
         Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -153,7 +160,6 @@ const Container = styled.header`
     filter: blur(1px);
   }
 
-  
   @media (max-width: 800px) {
     padding: 20px;
   }
