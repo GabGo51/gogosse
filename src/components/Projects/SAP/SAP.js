@@ -20,14 +20,15 @@ const SAP = () => {
   return (
     <Container>
       <div className="top-section">
-        <OtherHeader name={'SALON AVENTURE & PLEIN-AIR'} />
+        <OtherHeader name={"SALON AVENTURE & PLEIN-AIR"} />
         <Intro
           title={project.title}
           description={project.description}
           tag1={project.type}
         />
+        <SlidingImg src={project.img} />
       </div>
-      <SlidingImg src={project.img} />
+
       <div className="right-section">
         <div>
           <p>

@@ -25,8 +25,9 @@ const Turbine = () => {
           description={project.description}
           tag1={project.type}
         />
+        <SlidingImg src={project.img} />
       </div>
-      <SlidingImg src={project.img} />
+
       <img alt="turbine" className="t1" src={t2} />
       <img alt="turbine" className="t2" src={t3} />
       <img alt="turbine" className="t3" src={t4} />

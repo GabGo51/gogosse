@@ -16,7 +16,7 @@ import L9 from "./img/L_06.jpg";
 import L10 from "./img/L_07.jpg";
 import L11 from "./img/woody.jpg";
 import WorkButton from "../../WorkButton";
-import gradient from '../img/gradient.jpg'
+import gradient from "../img/gradient.jpg";
 
 const project = projects[4];
 
@@ -30,8 +30,9 @@ const Lapies = () => {
           description={project.description}
           tag1={project.type}
         />
+        <SlidingImg src={project.img} />
       </div>
-      <SlidingImg src={project.img} />
+
       <img alt="lapies" className="start middle-screen" src={L1} />
       <img alt="lapies" className="middle-screen" src={L2} />
       <img alt="lapies" className="middle-screen" src={L6} />

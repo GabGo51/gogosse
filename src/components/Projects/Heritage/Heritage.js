@@ -1,17 +1,15 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import OtherHeader from "../OtherHeader";
 import Intro from "../Intro";
 import SlidingImg from "../SlidingImg";
 import projects from "../../../data/projectData";
 import WorkButton from "../../WorkButton";
-import group from './img/Group 16.jpg'
-import h1 from './img/h1.jpg'
+import group from "./img/Group 16.jpg";
+import h1 from "./img/h1.jpg";
 import { useLocation } from "react-router-dom";
 
 const project = projects[1];
-
-
 
 const Heritage = () => {
   const location = useLocation();
@@ -37,10 +35,11 @@ const Heritage = () => {
           description={project.description}
           tag1={project.type}
         />
+        <SlidingImg src={project.img} />
       </div>
-      <SlidingImg src={project.img} />
-      <img className="fullscreen-image h1" src={h1}/>
-      <img className="fullscreen-image" src={group}/>
+
+      <img className="fullscreen-image h1" src={h1} />
+      <img className="fullscreen-image" src={group} />
 
       <WorkButton darkTheme={isDarkTheme} />
 
@@ -49,18 +48,18 @@ const Heritage = () => {
         <p>NICOLAS GOSSELIN</p>
       </div>
     </Container>
-  )
-}
+  );
+};
 
 const Container = styled.div`
-.h1{
-  margin-bottom: -20px;
-  margin-top: 20vw;
+  .h1 {
+    margin-bottom: -20px;
+    margin-top: 20vw;
 
-  @media (max-width:1100px){
-    display: none;
+    @media (max-width: 1100px) {
+      display: none;
+    }
   }
-}
-`
+`;
 
-export default Heritage
+export default Heritage;

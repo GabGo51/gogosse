@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Hero from "./Hero";
 import Projects from "./Projects";
 import Header from "./Header";
-import gradient from './img/gradient.png'
+import gradient from './img/gradient.jpg'
 
 const Home = () => {
   return (
@@ -12,9 +12,9 @@ const Home = () => {
         <Header />
         <Hero />
       </div>
-      <img className="gradient" src={gradient}/>
+      
       <Projects />
-      <div className="gradient2"></div>
+      
     </Container>
   );
 };
@@ -25,6 +25,8 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-image: url(${gradient});
+    background-size: cover;
 
     @media (max-width:1100px){
       height: auto;

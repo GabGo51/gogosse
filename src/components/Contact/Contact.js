@@ -52,7 +52,6 @@ const Contact = () => {
   return (
     <Container>
       <Header />
-      <img src={gradient} alt="gradient" className="gradient" />
       <div className="frame">
         <form ref={gogosseForm} onSubmit={handleSubmit}>
           <div className="textarea">
@@ -86,22 +85,13 @@ const Container = styled.div`
   
   .frame {
     padding: 0 20px;
-    margin-top: -100px;
     display: flex;
     flex-direction: column;
     width: 100%;
     height:100%;
+    margin-top: 100px;
   }
-  .gradient {
-    margin-top: -10px;
-    height: 200px;
-    width: 100vw;
-
-    @media (max-width: 500px) {
-      height: 150px;
-    }
-  }
-
+  
   label {
     font-family: Authentic90C;
     font-size: 40px;
@@ -115,8 +105,7 @@ const Container = styled.div`
     }
   }
 
-  
-
+ 
   .textarea {
     display: flex;
     flex-direction: column;

@@ -94,7 +94,7 @@ const Container = styled.header`
   padding-top: 20px;
   display: flex;
   justify-content: space-between;
-  background-color: #dcdcdc;
+  
   position: relative;
   div {
     width: 100%;

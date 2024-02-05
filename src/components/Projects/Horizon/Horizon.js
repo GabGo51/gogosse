@@ -37,8 +37,9 @@ const Horizon = () => {
           description={project.description}
           tag1={project.type}
         />
+        <SlidingImg src={project.img} />
       </div>
-      <SlidingImg src={project.img} />
+
       <img className="fullscreen-image gif1" src={H_2} />
       <img className="fullscreen-image" src={H_3} />
       <img className="fullscreen-image" src={H_4} />

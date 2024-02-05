@@ -189,7 +189,7 @@ const Container = styled.div`
   
   flex-direction: column;
   justify-content: space-between;
-  background-color: #dcdcdc;
+  
  z-index: 3;
   @media (max-width: 1100px) {
     justify-content: center;
