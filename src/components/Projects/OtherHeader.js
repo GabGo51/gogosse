@@ -8,7 +8,7 @@ const OtherHeader = ({ name }) => {
   const { cursorChangeHandler } = useContext(MouseContext);
 
   const [isOpen, setIsOpen] = useState(false);
-  const toggleMenu = () => {
+  const toggleMenu = () => { 
     setIsOpen(!isOpen);
   };
 

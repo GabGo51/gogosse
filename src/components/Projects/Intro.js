@@ -26,7 +26,7 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   padding: 40px 20px;
-  height: 500px;
+  height: 350px;
 
   h1 {
     font-family: Authentic90C;
