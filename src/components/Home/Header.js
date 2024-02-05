@@ -131,7 +131,7 @@ const Container = styled.header`
 
   i {
     display: none;
-
+    
     scale: 1.2;
     transition: 400ms;
 
@@ -150,6 +150,7 @@ const Container = styled.header`
   li {
     transition: 500ms;
     margin-left: 30px;
+    margin-bottom: 5px;
     &:hover {
       transform: translateX(-10%);
       filter: none;
