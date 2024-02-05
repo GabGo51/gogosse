@@ -21,10 +21,14 @@ const Home = () => {
 
 const Container = styled.div`
   .top-section {
-    
+    height: 95vh;
     display: flex;
     flex-direction: column;
-    
+    justify-content: space-between;
+
+    @media (max-width:1100px){
+      height: auto;
+    }
   }
 
   .gradient{

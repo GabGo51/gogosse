@@ -184,7 +184,9 @@ const clearAnimation = keyframes`
 const Container = styled.div`
   padding: 20px;
   padding-bottom: 0;
+  flex: 1;
   display: flex;
+  
   flex-direction: column;
   justify-content: space-between;
   background-color: #dcdcdc;
@@ -219,8 +221,8 @@ const ImgBox = styled(motion.div)`
     margin-bottom: 20px;
     font-family: Authentic90;
     position: relative;
-    width: 600px;
-    height: 350px;
+    width: 30%;
+    height: 21vw;
     overflow: hidden;
     border: none;
   }
@@ -241,6 +243,7 @@ const ImgBox = styled(motion.div)`
 
   .project-text {
     display: flex;
+    width: 100%;
     justify-content: space-between;
     height: 60px;
     p {
