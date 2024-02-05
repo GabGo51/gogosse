@@ -66,7 +66,7 @@ const OtherHeader = ({ name }) => {
               onClick={() => handleNavigate("/contact")}
               className={blur ? "blurred" : ""}
             >
-              CONTACT
+              CONNECT
             </li>
           </ul>
         </div>

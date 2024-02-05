@@ -221,7 +221,7 @@ const ImgBox = styled(motion.div)`
     margin-bottom: 20px;
     font-family: Authentic90;
     position: relative;
-    width: 30%;
+    width: 33%;
     height: 21vw;
     overflow: hidden;
     border: none;

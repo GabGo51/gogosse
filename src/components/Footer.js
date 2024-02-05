@@ -10,10 +10,11 @@ const Footer = () => {
   const { cursorChangeHandler } = useContext(MouseContext);
 
   const location = useLocation();
-  const isDarkTheme = location.pathname === "/HERITAGE" || location.pathname === "/HORIZON"|| location.pathname === "/ESPACE%20FINE";
-  
-  
-  
+  const isDarkTheme =
+    location.pathname === "/HERITAGE" ||
+    location.pathname === "/HORIZON" ||
+    location.pathname === "/ESPACE%20FINE" ||
+    location.pathname === "/about";
 
   const [blur, setBlur] = useState(false);
   const handleBlur = () => {
@@ -29,8 +30,8 @@ const Footer = () => {
   const handleNavigate = (page) => {
     navigate(page);
     window.scrollTo({
-      top:0,
-      behavior: 'smooth',
+      top: 0,
+      behavior: "smooth",
     });
   };
 
@@ -81,7 +82,6 @@ const Footer = () => {
 };
 
 const Container = styled.footer`
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -95,7 +95,7 @@ const Container = styled.footer`
     filter: blur(1px);
   }
 
-  @media (max-width:800px){
+  @media (max-width: 800px) {
     padding: 0;
   }
 `;
@@ -111,7 +111,7 @@ const Info = styled.div`
     font-family: Tagada;
     font-size: 64px;
     font-weight: 400;
-    color: ${props => props.darkTheme ? '#f2f2f2' : 'black'};
+    color: ${(props) => (props.darkTheme ? "#f2f2f2" : "black")};
     background-color: transparent;
     border: none;
   }
@@ -124,8 +124,8 @@ const Info = styled.div`
 
     a {
       text-decoration: none;
-      
-      color: ${props => props.darkTheme ? '#f2f2f2' : 'black'};
+
+      color: ${(props) => (props.darkTheme ? "#f2f2f2" : "black")};
     }
 
     &:hover {

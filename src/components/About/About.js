@@ -1,14 +1,28 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styled from "styled-components";
 import Header from "../Home/Header";
-import gradient from "./img/gradient.png";
 import drigo from './img/ABOUTME.gif'
+import { useLocation } from "react-router-dom";
 
 const About = () => {
+  const location = useLocation();
+  const isDarkTheme = location.pathname === "/about";
+  useEffect(() => {
+    if (location.pathname === "/about") {
+      document.body.setAttribute("data-theme", "dark");
+    } else {
+      document.body.removeAttribute("data-theme");
+    }
+
+    // Cleanup when the component unmounts
+    return () => {
+      document.body.removeAttribute("data-theme");
+    };
+  }, [location.pathname]);
   return (
     <Container>
       <Header />
-      <img src={gradient} alt="gradient" className="gradient" />
+      
       <div className="frame">
         <p>
           Hey there! Tell me about yourself, your project, and what you aim to
@@ -25,7 +39,7 @@ const About = () => {
 const Container = styled.div`
   .frame {
     padding: 0 20px;
-    margin-top: -100px;
+    margin-top: 100px;
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -57,15 +71,7 @@ const Container = styled.div`
     }
   }
   }
-  .gradient {
-    margin-top: -10px;
-    height: 200px;
-    width: 100vw;
-
-    @media (max-width: 500px) {
-      height: 150px;
-    }
-  }
+  
 
   
 `;
