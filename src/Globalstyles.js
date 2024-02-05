@@ -204,4 +204,18 @@ export default createGlobalStyle`
     
   }
 
+
+
+  .top-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 95vh;
+
+    @media (max-width:1100px){
+      height: auto;
+    }
+
+  }
+
 `;

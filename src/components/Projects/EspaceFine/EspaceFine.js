@@ -13,8 +13,6 @@ import E_5 from "./img/E-5.jpg";
 import E_6 from "./img/E-6.jpg";
 import E_7 from "./img/E-7.jpg";
 
-
-
 import { useLocation } from "react-router-dom";
 
 const project = projects[0];
@@ -43,8 +41,9 @@ const EspaceFine = () => {
           description={project.description}
           tag1={project.type}
         />
+        <SlidingImg src={project.img} />
       </div>
-      <SlidingImg src={project.img} />
+
       <div className="row">
         <img alt="espace fine" className="fullscreen-image top-img" src={E_2} />
       </div>
@@ -71,29 +70,27 @@ const EspaceFine = () => {
         <p>CHRISTELLE GUIMONT</p>
         <p>NICOLAS GOSSELIN</p>
         <p>CERYL BENZEKRI</p>
-        
       </div>
     </Container>
   );
 };
 
 const Container = styled.div`
-
   .row {
     display: flex;
     justify-content: space-between;
     padding: 13px 20px;
 
-    .rowimg1{
+    .rowimg1 {
       width: 44.7%;
     }
 
-    .rowimg2{
+    .rowimg2 {
       width: 54%;
     }
   }
 
-  .top-img{
+  .top-img {
     margin-top: 10vw;
   }
 `;

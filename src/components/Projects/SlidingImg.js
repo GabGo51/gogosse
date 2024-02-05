@@ -42,7 +42,7 @@ const SlidingImg = ({ src }) => {
 
 const Container = styled(motion.div)`
   width: 100%;
-  height: 400px;
+  height: 40vh;
   overflow: hidden;
 
   img {
