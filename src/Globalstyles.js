@@ -133,7 +133,7 @@ export default createGlobalStyle`
     transition: 1s;
     background-color: #000000 ;
     color: #f2f2f2;
-    /* color: white; */
+    
 
     
   }
@@ -200,12 +200,8 @@ export default createGlobalStyle`
         }
       }
     }
-
-    
   }
-
-
-
+  
   .top-section{
     display: flex;
     flex-direction: column;

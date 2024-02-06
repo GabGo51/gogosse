@@ -15,9 +15,9 @@ const project = projects[2];
 
 const Horizon = () => {
   const location = useLocation();
-  const isDarkTheme = location.pathname === "/HORIZON";
+  const isDarkTheme = location.pathname === "/HORIZON%202023";
   useEffect(() => {
-    if (location.pathname === "/HORIZON") {
+    if (location.pathname === "/HORIZON%202023") {
       document.body.setAttribute("data-theme", "dark");
     } else {
       document.body.removeAttribute("data-theme");

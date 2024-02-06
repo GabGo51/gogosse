@@ -27,7 +27,7 @@ const Container = styled.div`
     justify-content: space-between;
     background-image: url(${gradient});
     background-size: cover;
-
+    margin-bottom: 150px;
     @media (max-width:1100px){
       height: auto;
     }

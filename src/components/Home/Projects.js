@@ -50,9 +50,7 @@ const Projects = () => {
               <h3>{project.title}</h3>
               <img alt="project" src={project.img} />
               <p className="description">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam, eaque
-                voluptas sit aspernatur aut odit aut fugit, sed quia consequunt
+                {project.description}
               </p>
               <div className="project-info">
                 <p>{project.type}</p>
@@ -140,7 +138,7 @@ const ProjectBox = styled.div`
     filter: blur(0);
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 1100px) {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -178,7 +176,7 @@ const Project = styled.div`
     font-family: Authentic130C;
     font-size: 18px;
 
-    @media (max-width: 900px) {
+    @media (max-width: 1100px) {
       display: none;
     }
   }
@@ -188,7 +186,7 @@ const Project = styled.div`
     font-size: 20px;
     font-family: Authentic90C;
     text-transform: uppercase;
-    @media (max-width: 900px) {
+    @media (max-width: 1100px) {
       font-size: 14px;
     }
   }
@@ -210,7 +208,7 @@ const Project = styled.div`
     &:hover {
       font-size: 14px;
 
-      @media (max-width: 900px) {
+      @media (max-width: 1100px) {
         font-size: 12px;
       }
     }
@@ -237,7 +235,7 @@ const Project = styled.div`
       width: 22vw;
       height: 22vw;
 
-      @media (max-width: 900px) {
+      @media (max-width: 1100px) {
         margin: 0;
         margin-bottom: 10px;
         scale: 1;
@@ -250,16 +248,16 @@ const Project = styled.div`
     .description {
       font-size: 20px;
 
-      @media (max-width: 900px) {
+      @media (max-width: 1100px) {
         font-size: 12px;
       }
     }
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 1100px) {
     flex-direction: column-reverse;
     height: 240px;
-    max-width: 400px;
+    width: 50%;
     border-bottom: none;
     width: 50%;
     padding: 0;
@@ -304,12 +302,12 @@ const Project = styled.div`
   }
 
   // Responsive styles
-  @media (max-width: 350px) {
+  /* @media (max-width: 350px) {
     img {
       width: 150px;
       left: 55vw;
     }
-  }
+  } */
 `;
 
 export default Projects;

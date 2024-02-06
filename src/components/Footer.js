@@ -11,8 +11,8 @@ const Footer = () => {
 
   const location = useLocation();
   const isDarkTheme =
-    location.pathname === "/HERITAGE" ||
-    location.pathname === "/HORIZON" ||
+    location.pathname === "/HÉRITAGE" ||
+    location.pathname === "/HORIZON%202023" ||
     location.pathname === "/ESPACE%20FINE" ||
     location.pathname === "/about";
 
@@ -73,7 +73,7 @@ const Footer = () => {
           onMouseEnter={handleBlur}
           onMouseLeave={removeBlur}
         >
-          <li className={blur ? "blurred" : ""}>ggssestudio@outlook.com</li>
+          <li className={blur ? "blurred" : ""}>ggss.studio@outlook.com</li>
           <li className={blur ? "blurred" : ""}>450 822 5550</li>
         </ul>
       </Info>
@@ -87,6 +87,7 @@ const Container = styled.footer`
   align-items: center;
   justify-content: center;
   padding: 50px 20px;
+  padding-bottom: 20px;
   background-color: transparent;
   width: 100%;
   font-weight: 700;

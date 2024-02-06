@@ -19,9 +19,9 @@ const project = projects[0];
 
 const EspaceFine = () => {
   const location = useLocation();
-  const isDarkTheme = location.pathname === "/ESPACE%20FINE";
+  const isDarkTheme = location.pathname === "/ESPACE%20FINE%20VOL.2";
   useEffect(() => {
-    if (location.pathname === "/ESPACE%20FINE") {
+    if (location.pathname === "/ESPACE%20FINE%20VOL.2") {
       document.body.setAttribute("data-theme", "dark");
     } else {
       document.body.removeAttribute("data-theme");

@@ -15,7 +15,7 @@ const SlidingImg = ({ src }) => {
     const handleMouseMove = (e) => {
       const adjustedMouseX = e.clientX - 340;
       const minX = 20;
-      const maxX = window.innerWidth - 850;
+      const maxX = window.innerWidth - window.innerWidth * 0.46;
 
       if (window.innerWidth > 1100) {
         setMouseX(Math.max(minX, Math.min(adjustedMouseX, maxX)));

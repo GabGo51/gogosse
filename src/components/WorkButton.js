@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import styled, { keyframes } from "styled-components";
 import { useNavigate } from "react-router-dom";
 
@@ -7,12 +7,8 @@ import { MouseContext } from "../context/mouseContext";
 import useMousePosition from "../hooks/useMousePosition";
 import { motion } from "framer-motion";
 
-const WorkButton = ({darkTheme}) => {
+const WorkButton = ({ darkTheme }) => {
   const { cursorChangeHandler } = useContext(MouseContext);
-  const mousePosition = useMousePosition();
-  
-
-  const isWideScreen = window.innerWidth > 1100;
 
   const navigate = useNavigate();
   const handleNavigate = (page) => {
@@ -26,26 +22,48 @@ const WorkButton = ({darkTheme}) => {
   const spring = {
     type: "spring",
     damping: 9,
-    stiffness: 40,
+    stiffness: 50,
   };
+  const [mouseX, setMouseX] = useState(0);
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      const adjustedMouseX = e.clientX - 140;
+      const minX = -30;
+      const maxX = window.innerWidth - window.innerWidth * 0.14;
+
+      if (window.innerWidth > 1100) {
+        setMouseX(Math.max(minX, Math.min(adjustedMouseX, maxX)));
+      } else {
+        setMouseX(0);
+      }
+    };
+
+    // Add event listener for mouse move
+    document.addEventListener("mousemove", handleMouseMove);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
 
   return (
     <Container darkTheme={darkTheme}>
-      <motion.button 
-      {...(isWideScreen && { animate: { x: mousePosition.x - 120 } })}
-      transition={spring}
-      onMouseEnter={() => cursorChangeHandler("hover")}
-      onMouseLeave={() => cursorChangeHandler("")}
-      onClick={() => {
-        handleNavigate(`/contact`);
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }}
-      className="lets-work"
-    >
-      Let's <div>W</div>ork
-    </motion.button>
+      <motion.button
+        animate={{ x: mouseX }}
+        transition={spring}
+        onMouseEnter={() => cursorChangeHandler("hover")}
+        onMouseLeave={() => cursorChangeHandler("")}
+        onClick={() => {
+          handleNavigate(`/contact`);
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
+        className="lets-work"
+      >
+        Let's <div>W</div>ork
+      </motion.button>
     </Container>
-    
   );
 };
 
@@ -57,7 +75,6 @@ to{
 
 const Container = styled(motion.div)`
 width: 95%;
-
 
   button {
     transition: 300ms;

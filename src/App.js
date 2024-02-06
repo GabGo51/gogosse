@@ -24,13 +24,13 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/HERITAGE" element={<Heritage />} />
-            <Route path="/ESPACE FINE" element={<EspaceFine />} />
-            <Route path="/HORIZON" element={<Horizon />} />
+            <Route path="/HÉRITAGE" element={<Heritage />} />
+            <Route path="/ESPACE FINE VOL.2" element={<EspaceFine />} />
+            <Route path="/HORIZON 2023" element={<Horizon />} />
             <Route path="/LAPIÈS" element={<Lapies />} />
             <Route path="/SAP 2024" element={<SAP />} />
             <Route path="/PBGG" element={<Contact />} />
-            <Route path="/TURBINE" element={<Turbine />} />
+            <Route path="/TURBINE 2024" element={<Turbine />} />
             <Route path="/FESTIVAL DE JAZZ" element={<Contact />} />
           </Routes>
         </div>

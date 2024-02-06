@@ -1,24 +1,15 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useContext, useRef } from "react";
 import { MouseContext } from "../../context/mouseContext";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
-import useMousePosition from "../../hooks/useMousePosition";
-import Header from "../Home/Header";
-import gradient from "./img/gradient.png";
+import OtherHeader from '../Projects/OtherHeader'
 
 
 const Contact = () => {
   const { cursorChangeHandler } = useContext(MouseContext);
-  const mousePosition = useMousePosition();
-  const isWideScreen = window.innerWidth > 1100;
-  const spring = {
-    type: "spring",
-    damping: 9,
-    stiffness: 40,
-  };
 
   const gogosseForm = useRef();
 
@@ -49,9 +40,39 @@ const Contact = () => {
       );
   };
 
+  const spring = {
+    type: "spring",
+    damping: 9,
+    stiffness: 50,
+  };
+  const [mouseX, setMouseX] = useState(0);
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      const adjustedMouseX = e.clientX - 140;
+      const minX = 0;
+      const maxX = window.innerWidth - window.innerWidth * 0.11;
+
+      if (window.innerWidth > 1100) {
+        setMouseX(Math.max(minX, Math.min(adjustedMouseX, maxX)));
+      } else {
+        setMouseX(0);
+      }
+    };
+
+    // Add event listener for mouse move
+    document.addEventListener("mousemove", handleMouseMove);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
+
   return (
     <Container>
-      <Header />
+      <OtherHeader />
       <div className="frame">
         <form ref={gogosseForm} onSubmit={handleSubmit}>
           <div className="textarea">
@@ -67,7 +88,7 @@ const Contact = () => {
             />
           </div>
           <motion.button
-            {...(isWideScreen && { animate: { x: mousePosition.x - 120 } })}
+            animate={{ x: mouseX }}
             transition={spring}
             onMouseEnter={() => cursorChangeHandler("hover")}
             onMouseLeave={() => cursorChangeHandler("")}

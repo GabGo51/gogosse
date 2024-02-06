@@ -6,7 +6,6 @@ import { MouseContext } from "../../context/mouseContext";
 
 const Header = () => {
   const { cursorChangeHandler } = useContext(MouseContext);
-  
 
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
@@ -44,8 +43,13 @@ const Header = () => {
       </h1>
 
       <p>
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-        accusantium doloremque laudantium, totam rem aperiam.
+        Gogosse is Nicolas Gosselin, a French Canadian designer and recent
+        DESIGN graduate based in Montreal. Specializing in branding, poster
+        design, and EDITORIAL DESIGN, I am dedicated to creating clean and
+        FLEXIBLE designs that leave a lasting impact. Beyond my design
+        expertise, I am also an avid skier with a deep passion for the outdoors.
+        My work is a reflection of this dual love for design precision and the
+        exhilaration of nature.
       </p>
 
       <ul
@@ -53,7 +57,7 @@ const Header = () => {
         onMouseEnter={handleBlur}
         onMouseLeave={removeBlur}
       >
-        <li className={blur ? "blurred" : ""}>ggssestudio@outlook.com</li>
+        <li className={blur ? "blurred" : ""}>ggss.studio@outlook.com</li>
         <li className={blur ? "blurred" : ""}>450 822 5550</li>
       </ul>
 
@@ -94,7 +98,7 @@ const Container = styled.header`
   padding-top: 20px;
   display: flex;
   justify-content: space-between;
-  
+
   position: relative;
   div {
     width: 100%;
@@ -105,14 +109,15 @@ const Container = styled.header`
     font-size: clamp(20px, 3vw, 40px);
     font-family: Tagada;
     font-weight: 400;
+    margin-right: 30px;
   }
 
   p {
     font-family: Authentic60C;
     text-transform: uppercase;
     display: inline-block;
-    font-size: 18px;
-    max-width: 400px;
+    font-size: 16px;
+    max-width: 500px;
 
     @media (max-width: 1100px) {
       display: none;
@@ -131,7 +136,7 @@ const Container = styled.header`
 
   i {
     display: none;
-    
+
     scale: 1.2;
     transition: 400ms;
 

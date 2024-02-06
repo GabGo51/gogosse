@@ -49,7 +49,7 @@ const Dot = styled.div`
   &.button{
     display: none;
   }
-  @media (max-width:800px){
+  @media (max-width:1100px){
     display: none;
   }
 ` 
