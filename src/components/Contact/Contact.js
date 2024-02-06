@@ -6,14 +6,15 @@ import { MouseContext } from "../../context/mouseContext";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 import OtherHeader from "../Projects/OtherHeader";
-
+import loadinggif from "./img/Rolling-1.4s-200px.gif";
 const Contact = () => {
   const { cursorChangeHandler } = useContext(MouseContext);
 
   const gogosseForm = useRef();
-
-  const [loading, setLoading] = useState(true);
+  const [normal, setNormal] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
+  const [error, setError] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,12 +30,15 @@ const Contact = () => {
       .then(
         function (response) {
           setLoading(false);
+          setNormal(false);
           console.log("SUCCESS!", response.status, response.text);
           gogosseForm.current.reset();
           setSent(true);
         },
         function (error) {
           console.log("FAILED...", error);
+          setNormal(false);
+          setError(true);
         }
       );
   };
@@ -76,12 +80,19 @@ const Contact = () => {
           <div className="textarea">
             <label>LET'S WORK</label>
 
-            {sent ? (
+            {sent && (
               <p>
                 YOUR MESSAGE HAS BEEN SENT. I WILL CONTACT YOU REGARDING YOUR
                 PROJECT AS SOON AS POSSIBLE. THANK YOU !
               </p>
-            ) : (
+            )}
+            {error && (
+              <p>
+                OOPS, IT LOOKS LIKE SOMETHING WENT WRONG. PLEASE TRY AGAIN LATER
+                OR CONTACT ME DIRECTLY VIA PHONE OR EMAIL. SORRY!
+              </p>
+            )}
+            {normal && (
               <textarea
                 name="user_project"
                 autoFocus
@@ -92,7 +103,7 @@ const Contact = () => {
               />
             )}
           </div>
-          {!sent && (
+          {normal && (
             <motion.button
               animate={{ x: mouseX }}
               transition={spring}
@@ -100,7 +111,7 @@ const Contact = () => {
               onMouseLeave={() => cursorChangeHandler("")}
               type="submit"
             >
-              SUMBIT
+              {loading ? <img alt="loading" src={loadinggif} /> : <>SUBMIT</>}
             </motion.button>
           )}
         </form>
@@ -159,6 +170,7 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
     background-color: transparent;
+    overflow: hidden;
     font-size: 30px;
     font-weight: 400;
     margin-bottom: 50px;
@@ -170,12 +182,19 @@ const Container = styled.div`
     height: 70px;
     width: 170px;
     text-align: center;
-
     text-transform: uppercase;
+
+    img {
+      width: 100%;
+      scale: 0.3;
+    }
 
     &:hover {
       background-color: black;
       color: white;
+      img {
+        filter: invert(1);
+      }
     }
     @media (max-width: 500px) {
       font-size: 18px;

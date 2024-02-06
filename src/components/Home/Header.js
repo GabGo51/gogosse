@@ -33,7 +33,7 @@ const Header = () => {
   };
 
   return (
-    <Container>
+    <Container className={isOpen ? "open-header" : ""}>
       <h1
         onMouseEnter={() => cursorChangeHandler("hover")}
         onMouseLeave={() => cursorChangeHandler("")}
@@ -96,6 +96,7 @@ const Header = () => {
 };
 
 const Container = styled.header`
+  
   padding: 20px;
   padding-bottom: 10px;
   padding-top: 20px;
@@ -122,7 +123,7 @@ const Container = styled.header`
     font-size: 16px;
     max-width: 500px;
 
-    @media (max-width: 1100px) {
+    @media (max-width: 800px) {
       display: none;
     }
   }
@@ -173,20 +174,13 @@ const Container = styled.header`
     padding: 20px;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 1100px) {
     i {
       display: block;
     }
 
     ul {
       display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 100%;
-      right: 40px;
-      background-color: #dcdcdc;
-
-      border: 1px solid black;
     }
 
     li {
@@ -199,8 +193,15 @@ const Container = styled.header`
 
     /* Show the menu when isOpen state is true */
     ul.open {
+    
       display: flex;
+      
+      border: 1px solid black;
     }
+  }
+
+  .open-header{
+    height: 200px;
   }
 `;
 

@@ -26,7 +26,7 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   padding: 40px 20px;
-  height: 350px;
+  
 
   h1 {
     font-family: Authentic90C;
@@ -48,7 +48,7 @@ const Container = styled.div`
       width: 70%;
       font-family: Authentic60;
       text-transform: uppercase;
-      font-size: 18px;
+      font-size: clamp(12px, 3vw, 18px);
     }
 
     .type {
@@ -82,9 +82,7 @@ const Container = styled.div`
         align-items: end;
       }
 
-      .description {
-        font-size: 14px;
-      }
+      
       .type {
         font-size: 10px;
       }
