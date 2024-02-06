@@ -5,7 +5,9 @@ import Projects from "./Projects";
 import Header from "./Header";
 import gradient from './img/gradient.jpg'
 
+
 const Home = () => {
+  
   return (
     <Container>
       <div className="top-section">
@@ -13,7 +15,7 @@ const Home = () => {
         <Hero />
       </div>
       
-      <Projects />
+      <Projects id="project" />
       
     </Container>
   );

@@ -6,7 +6,6 @@ import SlidingImg from "../SlidingImg";
 import projects from "../../../data/projectData";
 import WorkButton from "../../WorkButton";
 import { useLocation } from "react-router-dom";
-import H_1 from "./img/H-1.jpg";
 import H_2 from "./img/H-2.gif";
 import H_3 from "./img/H-3.gif";
 import H_4 from "./img/H-4.jpg";

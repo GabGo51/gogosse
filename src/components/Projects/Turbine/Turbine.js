@@ -4,7 +4,7 @@ import Intro from "../Intro";
 import projects from "../../../data/projectData";
 import WorkButton from "../../WorkButton";
 import OtherHeader from "../OtherHeader";
-import gradient from "../img/gradient.jpg";
+import gradient from "../../Home/img/gradient.jpg";
 import SlidingImg from "../SlidingImg";
 import t2 from "./img/T_02.jpg";
 import t3 from "./img/T_03.jpg";

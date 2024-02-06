@@ -1,8 +1,8 @@
 import React, {useEffect} from "react";
 import styled from "styled-components";
-import Header from "../Home/Header";
 import drigo from './img/ABOUTME.gif'
 import { useLocation } from "react-router-dom";
+import OtherHeader from "../Projects/OtherHeader";
 
 const About = () => {
   const location = useLocation();
@@ -21,7 +21,7 @@ const About = () => {
   }, [location.pathname]);
   return (
     <Container>
-      <Header />
+      <OtherHeader />
       
       <div className="frame">
         <p>
@@ -39,8 +39,9 @@ const About = () => {
 const Container = styled.div`
   .frame {
     padding: 0 20px;
-    margin-top: 100px;
+    
     display: flex;
+    align-items: center;
     justify-content: space-between;
     width: 100%;
     height: 100%;

@@ -5,15 +5,14 @@ import { useContext, useRef } from "react";
 import { MouseContext } from "../../context/mouseContext";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
-import OtherHeader from '../Projects/OtherHeader'
-
+import OtherHeader from "../Projects/OtherHeader";
 
 const Contact = () => {
   const { cursorChangeHandler } = useContext(MouseContext);
 
   const gogosseForm = useRef();
 
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [sent, setSent] = useState(false);
 
   const handleSubmit = (e) => {
@@ -69,7 +68,6 @@ const Contact = () => {
     };
   }, []);
 
-
   return (
     <Container>
       <OtherHeader />
@@ -77,25 +75,34 @@ const Contact = () => {
         <form ref={gogosseForm} onSubmit={handleSubmit}>
           <div className="textarea">
             <label>LET'S WORK</label>
-            <textarea
-            name="user_project"
-            autoFocus
+
+            {sent ? (
+              <p>
+                YOUR MESSAGE HAS BEEN SENT. I WILL CONTACT YOU REGARDING YOUR
+                PROJECT AS SOON AS POSSIBLE. THANK YOU !
+              </p>
+            ) : (
+              <textarea
+                name="user_project"
+                autoFocus
+                onMouseEnter={() => cursorChangeHandler("hover")}
+                onMouseLeave={() => cursorChangeHandler("")}
+                placeholder="Tell me about yourself, your project, and what you aim to achieve. Please provide your contact information so we can get in touch and discuss your project needs further. Can't wait to hear about your project and putting it to life!"
+                required
+              />
+            )}
+          </div>
+          {!sent && (
+            <motion.button
+              animate={{ x: mouseX }}
+              transition={spring}
               onMouseEnter={() => cursorChangeHandler("hover")}
               onMouseLeave={() => cursorChangeHandler("")}
-              placeholder="Tell me about yourself, your project, and what you aim to achieve. Please provide your contact information so we can get in touch and discuss your project needs further. Can't wait to hear about your project and putting it to life!"
-              required
-              
-            />
-          </div>
-          <motion.button
-            animate={{ x: mouseX }}
-            transition={spring}
-            onMouseEnter={() => cursorChangeHandler("hover")}
-            onMouseLeave={() => cursorChangeHandler("")}
-            type="submit"
-          >
-            SUMBIT
-          </motion.button>
+              type="submit"
+            >
+              SUMBIT
+            </motion.button>
+          )}
         </form>
       </div>
     </Container>
@@ -103,30 +110,21 @@ const Contact = () => {
 };
 
 const Container = styled.div`
-  
   .frame {
     padding: 0 20px;
     display: flex;
     flex-direction: column;
     width: 100%;
-    height:100%;
+    height: 100%;
     margin-top: 100px;
   }
-  
+
   label {
     font-family: Authentic90C;
-    font-size: 40px;
+    font-size: clamp(20px, 5vw, 40px);
     margin-bottom: 50px;
-
-    @media (max-width: 1100px) {
-      font-size: 30px;
-    }
-    @media (max-width: 700px) {
-      font-size: 20px;
-    }
   }
 
- 
   .textarea {
     display: flex;
     flex-direction: column;
@@ -138,23 +136,20 @@ const Container = styled.div`
       border: none;
       max-width: 800px;
       resize: none;
-      font-size: 24px;
+      font-size: clamp(16px, 5vw, 24px);
       font-family: Authentic60;
       text-transform: uppercase;
-      
+
       outline: none;
       width: 100%;
       height: 180px;
-      
+    }
 
-      
-
-      @media (max-width: 1100px) {
-        font-size: 24px;
-      }
-      @media (max-width: 700px) {
-        font-size: 16px;
-      }
+    p {
+      font-size: clamp(16px, 5vw, 24px);
+      font-family: Authentic60;
+      text-transform: uppercase;
+      max-width: 800px;
     }
   }
 

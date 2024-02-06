@@ -40,7 +40,7 @@ const SAP = () => {
           </p>
         </div>
         <div>
-          <img src={s2} />
+          <img alt="project" src={s2} />
         </div>
       </div>
       <img alt="project" className="fullscreen-image" src={s3} />

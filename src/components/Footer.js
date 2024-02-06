@@ -110,7 +110,7 @@ const Info = styled.div`
 
   button {
     font-family: Tagada;
-    font-size: 64px;
+    font-size: 34px;
     font-weight: 400;
     color: ${(props) => (props.darkTheme ? "#f2f2f2" : "black")};
     background-color: transparent;

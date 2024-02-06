@@ -16,7 +16,7 @@ import L9 from "./img/L_06.jpg";
 import L10 from "./img/L_07.jpg";
 import L11 from "./img/woody.jpg";
 import WorkButton from "../../WorkButton";
-import gradient from "../img/gradient.jpg";
+import gradient from "../../Home/img/gradient.jpg";
 
 const project = projects[4];
 

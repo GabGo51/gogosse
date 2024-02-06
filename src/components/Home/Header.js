@@ -69,7 +69,10 @@ const Header = () => {
           className={isOpen ? "open" : ""}
         >
           <li
-            onClick={() => handleNavigate("/")}
+            onClick={() => document.getElementById('project').scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            })}
             className={blur ? "blurred" : ""}
           >
             WORK

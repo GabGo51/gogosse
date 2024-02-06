@@ -38,8 +38,8 @@ const Heritage = () => {
         <SlidingImg src={project.img} />
       </div>
 
-      <img className="fullscreen-image h1" src={h1} />
-      <img className="fullscreen-image" src={group} />
+      <img alt="project" className="fullscreen-image h1" src={h1} />
+      <img alt="project" className="fullscreen-image" src={group} />
 
       <WorkButton darkTheme={isDarkTheme} />
 
