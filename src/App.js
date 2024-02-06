@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -13,14 +13,26 @@ import Lapies from "./components/Projects/Lapies/Lapies";
 import Turbine from "./components/Projects/Turbine/Turbine";
 import Heritage from "./components/Projects/Heritage/Heritage";
 import Horizon from "./components/Projects/Horizon/Horizon";
-import gif from './introgif.gif'
+
 
 function App() {
   const [load, setLoad] = useState(false);
 
-  setTimeout(() => {
-    setLoad(true);
-  }, 2500);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (count < 100) {
+        setCount(count + 1);
+      } else {
+        setLoad(true);
+      }
+    }, 25); // 1000ms / 25 = 40 updates per second (2.5 seconds for 100 updates)
+
+    return () => clearTimeout(timer);
+  }, [count]);
+
+
   return (
     <Router>
       <Cursor />
@@ -46,7 +58,7 @@ function App() {
         </Container>
       ) : (
         <Container>
-          <img alt="intro" className="intro-gif" src={gif} />
+          <div className="loading-animation">{count}</div>
         </Container>
       )}
     </Router>
@@ -64,13 +76,13 @@ const Container = styled.div`
     width: 100%;
   }
 
-  .intro-gif {
-    width: 100%;
-    object-fit: cover;
-    position: fixed;
-  bottom: 0;
-  left: 0;
-    max-height:100vh;
+  .loading-animation {
+    position: absolute;
+    bottom: 0px;
+    right: 50px;
+    font-size: clamp(100px, 20vw, 250px);
+    font-family: Tagada;
+    
   }
 `;
 
