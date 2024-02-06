@@ -32,24 +32,23 @@ const SAP = () => {
       <div className="right-section">
         <div>
           <p>
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque laudantium, totam rem aperiam, eaque voluptas
-            sit aspernatur aut odit aut fugit, sed quia consequuntSed ut
-            perspiciatis unde omnis iste natus error sit voluptatem accusantium
-            doloremque laudantium, totam rem aperiam, eaque voluptas sit
-            aspernatur aut odit aut fugit, sed quia consequunt
+            The visual system revolves around the logo itself, a symmetrical
+            abstract shape that can be decomposed, making the process of
+            developing the aesthetic both enjoyable and intriguing. It unlocks
+            numerous visual possibilities and also enhances the overall branding
+            flexibility.
           </p>
         </div>
         <div>
           <img src={s2} />
         </div>
       </div>
-      <img className="fullscreen-image" src={s3} />
-      <img className="almost-fullscreen" src={s4} />
-      <img className="middle-screen" src={s5} />
-      <img className="fullscreen-image" src={s6} />
-      <img className="almost-fullscreen" src={s7} />
-      <img className="almost-fullscreen" src={s8} />
+      <img alt="project" className="fullscreen-image" src={s3} />
+      <img alt="project" className="almost-fullscreen" src={s4} />
+      <img alt="project" className="middle-screen" src={s5} />
+      <img alt="project" className="fullscreen-image" src={s6} />
+      <img alt="project" className="almost-fullscreen" src={s7} />
+      <img alt="project" className="almost-fullscreen" src={s8} />
 
       <WorkButton />
 

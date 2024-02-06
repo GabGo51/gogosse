@@ -11,9 +11,9 @@ const Footer = () => {
 
   const location = useLocation();
   const isDarkTheme =
-    location.pathname === "/HÉRITAGE" ||
+    location.pathname === "/H%C3%89RITAGE" ||
     location.pathname === "/HORIZON%202023" ||
-    location.pathname === "/ESPACE%20FINE" ||
+    location.pathname === "/ESPACE%20FINE%20VOL.2" ||
     location.pathname === "/about";
 
   const [blur, setBlur] = useState(false);

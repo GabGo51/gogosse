@@ -40,10 +40,10 @@ const Horizon = () => {
         <SlidingImg src={project.img} />
       </div>
 
-      <img className="fullscreen-image gif1" src={H_2} />
-      <img className="fullscreen-image" src={H_3} />
-      <img className="fullscreen-image" src={H_4} />
-      <img className="fullscreen-image" src={H_5} />
+      <img alt="project" className="fullscreen-image gif1" src={H_2} />
+      <img alt="project" className="fullscreen-image" src={H_3} />
+      <img alt="project" className="fullscreen-image" src={H_4} />
+      <img alt="project" className="fullscreen-image" src={H_5} />
 
       <WorkButton darkTheme={isDarkTheme} />
 

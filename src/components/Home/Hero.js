@@ -97,7 +97,7 @@ const Hero = () => {
             onMouseEnter={() => handleHover(projects[0].title)}
             onClick={() => handleNavigate(`/${projects[0].title}`)}
           >
-            <img src={G}/>
+            <img alt="letter" src={G}/>
           </motion.div>
 
           <motion.div initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} transition={{duration:0.5, delay:0.2}}
@@ -105,7 +105,7 @@ const Hero = () => {
             onMouseEnter={() => handleHover(projects[1].title)}
             onClick={() => handleNavigate(`/${projects[1].title}`)}
           >
-            <img src={O}/>
+            <img alt="letter" src={O}/>
           </motion.div>
 
           <motion.div initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} transition={{duration:0.5, delay:0.3}}
@@ -113,7 +113,7 @@ const Hero = () => {
             onMouseEnter={() => handleHover(projects[2].title)}
             onClick={() => handleNavigate(`/${projects[2].title}`)}
           >
-            <img src={G}/>
+            <img alt="letter" src={G}/>
           </motion.div>
 
           <motion.div initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} transition={{duration:0.5, delay:0.4}}
@@ -121,7 +121,7 @@ const Hero = () => {
             onMouseEnter={() => handleHover(projects[3].title)}
             onClick={() => handleNavigate(`/${projects[3].title}`)}
           >
-            <img src={O}/>
+            <img alt="letter" src={O}/>
           </motion.div>
 
           <motion.div initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} transition={{duration:0.5, delay:0.5}}
@@ -129,7 +129,7 @@ const Hero = () => {
             onMouseEnter={() => handleHover(projects[4].title)}
             onClick={() => handleNavigate(`/${projects[4].title}`)}
           >
-            <img src={S}/>
+            <img alt="letter" src={S}/>
           </motion.div>
 
           <motion.div initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} transition={{duration:0.5, delay:0.6}}
@@ -137,7 +137,7 @@ const Hero = () => {
             onMouseEnter={() => handleHover(projects[5].title)}
             onClick={() => handleNavigate(`/${projects[5].title}`)}
           >
-            <img src={S}/>
+            <img alt="letter" src={S}/>
           </motion.div>
 
           <motion.div initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} transition={{duration:0.5, delay:0.7}}
@@ -145,7 +145,7 @@ const Hero = () => {
             onMouseEnter={() => handleHover(projects[6].title)}
             onClick={() => handleNavigate(`/${projects[6].title}`)}
           >
-            <img src={E}/>
+            <img alt="letter" src={E}/>
           </motion.div>
         
       </LettersBox>
