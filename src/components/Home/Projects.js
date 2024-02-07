@@ -34,7 +34,7 @@ const Projects = () => {
   };
 
   return (
-    <Container>
+    <Container id="project">
       <h2>PROJECTS & FEATURED WORKS</h2>
       <div
         className="all-project"

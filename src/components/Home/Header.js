@@ -32,6 +32,20 @@ const Header = () => {
     setBlur(false);
   };
 
+  const scrollToRef = (id) => {
+    const element = document.getElementById(id);
+    console.log(element);
+    if (element) {
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const targetScrollPosition = elementPosition;
+
+      window.scrollTo({
+          top: targetScrollPosition,
+          behavior: "smooth"
+      });
+  }
+  };
+
   return (
     <Container className={isOpen ? "open-header" : ""}>
       <h1
@@ -69,10 +83,7 @@ const Header = () => {
           className={isOpen ? "open" : ""}
         >
           <li
-             onClick={() => document.getElementById('project').scrollIntoView({
-              behavior: "smooth",
-              block: "end", // Scroll to the end of the container
-            })}
+             onClick={() => scrollToRef("project")}
             className={blur ? "blurred" : ""}
           >
             WORK
