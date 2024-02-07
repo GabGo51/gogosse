@@ -69,9 +69,9 @@ const Header = () => {
           className={isOpen ? "open" : ""}
         >
           <li
-            onClick={() => document.getElementById('project').scrollIntoView({
+             onClick={() => document.getElementById('project').scrollIntoView({
               behavior: "smooth",
-              block: "start",
+              block: "end", // Scroll to the end of the container
             })}
             className={blur ? "blurred" : ""}
           >

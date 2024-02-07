@@ -50,7 +50,7 @@ function App() {
               <Route path="/LAPIÈS" element={<Lapies />} />
               <Route path="/SAP 2024" element={<SAP />} />
               <Route path="/PBGG" element={<Contact />} />
-              <Route path="/TURBINE" element={<Turbine />} />
+              <Route path="/TURBINE 2024" element={<Turbine />} />
               <Route path="/FESTIVAL DE JAZZ" element={<Contact />} />
             </Routes>
           </div>
