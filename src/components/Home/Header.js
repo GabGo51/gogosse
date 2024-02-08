@@ -19,7 +19,6 @@ const Header = () => {
     setIsOpen(false);
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
     });
   };
 
@@ -37,99 +36,109 @@ const Header = () => {
     const element = document.getElementById(id);
     console.log(element);
     if (element) {
-      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const elementPosition =
+        element.getBoundingClientRect().top + window.scrollY;
       const targetScrollPosition = elementPosition;
 
       window.scrollTo({
-          top: targetScrollPosition,
-          behavior: "smooth"
+        top: targetScrollPosition,
+        behavior: "smooth",
       });
-  }
+    }
   };
 
-  const initial =  { opacity:0, y:-20}
-  const animate = { opacity:1, y:0}
+  const initial = { opacity: 0, y: -20 };
+  const animate = { opacity: 1, y: 0 };
 
   return (
-    <Container className={isOpen ? "open-header" : ""}>
-      <motion.h1
-      initial = {initial}
-      animate = {animate}
-      transition = {{duration:0.5 , delay:0.1}}
-        onMouseEnter={() => cursorChangeHandler("hover")}
-        onMouseLeave={() => cursorChangeHandler("")}
-        onClick={() => handleNavigate("/")}
-      >
-        GOGOSSE
-      </motion.h1>
+    <Container>
+      <div className={isOpen ? "frame frame-open" : "frame"}>
+        <motion.h1
+          initial={initial}
+          animate={animate}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          onMouseEnter={() => cursorChangeHandler("hover")}
+          onMouseLeave={() => cursorChangeHandler("")}
+          onClick={() => handleNavigate("/")}
+        >
+          GOGOSSE
+        </motion.h1>
 
-      <motion.p initial = {initial}
-      animate = {animate}
-      transition = {{duration:0.5 , delay:0.2}}>
-        Gogosse is Nicolas Gosselin, a French Canadian designer and recent
-        DESIGN graduate based in Montreal. Specializing in branding, poster
-        design, and EDITORIAL DESIGN, I am dedicated to creating clean and
-        FLEXIBLE designs that leave a lasting impact. Beyond my design
-        expertise, I am also an avid skier with a deep passion for the outdoors.
-        My work is a reflection of this dual love for design precision and the
-        exhilaration of nature.
-      </motion.p>
+        <motion.p
+          initial={initial}
+          animate={animate}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          Gogosse is Nicolas Gosselin, a French Canadian designer and recent
+          DESIGN graduate based in Montreal. Specializing in branding, poster
+          design, and EDITORIAL DESIGN, I am dedicated to creating clean and
+          FLEXIBLE designs that leave a lasting impact. Beyond my design
+          expertise, I am also an avid skier with a deep passion for the
+          outdoors. My work is a reflection of this dual love for design
+          precision and the exhilaration of nature.
+        </motion.p>
 
-      <motion.ul initial = {initial}
-      animate = {animate}
-      transition = {{duration:0.5 , delay:0.4}}
-        className="contact"
-        onMouseEnter={handleBlur}
-        onMouseLeave={removeBlur}
-      >
-        <li className={blur ? "blurred" : ""}>ggss.studio@outlook.com</li>
-        <li className={blur ? "blurred" : ""}>450 822 5550</li>
-      </motion.ul>
-
-      <motion.nav initial = {initial}
-      animate = {animate}
-      transition = {{duration:0.5 , delay:0.6}}>
-        <i className="fa-solid fa-bars" onClick={toggleMenu}></i>
-        <ul
+        <motion.ul
+          initial={initial}
+          animate={animate}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="contact"
           onMouseEnter={handleBlur}
           onMouseLeave={removeBlur}
-          className={isOpen ? "open" : ""}
         >
-          <li
-             onClick={() => scrollToRef("project")}
-            className={blur ? "blurred" : ""}
+          <li className={blur ? "blurred" : ""}>ggss.studio@outlook.com</li>
+          <li className={blur ? "blurred" : ""}>450 822 5550</li>
+        </motion.ul>
+
+        <motion.nav
+          initial={initial}
+          animate={animate}
+          transition={{ duration: 0.5, delay: 0.6 }}
+        >
+          <i className="fa-solid fa-bars" onClick={toggleMenu}></i>
+          <ul
+            onMouseEnter={handleBlur}
+            onMouseLeave={removeBlur}
+            className={isOpen ? "open" : ""}
           >
-            WORK
-          </li>
-          <li
-            onClick={() => handleNavigate("/about")}
-            className={blur ? "blurred" : ""}
-          >
-            ABOUT
-          </li>
-          <li
-            onClick={() => handleNavigate("/contact")}
-            className={blur ? "blurred" : ""}
-          >
-            CONNECT
-          </li>
-        </ul>
-      </motion.nav>
+            <li
+              onClick={() => scrollToRef("project")}
+              className={blur ? "blurred" : ""}
+            >
+              WORK
+            </li>
+            <li
+              onClick={() => handleNavigate("/about")}
+              className={blur ? "blurred" : ""}
+            >
+              ABOUT
+            </li>
+            <li
+              onClick={() => handleNavigate("/contact")}
+              className={blur ? "blurred" : ""}
+            >
+              CONNECT
+            </li>
+          </ul>
+        </motion.nav>
+      </div>
     </Container>
   );
 };
 
 const Container = styled.header`
-  
   padding: 20px;
   padding-bottom: 10px;
   padding-top: 20px;
-  display: flex;
-  justify-content: space-between;
 
-  position: relative;
+  
+
   div {
+    transition: 500ms;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
   }
 
   h1 {
@@ -144,7 +153,7 @@ const Container = styled.header`
     font-family: Authentic60C;
     text-transform: uppercase;
     display: inline-block;
-    font-size: 16px;
+    font-size: clamp(12px, 1vw, 16px);
     max-width: 500px;
 
     @media (max-width: 800px) {
@@ -198,7 +207,7 @@ const Container = styled.header`
     padding: 20px;
   }
 
-  @media (max-width: 1100px) {
+  @media (max-width: 700px) {
     i {
       display: block;
     }
@@ -217,15 +226,28 @@ const Container = styled.header`
 
     /* Show the menu when isOpen state is true */
     ul.open {
-    
+      right: 0;
       display: flex;
-      
-      border: 1px solid black;
-    }
-  }
+      flex-direction: row;
+      position: absolute;
+      bottom: 0;
 
-  .open-header{
-    height: 200px;
+      li{
+        border: 1px solid black ;
+        border-radius: 15px;
+        margin-left: 10px;
+      }
+    }
+
+    div.frame-open{
+      height: 100px;
+
+      p{
+        display: none;
+      }
+
+      
+    }
   }
 `;
 

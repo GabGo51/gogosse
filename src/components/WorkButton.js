@@ -55,7 +55,7 @@ const WorkButton = ({ darkTheme }) => {
         onMouseLeave={() => cursorChangeHandler("")}
         onClick={() => {
           handleNavigate(`/contact`);
-          window.scrollTo({ top: 0, behavior: "smooth" });
+          window.scrollTo({ top: 0 });
         }}
         className="lets-work"
       >

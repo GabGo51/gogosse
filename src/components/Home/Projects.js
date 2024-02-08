@@ -198,7 +198,7 @@ const Project = styled.div`
     flex: 1;
     text-align: start;
     font-family: Authentic60C;
-    text-transform: uppercase;
+    
 
     // Responsive styles
     @media (max-width: 1100px) {

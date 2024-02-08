@@ -32,7 +32,7 @@ const Footer = () => {
     navigate(page);
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      
     });
   };
   const initial = { opacity: 0, y: 20 };
