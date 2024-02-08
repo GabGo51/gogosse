@@ -134,7 +134,7 @@ const Info = styled.div`
 
   li {
     transition: 500ms;
-    font-size: 14px;
+    font-size: clamp(12px, 3vw, 14px);
     font-family: Authentic90;
     line-height: 24px;
 
@@ -160,10 +160,7 @@ const Info = styled.div`
       display: none;
     }
 
-    li {
-      font-size: 14px;
-      line-height: 30px;
-    }
+    
 
     ul {
       margin: 0px 0px;

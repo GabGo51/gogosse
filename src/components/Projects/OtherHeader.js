@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { useContext } from "react";
 import { MouseContext } from "../../context/mouseContext";
 import { motion } from "framer-motion";
+import { useLocation } from "react-router-dom";
 
 const OtherHeader = ({ name }) => {
   const { cursorChangeHandler } = useContext(MouseContext);
@@ -12,6 +13,14 @@ const OtherHeader = ({ name }) => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+  const location = useLocation();
+  const isDarkTheme =
+  location.pathname === "/H%C3%89RITAGE" ||
+  location.pathname === "/HORIZON%202023" ||
+  location.pathname === "/ESPACE%20FINE%20VOL.2" ||
+  location.pathname === "/about";
+
+  
 
   const navigate = useNavigate();
   const handleNavigate = (page) => {
@@ -34,8 +43,8 @@ const OtherHeader = ({ name }) => {
   const animate = { opacity: 1, y: 0 };
 
   return (
-    <Container>
-      <div className={isOpen ? "header header-open" : "header"}>
+    <Container darkTheme={isDarkTheme}>
+      <div  className={isOpen ? "header header-open" : "header"}>
         <motion.h1
           initial={initial}
           animate={animate}
@@ -63,19 +72,31 @@ const OtherHeader = ({ name }) => {
             className={isOpen ? "open" : ""}
           >
             <li
-              onClick={() => handleNavigate("/")}
+              onClick={() => {
+                removeBlur();
+                setIsOpen(false);
+                handleNavigate("/");
+              }}
               className={blur ? "blurred" : ""}
             >
               WORK
             </li>
             <li
-              onClick={() => handleNavigate("/about")}
+              onClick={() => {
+                removeBlur();
+                setIsOpen(false);
+                handleNavigate("/about");
+              }}
               className={blur ? "blurred" : ""}
             >
               ABOUT
             </li>
             <li
-              onClick={() => handleNavigate("/contact")}
+              onClick={() => {
+                removeBlur();
+                setIsOpen(false);
+                handleNavigate("/contact");
+              }}
               className={blur ? "blurred" : ""}
             >
               CONNECT
@@ -194,7 +215,7 @@ const Container = styled.header`
       bottom: 0;
 
       li{
-        border: 1px solid black ;
+        border:1px solid ${(props) => (props.darkTheme ? "white" : "black")} ;
         border-radius: 15px;
         margin-left: 10px;
       }

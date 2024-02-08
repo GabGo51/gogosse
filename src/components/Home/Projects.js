@@ -88,43 +88,10 @@ const Container = styled.div`
     filter: blur(2px);
   }
 
-  .lets-work {
-    transition: 300ms;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: transparent;
-    font-size: 30px;
-    font-weight: 400;
-    margin-bottom: 50px;
-    border: 1px solid black;
-    border-radius: 39px;
-    font-family: Authentic60;
-    color: black;
-    width: 225px;
-    height: 100px;
-    text-align: center;
-    margin-top: 100px;
-    text-transform: uppercase;
-    div {
-      margin-left: 10px;
-    }
+  
 
-    &:hover {
-      background-color: black;
-      color: white;
-      div {
-        animation: ${rotate} 500ms forwards;
-      }
-    }
-    @media (max-width: 500px) {
-      font-size: 20px;
-      height: 70px;
-      width: 170px;
-      border-radius: 25px;
-      margin-bottom: 0px;
-    }
-  }
+    
+    
 
   @media (max-width: 900px) {
     .blurred {

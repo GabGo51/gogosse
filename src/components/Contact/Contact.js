@@ -81,30 +81,39 @@ const Contact = () => {
       <div className="frame">
         <form ref={gogosseForm} onSubmit={handleSubmit}>
           <div className="textarea">
-            <motion.label initial={initial}
-        animate={animate}
-        transition={{ duration: 0.5, delay: 0.1 }}>LET'S WORK</motion.label>
+            <motion.label
+              initial={initial}
+              animate={animate}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              LET'S WORK
+            </motion.label>
 
             {sent && (
-              <motion.p initial={initial}
-              animate={animate}
-              transition={{ duration: 0.5, delay: 0.2 }}>
+              <motion.p
+                initial={initial}
+                animate={animate}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
                 YOUR MESSAGE HAS BEEN SENT. I WILL CONTACT YOU REGARDING YOUR
                 PROJECT AS SOON AS POSSIBLE. THANK YOU !
               </motion.p>
             )}
             {error && (
-              <motion.p initial={initial}
-              animate={animate}
-              transition={{ duration: 0.5, delay: 0.2 }}>
+              <motion.p
+                initial={initial}
+                animate={animate}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
                 OOPS, IT LOOKS LIKE SOMETHING WENT WRONG. PLEASE TRY AGAIN LATER
                 OR CONTACT ME DIRECTLY VIA PHONE OR EMAIL. SORRY!
               </motion.p>
             )}
             {normal && (
-              <motion.textarea initial={initial}
-              animate={animate}
-              transition={{ duration: 0.5, delay: 0.1 }}
+              <motion.textarea
+                initial={initial}
+                animate={animate}
+                transition={{ duration: 0.5, delay: 0.1 }}
                 name="user_project"
                 autoFocus
                 onMouseEnter={() => cursorChangeHandler("hover")}
@@ -115,9 +124,9 @@ const Contact = () => {
             )}
           </div>
           {normal && (
-            <motion.button initial={initial}
-            
-              animate={{ x: mouseX, opacity:1 }}
+            <motion.button
+              initial={initial}
+              animate={{ x: mouseX, opacity: 1 }}
               transition={spring}
               onMouseEnter={() => cursorChangeHandler("hover")}
               onMouseLeave={() => cursorChangeHandler("")}
@@ -161,11 +170,10 @@ const Container = styled.div`
       resize: none;
       font-size: clamp(16px, 5vw, 24px);
       font-family: Authentic60;
-      
 
       outline: none;
       width: 100%;
-      height: 180px;
+      height: 220px;
     }
 
     p {
@@ -191,14 +199,14 @@ const Container = styled.div`
     margin-top: 40px;
     font-family: Authentic60;
     color: black;
+    width: 150px;
     height: 70px;
-    width: 170px;
     text-align: center;
     text-transform: uppercase;
 
     img {
       width: 100%;
-      scale: 0.3;
+      scale: 0.4;
     }
 
     &:hover {
@@ -208,12 +216,14 @@ const Container = styled.div`
         filter: invert(1);
       }
     }
-    @media (max-width: 500px) {
-      font-size: 18px;
+    @media (max-width: 1100px) {
+      width: 100px;
       height: 50px;
-      width: 120px;
+      font-size: 20px;
       border-radius: 20px;
-      margin-bottom: 0px;
+      img{
+        scale: 0.5;
+      }
     }
   }
 `;

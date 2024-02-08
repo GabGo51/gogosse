@@ -23,7 +23,7 @@ const Home = () => {
 
 const Container = styled.div`
   .top-section {
-    height: 95vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

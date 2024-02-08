@@ -52,7 +52,7 @@ const Header = () => {
 
   return (
     <Container>
-      <div className={isOpen ? "frame frame-open" : "frame"}>
+      <motion.div  className={isOpen ? "frame frame-open" : "frame"}>
         <motion.h1
           initial={initial}
           animate={animate}
@@ -102,34 +102,49 @@ const Header = () => {
             className={isOpen ? "open" : ""}
           >
             <li
-              onClick={() => scrollToRef("project")}
+              onClick={() => {
+                removeBlur();
+                setIsOpen(false);
+                scrollToRef("project");
+              }}
               className={blur ? "blurred" : ""}
             >
               WORK
             </li>
             <li
-              onClick={() => handleNavigate("/about")}
+              onClick={() => {
+                removeBlur();
+                setIsOpen(false);
+                handleNavigate("/about");
+              }}
               className={blur ? "blurred" : ""}
             >
               ABOUT
             </li>
             <li
-              onClick={() => handleNavigate("/contact")}
+              onClick={() => {
+                removeBlur();
+                setIsOpen(false);
+                handleNavigate("/contact");
+              }}
               className={blur ? "blurred" : ""}
             >
               CONNECT
             </li>
           </ul>
         </motion.nav>
-      </div>
+      </motion.div>
     </Container>
   );
 };
 
+
+
 const Container = styled.header`
   padding: 20px;
-  padding-bottom: 10px;
+  padding-bottom: 30px;
   padding-top: 20px;
+  
 
   
 
@@ -174,12 +189,10 @@ const Container = styled.header`
   i {
     display: none;
 
-    scale: 1.2;
+    scale: 1.5;
     transition: 400ms;
 
-    &:hover {
-      scale: 1.3;
-    }
+    
   }
   ul {
     display: flex;
@@ -232,21 +245,20 @@ const Container = styled.header`
       position: absolute;
       bottom: 0;
 
-      li{
-        border: 1px solid black ;
+      li {
+        border: 1px solid black;
         border-radius: 15px;
         margin-left: 10px;
       }
     }
 
-    div.frame-open{
+    div.frame-open {
       height: 100px;
+      
 
-      p{
+      p {
         display: none;
       }
-
-      
     }
   }
 `;

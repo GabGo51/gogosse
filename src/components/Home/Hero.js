@@ -183,28 +183,21 @@ const clearAnimation = keyframes`
 
 const Container = styled.div`
   padding: 20px;
-  
   flex: 1;
   display: flex;
-
-  
   flex-direction: column;
   justify-content: space-between;
+  z-index: 3;
   
- z-index: 3;
-  @media (max-width: 1100px) {
-    justify-content: center;
-    
-  }
 `;
 
 const ImgBox = styled(motion.div)`
-  
+  height: 100%;
   .top {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 0;
+    height: 100%;
   }
 
   .cadre {
@@ -223,7 +216,7 @@ const ImgBox = styled(motion.div)`
     font-family: Authentic90;
     position: relative;
     width: 30%;
-    height: 19vw;
+    
     overflow: hidden;
     border: none;
   }
@@ -265,39 +258,41 @@ const ImgBox = styled(motion.div)`
     display: flex;
     align-items: end;
     justify-content: end;
+    height: 400px;
 
-    div {
-      max-width: 71vw;
-      margin-top: 20px;
-
-      @media (max-width: 750px) {
-        max-width: 93vw;
-      }
+    .top{
+      width: 100%;
+      align-items: end;
     }
 
-    div {
-      width: 100%;
-      height: 400px;
+    .cadre{
+      width: 70%;
+    }
+    .project-text{
+      width: 70%;
     }
 
     img {
       width: 100%;
-      height: 400px;
+      height: 100%;
     }
   }
 
-  @media (max-width: 500px) {
-    padding-top: 0;
-    margin-top: -50px;
+  @media (max-width: 700px) {
+    height: 500px;
+    
 
-    div {
+    .cadre {
       width: 100%;
-      height: 550px;
+      height: 450px;
+    }
+    .project-text{
+      width: 100%;
     }
 
     img {
       width: 100%;
-      height: 550px;
+      height: 100%;
     }
 
     .project-text {

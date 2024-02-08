@@ -27,7 +27,7 @@ const WorkButton = ({ darkTheme }) => {
   useEffect(() => {
     const handleMouseMove = (e) => {
       const adjustedMouseX = e.clientX - 140;
-      const minX = -30;
+      const minX = 0;
       const maxX = window.innerWidth - window.innerWidth * 0.14;
 
       if (window.innerWidth > 1100) {
@@ -81,14 +81,14 @@ width: 95%;
     justify-content: center;
     background-color: transparent;
     font-size: 30px;
-    font-weight: 400;
     margin-bottom: 50px;
     border: 1px solid ${props => props.$darkTheme ? 'white' : 'black'};
-    border-radius: 39px;
+    border-radius: 25px;
     font-family: Authentic60;
     color: ${props => props.$darkTheme ? 'white' : 'black'};
-    width: 225px;
-    height: 100px;
+    width: 220px;
+    height: 70px;
+    
     text-align: center;
     margin-top: 100px;
     text-transform: uppercase;
@@ -103,13 +103,13 @@ width: 95%;
         animation: ${rotate} 500ms forwards;
       }
     }
-    @media (max-width: 500px) {
-      font-size: 20px;
-      height: 70px;
-      width: 170px;
-      border-radius: 25px;
-      margin-bottom: 0px;
+
+    @media (max-width:1100px){
+      width: 160px;
+    height: 60px;
+    font-size: 20px;border-radius: 20px;
     }
+    
   }
 
  
