@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { useContext } from "react";
 import { MouseContext } from "../../context/mouseContext";
+import { motion } from "framer-motion";
 
 const Header = () => {
   const { cursorChangeHandler } = useContext(MouseContext);
@@ -46,17 +47,25 @@ const Header = () => {
   }
   };
 
+  const initial =  { opacity:0, y:-20}
+  const animate = { opacity:1, y:0}
+
   return (
     <Container className={isOpen ? "open-header" : ""}>
-      <h1
+      <motion.h1
+      initial = {initial}
+      animate = {animate}
+      transition = {{duration:0.5 , delay:0.1}}
         onMouseEnter={() => cursorChangeHandler("hover")}
         onMouseLeave={() => cursorChangeHandler("")}
         onClick={() => handleNavigate("/")}
       >
         GOGOSSE
-      </h1>
+      </motion.h1>
 
-      <p>
+      <motion.p initial = {initial}
+      animate = {animate}
+      transition = {{duration:0.5 , delay:0.2}}>
         Gogosse is Nicolas Gosselin, a French Canadian designer and recent
         DESIGN graduate based in Montreal. Specializing in branding, poster
         design, and EDITORIAL DESIGN, I am dedicated to creating clean and
@@ -64,18 +73,22 @@ const Header = () => {
         expertise, I am also an avid skier with a deep passion for the outdoors.
         My work is a reflection of this dual love for design precision and the
         exhilaration of nature.
-      </p>
+      </motion.p>
 
-      <ul
+      <motion.ul initial = {initial}
+      animate = {animate}
+      transition = {{duration:0.5 , delay:0.4}}
         className="contact"
         onMouseEnter={handleBlur}
         onMouseLeave={removeBlur}
       >
         <li className={blur ? "blurred" : ""}>ggss.studio@outlook.com</li>
         <li className={blur ? "blurred" : ""}>450 822 5550</li>
-      </ul>
+      </motion.ul>
 
-      <nav>
+      <motion.nav initial = {initial}
+      animate = {animate}
+      transition = {{duration:0.5 , delay:0.6}}>
         <i className="fa-solid fa-bars" onClick={toggleMenu}></i>
         <ul
           onMouseEnter={handleBlur}
@@ -101,7 +114,7 @@ const Header = () => {
             CONNECT
           </li>
         </ul>
-      </nav>
+      </motion.nav>
     </Container>
   );
 };

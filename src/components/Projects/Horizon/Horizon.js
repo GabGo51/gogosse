@@ -44,7 +44,7 @@ const Horizon = () => {
       <img alt="project" className="fullscreen-image" src={H_4} />
       <img alt="project" className="fullscreen-image" src={H_5} />
 
-      <WorkButton darkTheme={isDarkTheme} />
+      <WorkButton $darkTheme={isDarkTheme} />
 
       <div className="direction">
         <h3>ARTISTIC DIRECTION</h3>

@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useContext } from "react";
 import { MouseContext } from "../context/mouseContext";
 import { useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   const { cursorChangeHandler } = useContext(MouseContext);
@@ -34,18 +35,29 @@ const Footer = () => {
       behavior: "smooth",
     });
   };
+  const initial = { opacity: 0, y: 20 };
+  const animate = { opacity: 1, y: 0 };
 
   return (
     <Container>
-      <Info darkTheme={isDarkTheme}>
-        <button
+      <Info $darkTheme={isDarkTheme}>
+        <motion.button
+          initial={initial}
+          animate={animate}
+          transition={{ duration: 0.5, delay: 0.1 }}
           onMouseEnter={() => cursorChangeHandler("hover")}
           onMouseLeave={() => cursorChangeHandler("")}
           onClick={() => handleNavigate("/")}
         >
           GOGOSSE
-        </button>
-        <ul onMouseEnter={handleBlur} onMouseLeave={removeBlur}>
+        </motion.button>
+        <motion.ul
+          initial={initial}
+          animate={animate}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          onMouseEnter={handleBlur}
+          onMouseLeave={removeBlur}
+        >
           <li className={blur ? "blurred" : ""}>
             <a
               target="#"
@@ -56,7 +68,7 @@ const Footer = () => {
           </li>
           <li className={blur ? "blurred" : ""}>
             <a target="#" href="https://www.instagram.com/rodrigoooo00o/">
-              Intsagram
+              Instagram
             </a>
           </li>
           <li className={blur ? "blurred" : ""}>
@@ -67,15 +79,18 @@ const Footer = () => {
               Linkedin
             </a>
           </li>
-        </ul>
-        <ul
+        </motion.ul>
+        <motion.ul
+          initial={initial}
+          animate={animate}
+          transition={{ duration: 0.5, delay: 0.5 }}
           className="contact"
           onMouseEnter={handleBlur}
           onMouseLeave={removeBlur}
         >
           <li className={blur ? "blurred" : ""}>ggss.studio@outlook.com</li>
           <li className={blur ? "blurred" : ""}>450 822 5550</li>
-        </ul>
+        </motion.ul>
       </Info>
     </Container>
   );
@@ -90,7 +105,7 @@ const Container = styled.footer`
   padding-bottom: 20px;
   background-color: transparent;
   width: 100%;
-  font-weight: 700;
+  text-transform: uppercase;
   font-family: Authentic60;
   .blurred {
     filter: blur(1px);
@@ -104,7 +119,7 @@ const Container = styled.footer`
 const Info = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: start;
+  align-items: end;
 
   width: 100%;
 
@@ -112,21 +127,21 @@ const Info = styled.div`
     font-family: Tagada;
     font-size: 34px;
     font-weight: 400;
-    color: ${(props) => (props.darkTheme ? "#f2f2f2" : "black")};
+    color: ${(props) => (props.$darkTheme ? "#f2f2f2" : "black")};
     background-color: transparent;
     border: none;
   }
 
   li {
     transition: 500ms;
-    font-size: 18px;
+    font-size: 14px;
     font-family: Authentic90;
     line-height: 24px;
 
     a {
       text-decoration: none;
 
-      color: ${(props) => (props.darkTheme ? "#f2f2f2" : "black")};
+      color: ${(props) => (props.$darkTheme ? "#f2f2f2" : "black")};
     }
 
     &:hover {

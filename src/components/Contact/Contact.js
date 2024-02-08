@@ -72,28 +72,39 @@ const Contact = () => {
     };
   }, []);
 
+  const initial = { opacity: 0, x: -20 };
+  const animate = { opacity: 1, x: 0 };
+
   return (
     <Container>
       <OtherHeader />
       <div className="frame">
         <form ref={gogosseForm} onSubmit={handleSubmit}>
           <div className="textarea">
-            <label>LET'S WORK</label>
+            <motion.label initial={initial}
+        animate={animate}
+        transition={{ duration: 0.5, delay: 0.1 }}>LET'S WORK</motion.label>
 
             {sent && (
-              <p>
+              <motion.p initial={initial}
+              animate={animate}
+              transition={{ duration: 0.5, delay: 0.2 }}>
                 YOUR MESSAGE HAS BEEN SENT. I WILL CONTACT YOU REGARDING YOUR
                 PROJECT AS SOON AS POSSIBLE. THANK YOU !
-              </p>
+              </motion.p>
             )}
             {error && (
-              <p>
+              <motion.p initial={initial}
+              animate={animate}
+              transition={{ duration: 0.5, delay: 0.2 }}>
                 OOPS, IT LOOKS LIKE SOMETHING WENT WRONG. PLEASE TRY AGAIN LATER
                 OR CONTACT ME DIRECTLY VIA PHONE OR EMAIL. SORRY!
-              </p>
+              </motion.p>
             )}
             {normal && (
-              <textarea
+              <motion.textarea initial={initial}
+              animate={animate}
+              transition={{ duration: 0.5, delay: 0.1 }}
                 name="user_project"
                 autoFocus
                 onMouseEnter={() => cursorChangeHandler("hover")}
@@ -104,8 +115,9 @@ const Contact = () => {
             )}
           </div>
           {normal && (
-            <motion.button
-              animate={{ x: mouseX }}
+            <motion.button initial={initial}
+            
+              animate={{ x: mouseX, opacity:1 }}
               transition={spring}
               onMouseEnter={() => cursorChangeHandler("hover")}
               onMouseLeave={() => cursorChangeHandler("")}
@@ -149,7 +161,7 @@ const Container = styled.div`
       resize: none;
       font-size: clamp(16px, 5vw, 24px);
       font-family: Authentic60;
-      text-transform: uppercase;
+      
 
       outline: none;
       width: 100%;

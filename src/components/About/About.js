@@ -6,7 +6,7 @@ import OtherHeader from "../Projects/OtherHeader";
 
 const About = () => {
   const location = useLocation();
-  const isDarkTheme = location.pathname === "/about";
+
   useEffect(() => {
     if (location.pathname === "/about") {
       document.body.setAttribute("data-theme", "dark");
@@ -69,9 +69,8 @@ const Container = styled.div`
       width: 50%;
     }
     p {
-      font-size: clamp(20px, 3vw, 30px);
+      font-size: clamp(14px, 5vw, 30px);
       font-family: Authentic60;
-      text-transform: ;
       width: 100%;
       margin-bottom: 20px;
     }
@@ -85,6 +84,9 @@ const Container = styled.div`
     @media (max-width: 1100px) {
       flex-direction: column;
       align-items: center;
+      div{
+        width: 100%;
+      }
       p {
         width: 100%;
         margin-bottom: 40px;

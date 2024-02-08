@@ -41,7 +41,7 @@ const Heritage = () => {
       <img alt="project" className="fullscreen-image h1" src={h1} />
       <img alt="project" className="fullscreen-image" src={group} />
 
-      <WorkButton darkTheme={isDarkTheme} />
+      <WorkButton $darkTheme={isDarkTheme} />
 
       <div className="direction">
         <h3>ARTISTIC DIRECTION</h3>

@@ -3,18 +3,19 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { useContext } from "react";
 import { MouseContext } from "../../context/mouseContext";
+import { motion } from "framer-motion";
 
 const OtherHeader = ({ name }) => {
   const { cursorChangeHandler } = useContext(MouseContext);
 
   const [isOpen, setIsOpen] = useState(false);
-  const toggleMenu = () => { 
+  const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   const navigate = useNavigate();
   const handleNavigate = (page) => {
-    cursorChangeHandler('')
+    cursorChangeHandler("");
     navigate(page);
     setIsOpen(false);
   };
@@ -29,21 +30,39 @@ const OtherHeader = ({ name }) => {
     setBlur(false);
   };
 
+  const initial = { opacity: 0, y: -20 };
+  const animate = { opacity: 1, y: 0 };
+
   return (
     <Container>
-      <h1
+      <motion.h1
+        initial={initial}
+        animate={animate}
+        transition={{ duration: 0.5, delay: 0.1 }}
         onMouseEnter={() => cursorChangeHandler("hover")}
         onMouseLeave={() => cursorChangeHandler("")}
         onClick={() => handleNavigate("/")}
       >
         GOGOSSE
-      </h1>
+      </motion.h1>
 
       <nav>
-        <p className="name">{name}</p>
+        <motion.p
+          initial={initial}
+          animate={animate}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="name"
+        >
+          {name}
+        </motion.p>
         <div>
           <i className="fa-solid fa-bars" onClick={toggleMenu}></i>
-          <ul className={isOpen ? "open" : ""}>
+          <motion.ul
+            initial={initial}
+            animate={animate}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className={isOpen ? "open" : ""}
+          >
             <li
               onMouseEnter={handleBlur}
               onMouseLeave={removeBlur}
@@ -68,7 +87,7 @@ const OtherHeader = ({ name }) => {
             >
               CONNECT
             </li>
-          </ul>
+          </motion.ul>
         </div>
       </nav>
     </Container>
@@ -87,8 +106,8 @@ const Container = styled.header`
 
   .name {
     width: 100%;
-
-    @media (max-width:800px){
+    font-size: clamp(12px, 10vw, 16px);
+    @media (max-width: 800px) {
       display: none;
     }
   }

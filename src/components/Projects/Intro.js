@@ -1,19 +1,27 @@
 import React from "react";
 import styled from "styled-components";
-
+import { motion } from "framer-motion";
 
 const Intro = ({ title, description, tag1, tag2}) => {
+  const initial =  { opacity:0, y:20}
+  const animate = { opacity:1, y:0}
   return (
     <Container>
-      <h1>{title}</h1>
+      <motion.h1 initial = {initial}
+      animate = {animate}
+      transition = {{duration:0.5 , delay:0.1}}>{title}</motion.h1>
 
       <div className="middle">
         <div className="top">
-          <p className="description">{description}</p>
-          <div className="type">
+          <motion.p initial = {initial}
+      animate = {animate}
+      transition = {{duration:0.5 , delay:0.3}} className="description">{description}</motion.p>
+          <motion.div initial = {initial}
+      animate = {animate}
+      transition = {{duration:0.5 , delay:0.5}} className="type">
             <p>{tag1}</p>
             <p>{tag2}</p>
-          </div>
+          </motion.div>
         </div>
       </div>
     </Container>

@@ -34,8 +34,8 @@ const SlidingImg = ({ src }) => {
   }, []);
 
   return (
-    <Container animate={{ x: mouseX }} transition={spring}>
-      <img src={src} alt="Sliding Image" />
+    <Container initial={{y:30}}  animate={{ x: mouseX,y:10 }} transition={spring}>
+      <img   src={src} alt="moving project hero" />
     </Container>
   );
 };
@@ -44,8 +44,10 @@ const Container = styled(motion.div)`
   width: 100%;
   height: 40vh;
   overflow: hidden;
+  transform-origin:bottom;
 
   img {
+    transform-origin:bottom;
     width: 45%;
     height: 100%;
     object-fit: cover;

@@ -62,7 +62,7 @@ const EspaceFine = () => {
         <img alt="espace fine" className="fullscreen-image" src={E_7} />
       </div>
 
-      <WorkButton darkTheme={isDarkTheme} />
+      <WorkButton $darkTheme={isDarkTheme} />
 
       <div className="direction">
         <h3>ARTISTIC DIRECTION</h3>

@@ -28,7 +28,7 @@ const Projects = () => {
     
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      
     });
     navigate(page);
   };

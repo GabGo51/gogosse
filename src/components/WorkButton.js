@@ -1,10 +1,8 @@
 import React, {useState, useEffect} from "react";
 import styled, { keyframes } from "styled-components";
 import { useNavigate } from "react-router-dom";
-
 import { useContext } from "react";
 import { MouseContext } from "../context/mouseContext";
-import useMousePosition from "../hooks/useMousePosition";
 import { motion } from "framer-motion";
 
 const WorkButton = ({ darkTheme }) => {
@@ -49,7 +47,7 @@ const WorkButton = ({ darkTheme }) => {
   }, []);
 
   return (
-    <Container darkTheme={darkTheme}>
+    <Container $darkTheme={darkTheme}>
       <motion.button
         animate={{ x: mouseX }}
         transition={spring}
@@ -85,10 +83,10 @@ width: 95%;
     font-size: 30px;
     font-weight: 400;
     margin-bottom: 50px;
-    border: 1px solid ${props => props.darkTheme ? 'white' : 'black'};
+    border: 1px solid ${props => props.$darkTheme ? 'white' : 'black'};
     border-radius: 39px;
     font-family: Authentic60;
-    color: ${props => props.darkTheme ? 'white' : 'black'};
+    color: ${props => props.$darkTheme ? 'white' : 'black'};
     width: 225px;
     height: 100px;
     text-align: center;
@@ -99,8 +97,8 @@ width: 95%;
     }
 
     &:hover {
-      background-color:${props => props.darkTheme ? 'white' : 'black'};
-      color: ${props => props.darkTheme ? 'black' : 'white'};
+      background-color:${props => props.$darkTheme ? 'white' : 'black'};
+      color: ${props => props.$darkTheme ? 'black' : 'white'};
       div {
         animation: ${rotate} 500ms forwards;
       }
