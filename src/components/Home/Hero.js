@@ -4,13 +4,12 @@ import projects from "../../data/projectData";
 import { MouseContext } from "../../context/mouseContext";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import G from './img/G.png'
-import O from './img/O.png'
-import S from './img/S.png'
-import E from './img/E.png'
+import G from "./img/G.png";
+import O from "./img/O.png";
+import S from "./img/S.png";
+import E from "./img/E.png";
 
 const Hero = () => {
-  
   const [mouseX, setMouseX] = useState(0);
   const { cursorChangeHandler } = useContext(MouseContext);
 
@@ -35,11 +34,10 @@ const Hero = () => {
 
   const navigate = useNavigate();
   const handleNavigate = (page) => {
-    cursorChangeHandler('')
+    cursorChangeHandler("");
     navigate(page);
     window.scrollTo({
       top: 0,
-      
     });
   };
 
@@ -55,6 +53,23 @@ const Hero = () => {
         setMouseX(0);
       }
     };
+
+    let intervalId; // Variable to hold interval id for clearing
+
+    if (window.innerWidth < 1100) {
+      // Check if screen width is under 1100px
+      intervalId = setInterval(() => {
+        // Set an interval to change active project every 2 seconds
+        setActiveProject((prevActiveProject) => {
+          const currentIndex = projects.findIndex(
+            (project) => project.title === prevActiveProject.title
+          );
+          const nextIndex =
+            currentIndex === projects.length - 1 ? 0 : currentIndex + 1;
+          return projects[nextIndex];
+        });
+      }, 2500);
+    }
     document.addEventListener("mousemove", handleMouseMove);
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);
@@ -91,65 +106,84 @@ const Hero = () => {
         </div>
       </ImgBox>
 
-      <LettersBox >   
-          <motion.div initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} transition={{duration:0.5, delay:0.1}}
-            className="g1"
-            onMouseEnter={() => handleHover(projects[0].title)}
-            onClick={() => handleNavigate(`/${projects[0].title}`)}
-          >
-            <img alt="letter" src={G}/>
-          </motion.div>
+      <LettersBox>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="g1"
+          onMouseEnter={() => handleHover(projects[0].title)}
+          onClick={() => handleNavigate(`/${projects[0].title}`)}
+        >
+          <img alt="letter" src={G} />
+        </motion.div>
 
-          <motion.div initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} transition={{duration:0.5, delay:0.2}}
-            className="o1"
-            onMouseEnter={() => handleHover(projects[1].title)}
-            onClick={() => handleNavigate(`/${projects[1].title}`)}
-          >
-            <img alt="letter" src={O}/>
-          </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="o1"
+          onMouseEnter={() => handleHover(projects[1].title)}
+          onClick={() => handleNavigate(`/${projects[1].title}`)}
+        >
+          <img alt="letter" src={O} />
+        </motion.div>
 
-          <motion.div initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} transition={{duration:0.5, delay:0.3}}
-            className="g2"
-            onMouseEnter={() => handleHover(projects[2].title)}
-            onClick={() => handleNavigate(`/${projects[2].title}`)}
-          >
-            <img alt="letter" src={G}/>
-          </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="g2"
+          onMouseEnter={() => handleHover(projects[2].title)}
+          onClick={() => handleNavigate(`/${projects[2].title}`)}
+        >
+          <img alt="letter" src={G} />
+        </motion.div>
 
-          <motion.div initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} transition={{duration:0.5, delay:0.4}}
-            className="o2"
-            onMouseEnter={() => handleHover(projects[3].title)}
-            onClick={() => handleNavigate(`/${projects[3].title}`)}
-          >
-            <img alt="letter" src={O}/>
-          </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="o2"
+          onMouseEnter={() => handleHover(projects[3].title)}
+          onClick={() => handleNavigate(`/${projects[3].title}`)}
+        >
+          <img alt="letter" src={O} />
+        </motion.div>
 
-          <motion.div initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} transition={{duration:0.5, delay:0.5}}
-            className="s1"
-            onMouseEnter={() => handleHover(projects[4].title)}
-            onClick={() => handleNavigate(`/${projects[4].title}`)}
-          >
-            <img alt="letter" src={S}/>
-          </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="s1"
+          onMouseEnter={() => handleHover(projects[4].title)}
+          onClick={() => handleNavigate(`/${projects[4].title}`)}
+        >
+          <img alt="letter" src={S} />
+        </motion.div>
 
-          <motion.div initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} transition={{duration:0.5, delay:0.6}}
-            className="s2"
-            onMouseEnter={() => handleHover(projects[5].title)}
-            onClick={() => handleNavigate(`/${projects[5].title}`)}
-          >
-            <img alt="letter" src={S}/>
-          </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+          className="s2"
+          onMouseEnter={() => handleHover(projects[5].title)}
+          onClick={() => handleNavigate(`/${projects[5].title}`)}
+        >
+          <img alt="letter" src={S} />
+        </motion.div>
 
-          <motion.div initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} transition={{duration:0.5, delay:0.7}}
-            className="e"
-            onMouseEnter={() => handleHover(projects[6].title)}
-            onClick={() => handleNavigate(`/${projects[6].title}`)}
-          >
-            <img alt="letter" src={E}/>
-          </motion.div>
-        
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.7 }}
+          className="e"
+          onMouseEnter={() => handleHover(projects[6].title)}
+          onClick={() => handleNavigate(`/${projects[6].title}`)}
+        >
+          <img alt="letter" src={E} />
+        </motion.div>
       </LettersBox>
-      
     </Container>
   );
 };
@@ -188,7 +222,6 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
   z-index: 3;
-  
 `;
 
 const ImgBox = styled(motion.div)`
@@ -208,7 +241,6 @@ const ImgBox = styled(motion.div)`
     height: 100%;
   }
 
-
   div {
     display: flex;
     justify-content: space-between;
@@ -216,7 +248,7 @@ const ImgBox = styled(motion.div)`
     font-family: Authentic90;
     position: relative;
     width: 30%;
-    
+
     overflow: hidden;
     border: none;
   }
@@ -242,8 +274,6 @@ const ImgBox = styled(motion.div)`
     height: 60px;
     p {
       width: 160px;
-
-      
     }
     .type {
       text-align: end;
@@ -260,15 +290,15 @@ const ImgBox = styled(motion.div)`
     justify-content: end;
     height: 400px;
 
-    .top{
+    .top {
       width: 100%;
       align-items: end;
     }
 
-    .cadre{
+    .cadre {
       width: 70%;
     }
-    .project-text{
+    .project-text {
       width: 70%;
     }
 
@@ -280,13 +310,12 @@ const ImgBox = styled(motion.div)`
 
   @media (max-width: 700px) {
     height: 500px;
-    
 
     .cadre {
       width: 100%;
       height: 450px;
     }
-    .project-text{
+    .project-text {
       width: 100%;
     }
 
@@ -302,34 +331,32 @@ const ImgBox = styled(motion.div)`
 `;
 
 const LettersBox = styled(motion.div)`
-display: flex;
-justify-content: space-between;
-padding:0  20px;
-@media (max-width:1000px){
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  @media (max-width: 1000px) {
     padding: 0;
   }
 
-div{
- 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  @media (max-width:1000px){
-    
-  }
-  img{
-    transition: 500ms;
-    width: 100%;
-    height: auto;
-    &:hover{
-      transform: rotate3d(0.1,0.2, 0.2, 0.02turn);
+    @media (max-width: 1000px) {
+    }
+    img {
+      transition: 500ms;
+      width: 100%;
+      height: auto;
+      &:hover {
+        transform: rotate3d(0.1, 0.2, 0.2, 0.02turn);
+      }
     }
   }
-}
 
-.o2{
-  margin-right: 1.5vw;
-}
-`
+  .o2 {
+    margin-right: 1.5vw;
+  }
+`;
 export default Hero;

@@ -52,7 +52,7 @@ const Header = () => {
 
   return (
     <Container>
-      <motion.div  className={isOpen ? "frame frame-open" : "frame"}>
+      <motion.div className={isOpen ? "frame frame-open" : "frame"}>
         <motion.h1
           initial={initial}
           animate={animate}
@@ -83,11 +83,21 @@ const Header = () => {
           animate={animate}
           transition={{ duration: 0.5, delay: 0.4 }}
           className="contact"
-          onMouseEnter={handleBlur}
-          onMouseLeave={removeBlur}
         >
-          <li className={blur ? "blurred" : ""}>ggss.studio@outlook.com</li>
-          <li className={blur ? "blurred" : ""}>450 822 5550</li>
+          <li
+            onMouseEnter={handleBlur}
+            onMouseLeave={removeBlur}
+            className={blur ? "blurred" : ""}
+          >
+            ggss.studio@outlook.com
+          </li>
+          <li
+            onMouseEnter={handleBlur}
+            onMouseLeave={removeBlur}
+            className={blur ? "blurred" : ""}
+          >
+            450 822 5550
+          </li>
         </motion.ul>
 
         <motion.nav
@@ -96,12 +106,10 @@ const Header = () => {
           transition={{ duration: 0.5, delay: 0.6 }}
         >
           <i className="fa-solid fa-bars" onClick={toggleMenu}></i>
-          <ul
-            onMouseEnter={handleBlur}
-            onMouseLeave={removeBlur}
-            className={isOpen ? "open" : ""}
-          >
+          <ul className={isOpen ? "open" : ""}>
             <li
+              onMouseEnter={handleBlur}
+              onMouseLeave={removeBlur}
               onClick={() => {
                 removeBlur();
                 setIsOpen(false);
@@ -112,6 +120,8 @@ const Header = () => {
               WORK
             </li>
             <li
+              onMouseEnter={handleBlur}
+              onMouseLeave={removeBlur}
               onClick={() => {
                 removeBlur();
                 setIsOpen(false);
@@ -122,6 +132,8 @@ const Header = () => {
               ABOUT
             </li>
             <li
+              onMouseEnter={handleBlur}
+              onMouseLeave={removeBlur}
               onClick={() => {
                 removeBlur();
                 setIsOpen(false);
@@ -138,15 +150,10 @@ const Header = () => {
   );
 };
 
-
-
 const Container = styled.header`
   padding: 20px;
   padding-bottom: 30px;
   padding-top: 20px;
-  
-
-  
 
   div {
     transition: 500ms;
@@ -191,8 +198,6 @@ const Container = styled.header`
 
     scale: 1.5;
     transition: 400ms;
-
-    
   }
   ul {
     display: flex;
@@ -254,7 +259,6 @@ const Container = styled.header`
 
     div.frame-open {
       height: 100px;
-      
 
       p {
         display: none;
