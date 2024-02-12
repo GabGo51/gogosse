@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { MouseContext } from "../context/mouseContext";
 import { motion } from "framer-motion";
+import { useLocation } from "react-router-dom";
 
 const WorkButton = ({ darkTheme }) => {
   const { cursorChangeHandler } = useContext(MouseContext);
@@ -16,6 +17,13 @@ const WorkButton = ({ darkTheme }) => {
       behavior: "smooth",
     });
   };
+
+  const location = useLocation();
+  const isDarkTheme =
+    location.pathname === "/H%C3%89RITAGE%20B%C3%82TI" ||
+    location.pathname === "/HORIZON%202023" ||
+    location.pathname === "/ESPACE%20FINE%20VOL.2" ||
+    location.pathname === "/about";
 
   const spring = {
     type: "spring",
@@ -47,7 +55,7 @@ const WorkButton = ({ darkTheme }) => {
   }, []);
 
   return (
-    <Container $darkTheme={darkTheme}>
+    <Container $darkTheme={isDarkTheme}>
       <motion.button
         animate={{ x: mouseX }}
         transition={spring}
