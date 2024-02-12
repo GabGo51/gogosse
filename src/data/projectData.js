@@ -56,10 +56,10 @@ const projects = [
     date: "2024",
   },
   {
-    title: "PETITS BUDGETS GRANDS GOUTS",
+    title: "PETITS BUDGETS GRANDS GOÛTS",
     type: "Editorial",
     description:
-      "Introducing the new identity for the Outdoor Adventure Show. The identity is form-based and inspired by flexible visual system techniques. The Outdoor Show of 2024 boasts a modernized look without sacrificing its creative essence. The system originates from the logo itself and can be utilized in various ways to create assets and designs for the brand.",
+      "Petits Budgets Grands Goût is an editorial endeavor featuring student recipes from our class. Our aim was to compile and share our culinary creations while crafting a unique recipe book. We explored budget-friendly cooking with flavorful twists, enriching our culinary journeys together.",
     img: p1,
     date: "2023",
   },

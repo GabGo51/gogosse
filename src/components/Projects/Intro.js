@@ -40,7 +40,7 @@ const Container = styled.div`
     font-family: Authentic90C;
     font-weight: 400;
     font-size: clamp(40px, 4vw, 80px);
-    max-width: 500px;
+    max-width: 700px;
   }
 
   .middle {

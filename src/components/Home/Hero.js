@@ -113,6 +113,7 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="g1"
           onMouseEnter={() => handleHover(projects[0].title)}
+          onMouseLeave={()=>{cursorChangeHandler("")}}
           onClick={() => handleNavigate(`/${projects[0].title}`)}
         >
           <img alt="letter" src={G} />
@@ -124,6 +125,7 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="o1"
           onMouseEnter={() => handleHover(projects[1].title)}
+          onMouseLeave={()=>{cursorChangeHandler("")}}
           onClick={() => handleNavigate(`/${projects[1].title}`)}
         >
           <img alt="letter" src={O} />
@@ -135,6 +137,7 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="g2"
           onMouseEnter={() => handleHover(projects[2].title)}
+          onMouseLeave={()=>{cursorChangeHandler("")}}
           onClick={() => handleNavigate(`/${projects[2].title}`)}
         >
           <img alt="letter" src={G} />
@@ -146,6 +149,7 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="o2"
           onMouseEnter={() => handleHover(projects[3].title)}
+          onMouseLeave={()=>{cursorChangeHandler("")}}
           onClick={() => handleNavigate(`/${projects[3].title}`)}
         >
           <img alt="letter" src={O} />
@@ -157,6 +161,7 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="s1"
           onMouseEnter={() => handleHover(projects[4].title)}
+          onMouseLeave={()=>{cursorChangeHandler("")}}
           onClick={() => handleNavigate(`/${projects[4].title}`)}
         >
           <img alt="letter" src={S} />
@@ -168,6 +173,7 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.6 }}
           className="s2"
           onMouseEnter={() => handleHover(projects[5].title)}
+          onMouseLeave={()=>{cursorChangeHandler("")}}
           onClick={() => handleNavigate(`/${projects[5].title}`)}
         >
           <img alt="letter" src={S} />
@@ -179,6 +185,7 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.7 }}
           className="e"
           onMouseEnter={() => handleHover(projects[6].title)}
+          onMouseLeave={()=>{cursorChangeHandler("")}}
           onClick={() => handleNavigate(`/${projects[6].title}`)}
         >
           <img alt="letter" src={E} />
@@ -226,6 +233,7 @@ const Container = styled.div`
 
 const ImgBox = styled(motion.div)`
   height: 100%;
+  margin-bottom: 20px;
   .top {
     display: flex;
     flex-direction: column;
