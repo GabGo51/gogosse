@@ -363,5 +363,9 @@ const LettersBox = styled(motion.div)`
   .o2 {
     margin-right: 1.5vw;
   }
+
+  @media (max-width:1100px){
+    margin-top: -30px;
+  }
 `;
 export default Hero;

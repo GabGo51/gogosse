@@ -15,7 +15,7 @@ const projects = [
     img: e1,
   },
   {
-    title: "HÉRITAGE",
+    title: "HÉRITAGE BÂTI",
     type: "Edition",
     description:
       "Héritage is a project that honors significant architects in Montreal and their contributions to the city's skyline and urban development. The design of the book is inspired by the architectural world, with elements of buildings being translated into shapes or design motifs within the book's layout. It captures a fusion of architectural principles and graphic design, celebrating Montreal's rich architectural heritage.",
