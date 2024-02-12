@@ -66,11 +66,6 @@ const Projects = () => {
   );
 };
 
-const rotate = keyframes`
-to{
-  transform: rotate(90deg);
-}
-`;
 
 const Container = styled.div`
   background-color: white;

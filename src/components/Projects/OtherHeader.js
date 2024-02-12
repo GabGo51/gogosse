@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { useContext } from "react";
 import { MouseContext } from "../../context/mouseContext";
 import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 
 const OtherHeader = ({ name }) => {
   const { cursorChangeHandler } = useContext(MouseContext);
@@ -40,9 +41,26 @@ const OtherHeader = ({ name }) => {
   const initial = { opacity: 0, y: -20 };
   const animate = { opacity: 1, y: 0 };
 
+  useEffect(() => {
+    const handleResize = () => {
+      // Check if the screen width is greater than 1100 pixels
+      if (window.innerWidth > 700) {
+        setIsOpen(false); // Close the menu
+      }
+    };
+
+    // Add event listener for resize events
+    window.addEventListener("resize", handleResize);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <Container darkTheme={isDarkTheme}>
-      <div className={isOpen ? "header header-open" : "header"}>
+      <div className={"header"}>
         <motion.h1
           initial={initial}
           animate={animate}
@@ -60,7 +78,7 @@ const OtherHeader = ({ name }) => {
           transition={{ duration: 0.5, delay: 0.6 }}
         >
           <i className="fa-solid fa-bars" onClick={toggleMenu}></i>
-          <ul className={isOpen ? "open" : ""}>
+          <ul>
             <li
               onMouseEnter={handleBlur}
               onMouseLeave={removeBlur}
@@ -100,6 +118,57 @@ const OtherHeader = ({ name }) => {
           </ul>
         </motion.nav>
       </div>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.nav
+            initial={{ opacity: 0, scaleY: 0, height: 0 }}
+            animate={{ opacity: 1, scaleY: 1, height: "auto" }}
+            exit={{ opacity: 0, scaleY: 0, height: 0 }}
+            transition={{ duration: 0.4 }}
+          >
+            <ul className="open">
+              <li
+                onMouseEnter={handleBlur}
+                onMouseLeave={removeBlur}
+                onClick={() => {
+                  handleNavigate('/');
+                  removeBlur();
+                  setIsOpen(false)
+                  //need timeout for the function to happen before removing element from dom
+                }}
+                className={blur ? "blurred" : ""}
+              >
+                WORK
+              </li>
+              <li
+                onMouseEnter={handleBlur}
+                onMouseLeave={removeBlur}
+                onClick={() => {
+                  removeBlur();
+                  setIsOpen(false);
+                  handleNavigate("/about");
+                }}
+                className={blur ? "blurred" : ""}
+              >
+                ABOUT
+              </li>
+              <li
+                onMouseEnter={handleBlur}
+                onMouseLeave={removeBlur}
+                onClick={() => {
+                  removeBlur();
+                  setIsOpen(false);
+                  handleNavigate("/contact");
+                }}
+                className={blur ? "blurred" : ""}
+              >
+                CONNECT
+              </li>
+            </ul>
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </Container>
   );
 };
@@ -205,8 +274,8 @@ const Container = styled.header`
       right: 0;
       display: flex;
       flex-direction: row;
-      position: absolute;
-      bottom: 0;
+      margin-top: 20px;
+      
 
       li {
         border: 1px solid ${(props) => (props.darkTheme ? "white" : "black")};

@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { useContext } from "react";
 import { MouseContext } from "../../context/mouseContext";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Header = () => {
   const { cursorChangeHandler } = useContext(MouseContext);
@@ -21,6 +21,22 @@ const Header = () => {
       top: 0,
     });
   };
+  useEffect(() => {
+    const handleResize = () => {
+      // Check if the screen width is greater than 1100 pixels
+      if (window.innerWidth > 700) {
+        setIsOpen(false); // Close the menu
+      }
+    };
+
+    // Add event listener for resize events
+    window.addEventListener("resize", handleResize);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const [blur, setBlur] = useState(false);
   const handleBlur = () => {
@@ -34,6 +50,7 @@ const Header = () => {
 
   const scrollToRef = (id) => {
     const element = document.getElementById(id);
+    console.log("hey");
     console.log(element);
     if (element) {
       const elementPosition =
@@ -47,12 +64,20 @@ const Header = () => {
     }
   };
 
+  const phoneScroll = () =>{
+    console.log('hey');
+    window.scrollBy({
+      top: 1000,
+      behavior: 'smooth'
+  });
+  }
+
   const initial = { opacity: 0, y: -20 };
   const animate = { opacity: 1, y: 0 };
 
   return (
     <Container>
-      <motion.div className={isOpen ? "frame frame-open" : "frame"}>
+      <motion.div>
         <motion.h1
           initial={initial}
           animate={animate}
@@ -106,7 +131,7 @@ const Header = () => {
           transition={{ duration: 0.5, delay: 0.6 }}
         >
           <i className="fa-solid fa-bars" onClick={toggleMenu}></i>
-          <ul className={isOpen ? "open" : ""}>
+          <ul>
             <li
               onMouseEnter={handleBlur}
               onMouseLeave={removeBlur}
@@ -146,6 +171,58 @@ const Header = () => {
           </ul>
         </motion.nav>
       </motion.div>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.nav
+            initial={{ opacity: 0, scaleY: 0, height: 0 }}
+            animate={{ opacity: 1, scaleY: 1, height: "auto" }}
+            exit={{ opacity: 0, scaleY: 0, height: 0 }}
+            transition={{ duration: 0.4 }}
+          >
+            <ul className="open">
+              <li
+                onMouseEnter={handleBlur}
+                onMouseLeave={removeBlur}
+                onClick={() => {
+                  scrollToRef('project');
+                  removeBlur();
+                  setTimeout(()=>{
+                      setIsOpen(false)
+                  },500)
+                  //need timeout for the function to happen before removing element from dom 
+                }}
+                className={blur ? "blurred" : ""}
+              >
+                WORK
+              </li>
+              <li
+                onMouseEnter={handleBlur}
+                onMouseLeave={removeBlur}
+                onClick={() => {
+                  removeBlur();
+                  setIsOpen(false);
+                  handleNavigate("/about");
+                }}
+                className={blur ? "blurred" : ""}
+              >
+                ABOUT
+              </li>
+              <li
+                onMouseEnter={handleBlur}
+                onMouseLeave={removeBlur}
+                onClick={() => {
+                  removeBlur();
+                  setIsOpen(false);
+                  handleNavigate("/contact");
+                }}
+                className={blur ? "blurred" : ""}
+              >
+                CONNECT
+              </li>
+            </ul>
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </Container>
   );
 };
@@ -247,8 +324,7 @@ const Container = styled.header`
       right: 0;
       display: flex;
       flex-direction: row;
-      position: absolute;
-      bottom: 0;
+      margin-top: 20px;
 
       li {
         border: 1px solid black;
@@ -257,12 +333,8 @@ const Container = styled.header`
       }
     }
 
-    div.frame-open {
-      height: 100px;
-
-      p {
-        display: none;
-      }
+    .frame {
+      transition: height 0.5s ease;
     }
   }
 `;

@@ -277,6 +277,7 @@ const ImgBox = styled(motion.div)`
     height: 60px;
     p {
       width: 100%;
+      text-transform: uppercase;
     }
     .type {
       text-align: end;
