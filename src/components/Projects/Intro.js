@@ -39,7 +39,8 @@ const Container = styled.div`
   h1 {
     font-family: Authentic90C;
     font-weight: 400;
-    font-size: clamp(50px, 3vw, 80px);
+    font-size: clamp(40px, 4vw, 80px);
+    max-width: 500px;
   }
 
   .middle {
@@ -76,7 +77,7 @@ const Container = styled.div`
     h1 {
       margin-bottom: 60px;
       width: 100%;
-      text-align: justify;
+      
     }
 
     .middle {
