@@ -172,7 +172,7 @@ const Container = styled.header`
   }
 
   p {
-    font-family: HLight;
+    font-family: Authentic60C;
     text-transform: uppercase;
     display: inline-block;
     font-size: clamp(12px, 1vw, 16px);
@@ -188,7 +188,7 @@ const Container = styled.header`
     text-align: end;
 
     ul {
-      font-family: HMedium;
+      font-family: Authentic90;
       font-size: 14px;
     }
   }
@@ -202,7 +202,7 @@ const Container = styled.header`
   ul {
     display: flex;
     flex-direction: column;
-    font-family: HLight;
+    font-family: Authentic60C;
     font-size: 18px;
     text-transform: uppercase;
   }

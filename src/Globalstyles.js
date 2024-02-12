@@ -63,26 +63,7 @@ export default createGlobalStyle`
       font-display: swap;
   }
 
-  @font-face {
-      font-family: HPro;
-      src: url(${HPro});
-      font-display: swap;
-  }
-  @font-face {
-      font-family: HLight;
-      src: url(${HLight});
-      font-display: swap;
-  }
-  @font-face {
-      font-family: HMedium;
-      src: url(${HMedium});
-      font-display: swap;
-  }
-  @font-face {
-      font-family: HCondensed;
-      src: url(${HCondensed});
-      font-display: swap;
-  }
+  
   
   
 
