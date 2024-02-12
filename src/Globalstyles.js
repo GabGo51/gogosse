@@ -8,6 +8,10 @@ import Authentic130C from "./fonts/AUTHENTICSans-Condensed-130.otf";
 import Authentic150C from "./fonts/AUTHENTICSans-Condensed-150.otf";
 import Authentic60C from "./fonts/AUTHENTICSans-Condensed-60.otf";
 import Authentic90C from "./fonts/AUTHENTICSans-Condensed-90.otf";
+import HPro from "./fonts/Hpro.otf";
+import HLight from "./fonts/HLight.ttf";
+import HMedium from "./fonts/HMedium.ttf";
+import HCondensed from "./fonts/HCondensed.ttf";
 
 export default createGlobalStyle`
 
@@ -56,6 +60,27 @@ export default createGlobalStyle`
   @font-face {
       font-family: Authentic150C;
       src: url(${Authentic150C});
+      font-display: swap;
+  }
+
+  @font-face {
+      font-family: HPro;
+      src: url(${HPro});
+      font-display: swap;
+  }
+  @font-face {
+      font-family: HLight;
+      src: url(${HLight});
+      font-display: swap;
+  }
+  @font-face {
+      font-family: HMedium;
+      src: url(${HMedium});
+      font-display: swap;
+  }
+  @font-face {
+      font-family: HCondensed;
+      src: url(${HCondensed});
       font-display: swap;
   }
   

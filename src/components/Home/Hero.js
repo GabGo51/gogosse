@@ -276,7 +276,10 @@ const ImgBox = styled(motion.div)`
     justify-content: space-between;
     height: 60px;
     p {
+      font-family: HLight;
       width: 100%;
+      font-size: 12px;
+      text-transform: uppercase;
     }
     .type {
       text-align: end;
