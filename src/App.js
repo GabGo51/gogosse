@@ -50,7 +50,7 @@ function App() {
               <Route path="/HORIZON 2023" element={<Horizon />} />
               <Route path="/LAPIÈS" element={<Lapies />} />
               <Route path="/SAP 2024" element={<SAP />} />
-              <Route path="/Petits Budgets Grands Gouts" element={<PBGG />} />
+              <Route path="/PETITS BUDGETS GRANDS GOUTS" element={<PBGG />} />
               <Route path="/TURBINE 2024" element={<Turbine />} />
               
             </Routes>

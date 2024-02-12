@@ -45,7 +45,7 @@ const Hero = () => {
     const handleMouseMove = (e) => {
       const adjustedMouseX = e.clientX - 340;
       const minX = 0;
-      const maxX = window.innerWidth - window.innerWidth * 0.34; //adjust for responsiveness depending on width of teh asset
+      const maxX = window.innerWidth - window.innerWidth * 0.32; //adjust for responsiveness depending on width of teh asset
 
       if (window.innerWidth > 1100) {
         setMouseX(Math.max(minX, Math.min(adjustedMouseX, maxX)));
@@ -230,7 +230,9 @@ const ImgBox = styled(motion.div)`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
+    height: 110%;
+    margin-top: -30px;
+    
   }
 
   .cadre {
@@ -238,7 +240,8 @@ const ImgBox = styled(motion.div)`
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100%;
+    height: 110%;
+    
   }
 
   div {
@@ -256,7 +259,7 @@ const ImgBox = styled(motion.div)`
     transition: 500ms;
     border: none;
     width: 100%;
-    height: 100%;
+    height: 110%;
     position: absolute;
     object-fit: cover;
     animation: ${appearAnimation} 800ms forwards;
@@ -273,7 +276,7 @@ const ImgBox = styled(motion.div)`
     justify-content: space-between;
     height: 60px;
     p {
-      width: 160px;
+      width: 100%;
     }
     .type {
       text-align: end;
@@ -292,6 +295,7 @@ const ImgBox = styled(motion.div)`
 
     .top {
       width: 100%;
+      height: 100%;
       align-items: end;
     }
 

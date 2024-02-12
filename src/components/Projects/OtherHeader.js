@@ -15,12 +15,10 @@ const OtherHeader = ({ name }) => {
   };
   const location = useLocation();
   const isDarkTheme =
-  location.pathname === "/H%C3%89RITAGE" ||
-  location.pathname === "/HORIZON%202023" ||
-  location.pathname === "/ESPACE%20FINE%20VOL.2" ||
-  location.pathname === "/about";
-
-  
+    location.pathname === "/H%C3%89RITAGE" ||
+    location.pathname === "/HORIZON%202023" ||
+    location.pathname === "/ESPACE%20FINE%20VOL.2" ||
+    location.pathname === "/about";
 
   const navigate = useNavigate();
   const handleNavigate = (page) => {
@@ -44,7 +42,7 @@ const OtherHeader = ({ name }) => {
 
   return (
     <Container darkTheme={isDarkTheme}>
-      <div  className={isOpen ? "header header-open" : "header"}>
+      <div className={isOpen ? "header header-open" : "header"}>
         <motion.h1
           initial={initial}
           animate={animate}
@@ -56,22 +54,16 @@ const OtherHeader = ({ name }) => {
           GOGOSSE
         </motion.h1>
 
-        
-
-        
-
         <motion.nav
           initial={initial}
           animate={animate}
           transition={{ duration: 0.5, delay: 0.6 }}
         >
           <i className="fa-solid fa-bars" onClick={toggleMenu}></i>
-          <ul
-            onMouseEnter={handleBlur}
-            onMouseLeave={removeBlur}
-            className={isOpen ? "open" : ""}
-          >
+          <ul className={isOpen ? "open" : ""}>
             <li
+              onMouseEnter={handleBlur}
+              onMouseLeave={removeBlur}
               onClick={() => {
                 removeBlur();
                 setIsOpen(false);
@@ -82,6 +74,8 @@ const OtherHeader = ({ name }) => {
               WORK
             </li>
             <li
+              onMouseEnter={handleBlur}
+              onMouseLeave={removeBlur}
               onClick={() => {
                 removeBlur();
                 setIsOpen(false);
@@ -92,6 +86,8 @@ const OtherHeader = ({ name }) => {
               ABOUT
             </li>
             <li
+              onMouseEnter={handleBlur}
+              onMouseLeave={removeBlur}
               onClick={() => {
                 removeBlur();
                 setIsOpen(false);
@@ -112,8 +108,6 @@ const Container = styled.header`
   padding: 20px;
   padding-bottom: 10px;
   padding-top: 20px;
-
-  
 
   div {
     transition: 500ms;
@@ -214,21 +208,19 @@ const Container = styled.header`
       position: absolute;
       bottom: 0;
 
-      li{
-        border:1px solid ${(props) => (props.darkTheme ? "white" : "black")} ;
+      li {
+        border: 1px solid ${(props) => (props.darkTheme ? "white" : "black")};
         border-radius: 15px;
         margin-left: 10px;
       }
     }
 
-    div.header-open{
+    div.header-open {
       height: 100px;
 
-      p{
+      p {
         display: none;
       }
-
-      
     }
   }
 `;

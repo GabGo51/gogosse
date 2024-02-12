@@ -32,8 +32,8 @@ const Dot = styled.div`
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   background-color: white;
   mix-blend-mode: difference;
   border-radius: 100%;
@@ -42,8 +42,8 @@ const Dot = styled.div`
   pointer-events: none;
 
   &.hover{
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     
   }
   &.button{

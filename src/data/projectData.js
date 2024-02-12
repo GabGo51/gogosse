@@ -50,7 +50,7 @@ const projects = [
     img: s1,
   },
   {
-    title: "Petits Budgets Grands Gouts",
+    title: "PETITS BUDGETS GRANDS GOUTS",
     type: "Editorial",
     description:
       "Introducing the new identity for the Outdoor Adventure Show. The identity is form-based and inspired by flexible visual system techniques. The Outdoor Show of 2024 boasts a modernized look without sacrificing its creative essence. The system originates from the logo itself and can be utilized in various ways to create assets and designs for the brand.",
