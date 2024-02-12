@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
@@ -65,14 +65,10 @@ const WorkButton = ({ darkTheme }) => {
   );
 };
 
-const rotate = keyframes`
-to{
-  transform: rotate(90deg);
-}
-`;
+
 
 const Container = styled(motion.div)`
-width: 95%;
+  width: 95%;
 
   button {
     transition: 300ms;
@@ -82,13 +78,13 @@ width: 95%;
     background-color: transparent;
     font-size: 30px;
     margin-bottom: 50px;
-    border: 1px solid ${props => props.$darkTheme ? 'white' : 'black'};
+    border: 1px solid ${(props) => (props.$darkTheme ? "white" : "black")};
     border-radius: 25px;
     font-family: Authentic60;
-    color: ${props => props.$darkTheme ? 'white' : 'black'};
+    color: ${(props) => (props.$darkTheme ? "white" : "black")};
     width: 220px;
     height: 70px;
-    
+
     text-align: center;
     margin-top: 100px;
     text-transform: uppercase;
@@ -97,22 +93,18 @@ width: 95%;
     }
 
     &:hover {
-      background-color:${props => props.$darkTheme ? 'white' : 'black'};
-      color: ${props => props.$darkTheme ? 'black' : 'white'};
-      div {
-        animation: ${rotate} 500ms forwards;
-      }
+      background-color: ${(props) => (props.$darkTheme ? "white" : "black")};
+      color: ${(props) => (props.$darkTheme ? "black" : "white")};
+      
     }
 
-    @media (max-width:1100px){
+    @media (max-width: 1100px) {
       width: 160px;
-    height: 60px;
-    font-size: 20px;border-radius: 20px;
+      height: 60px;
+      font-size: 20px;
+      border-radius: 20px;
     }
-    
   }
-
- 
 `;
 
 export default WorkButton;

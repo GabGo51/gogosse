@@ -113,6 +113,7 @@ const Header = () => {
             onMouseEnter={handleBlur}
             onMouseLeave={removeBlur}
             className={blur ? "blurred" : ""}
+            onClick={() =>{window.location.href = "mailto:ggss.studio@outlook.com"}}
           >
             ggss.studio@outlook.com
           </li>
@@ -120,6 +121,7 @@ const Header = () => {
             onMouseEnter={handleBlur}
             onMouseLeave={removeBlur}
             className={blur ? "blurred" : ""}
+            onClick={() =>{window.location.href = "tel:+14508225550"}}
           >
             450 822 5550
           </li>

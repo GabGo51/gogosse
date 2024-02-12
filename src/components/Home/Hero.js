@@ -248,7 +248,7 @@ const ImgBox = styled(motion.div)`
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
-    font-family: Authentic90;
+    font-family: Authentic90C;
     position: relative;
     width: 30%;
 

@@ -54,7 +54,7 @@ const Projects = () => {
               </p>
               <div className="project-info">
                 <p>{project.type}</p>
-                <p>2023</p>
+                <p>{project.date}</p>
               </div>
             </Project>
           ))}
@@ -180,6 +180,7 @@ const Project = styled.div`
     display: flex;
     flex: 0.2;
     justify-content: space-between;
+    text-transform: uppercase;
     width: 250px;
     height: 0px;
 

@@ -54,10 +54,12 @@ const Footer = () => {
           initial={initial}
           animate={animate}
           transition={{ duration: 0.5, delay: 0.3 }}
-          onMouseEnter={handleBlur}
-          onMouseLeave={removeBlur}
         >
-          <li className={blur ? "blurred" : ""}>
+          <li
+            onMouseEnter={handleBlur}
+            onMouseLeave={removeBlur}
+            className={blur ? "blurred" : ""}
+          >
             <a
               target="#"
               href="https://www.behance.net/nicolasgosselin2?tracking_source=search_users|nicolas%20gosselin"
@@ -65,12 +67,20 @@ const Footer = () => {
               Behance
             </a>
           </li>
-          <li className={blur ? "blurred" : ""}>
+          <li
+            onMouseEnter={handleBlur}
+            onMouseLeave={removeBlur}
+            className={blur ? "blurred" : ""}
+          >
             <a target="#" href="https://www.instagram.com/rodrigoooo00o/">
               Instagram
             </a>
           </li>
-          <li className={blur ? "blurred" : ""}>
+          <li
+            onMouseEnter={handleBlur}
+            onMouseLeave={removeBlur}
+            className={blur ? "blurred" : ""}
+          >
             <a
               target="#"
               href="https://www.linkedin.com/in/nicolas-gosselin-818862279/"
@@ -84,14 +94,29 @@ const Footer = () => {
           animate={animate}
           transition={{ duration: 0.5, delay: 0.5 }}
           className="contact"
-          onMouseEnter={handleBlur}
-          onMouseLeave={removeBlur}
         >
-          <li className={blur ? "blurred" : ""}>ggss.studio@outlook.com</li>
-          <li className={blur ? "blurred" : ""}>450 822 5550</li>
+          <li
+            onMouseEnter={handleBlur}
+            onMouseLeave={removeBlur}
+            className={blur ? "blurred" : ""}
+            onClick={() => {
+              window.location.href = "mailto:ggss.studio@outlook.com";
+            }}
+          >
+            ggss.studio@outlook.com
+          </li>
+          <li
+            onMouseEnter={handleBlur}
+            onMouseLeave={removeBlur}
+            className={blur ? "blurred" : ""}
+            onClick={() => {
+              window.location.href = "tel:+14508225550";
+            }}
+          >
+            450 822 5550
+          </li>
         </motion.ul>
       </Info>
-      
     </Container>
   );
 };
@@ -108,7 +133,6 @@ const Container = styled.footer`
   text-transform: uppercase;
   font-family: Authentic60;
 
-  
   .blurred {
     filter: blur(1px);
   }
