@@ -28,17 +28,21 @@ const About = () => {
 
       <div className="frame">
         <div>
-          <motion.p initial={initial}
-        animate={animate}
-        transition={{ duration: 0.5, delay: 0.1 }}>
+          <motion.p
+            initial={initial}
+            animate={animate}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
             Hi, I'm Nicolas, a Montreal-based designer! My practice covers
             various types of projects: bookmaking, branding, poster design,
             creative coding, web design, motion design, and animation.
           </motion.p>
 
-          <motion.p initial={initial}
-        animate={animate}
-        transition={{ duration: 0.5, delay: 0.3 }}>
+          <motion.p
+            initial={initial}
+            animate={animate}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
             Gogosse is my creative space where I share my graphic design work.
             The name "Gogosse" holds special significance for me—it's deeply
             intertwined with my family's legacy and ethos. Rooted in the surname
@@ -49,16 +53,24 @@ const About = () => {
             was a no-brainer given my backgrounds family's penchant for creative
             problem-solving.
           </motion.p>
-          <motion.p initial={initial}
-        animate={animate}
-        transition={{ duration: 0.5, delay: 0.5 }}>
+          <motion.p
+            initial={initial}
+            animate={animate}
+            transition={{ duration: 0.5, delay: 0.5 }}
+          >
             With Gogosse, I aim to showcase my work and connect with other
             creatives, as well as find interesting projects to collaborate on.
             Let’s connect, and hopefully soon!
           </motion.p>
         </div>
 
-        <motion.img initial={{x:50}} animate={{x:0}} src={drigo} transition={{ duration: 0.5}} alt="drigo" />
+        <motion.img
+          initial={{ x: 50 }}
+          animate={{ x: 0 }}
+          src={drigo}
+          transition={{ duration: 0.5 }}
+          alt="drigo"
+        />
       </div>
     </Container>
   );
@@ -67,14 +79,14 @@ const About = () => {
 const Container = styled.div`
   .frame {
     padding: 0 20px;
-
+    margin-top: 40px;
     display: flex;
     align-items: start;
     justify-content: space-between;
     width: 100%;
     height: 100%;
 
-    div{
+    div {
       width: 50%;
     }
     p {
@@ -93,7 +105,7 @@ const Container = styled.div`
     @media (max-width: 1100px) {
       flex-direction: column;
       align-items: center;
-      div{
+      div {
         width: 100%;
         margin-top: 50px;
       }

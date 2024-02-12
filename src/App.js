@@ -45,7 +45,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
-              <Route path="/HÉRITAGE" element={<Heritage />} />
+              <Route path="/HÉRITAGE BÂTI" element={<Heritage />} />
               <Route path="/ESPACE FINE VOL.2" element={<EspaceFine />} />
               <Route path="/HORIZON 2023" element={<Horizon />} />
               <Route path="/LAPIÈS" element={<Lapies />} />

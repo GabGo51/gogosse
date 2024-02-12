@@ -16,7 +16,7 @@ const OtherHeader = ({ name }) => {
   };
   const location = useLocation();
   const isDarkTheme =
-    location.pathname === "/H%C3%89RITAGE" ||
+    location.pathname === "/H%C3%89RITAGE%20B%C3%82TI" ||
     location.pathname === "/HORIZON%202023" ||
     location.pathname === "/ESPACE%20FINE%20VOL.2" ||
     location.pathname === "/about";

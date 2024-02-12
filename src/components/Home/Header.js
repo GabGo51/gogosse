@@ -280,7 +280,7 @@ const Container = styled.header`
     display: flex;
     flex-direction: column;
     font-family: Authentic60C;
-    font-size: 18px;
+    font-size: 16px;
     text-transform: uppercase;
   }
 

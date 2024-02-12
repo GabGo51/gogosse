@@ -7,7 +7,7 @@ import Authentic150 from "./fonts/AUTHENTICSans-150.otf";
 import Authentic130C from "./fonts/AUTHENTICSans-Condensed-130.otf";
 import Authentic150C from "./fonts/AC150.ttf";
 import Authentic60C from "./fonts/60_CONDENSED2.ttf";
-import Authentic90C from "./fonts/AUTHENTICSans-Condensed-90.otf";
+import Authentic90C from "./fonts/AC90.ttf";
 
 
 export default createGlobalStyle`

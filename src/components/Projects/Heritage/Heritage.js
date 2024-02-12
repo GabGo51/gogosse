@@ -13,9 +13,9 @@ const project = projects[1];
 
 const Heritage = () => {
   const location = useLocation();
-  const isDarkTheme = location.pathname === "/H%C3%89RITAGE";
+  const isDarkTheme = location.pathname === "/H%C3%89RITAGE%20B%C3%82TI";
   useEffect(() => {
-    if (location.pathname === "/H%C3%89RITAGE") {
+    if (location.pathname === "/H%C3%89RITAGE%20B%C3%82TI") {
       document.body.setAttribute("data-theme", "dark");
     } else {
       document.body.removeAttribute("data-theme");

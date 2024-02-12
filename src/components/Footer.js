@@ -12,7 +12,7 @@ const Footer = () => {
 
   const location = useLocation();
   const isDarkTheme =
-    location.pathname === "/H%C3%89RITAGE" ||
+    location.pathname === "/H%C3%89RITAGE%20B%C3%82TI" ||
     location.pathname === "/HORIZON%202023" ||
     location.pathname === "/ESPACE%20FINE%20VOL.2" ||
     location.pathname === "/about";
@@ -32,7 +32,6 @@ const Footer = () => {
     navigate(page);
     window.scrollTo({
       top: 0,
-      
     });
   };
   const initial = { opacity: 0, y: 20 };
@@ -92,6 +91,7 @@ const Footer = () => {
           <li className={blur ? "blurred" : ""}>450 822 5550</li>
         </motion.ul>
       </Info>
+      
     </Container>
   );
 };
@@ -107,6 +107,8 @@ const Container = styled.footer`
   width: 100%;
   text-transform: uppercase;
   font-family: Authentic60;
+
+  
   .blurred {
     filter: blur(1px);
   }
@@ -159,8 +161,6 @@ const Info = styled.div`
     button {
       display: none;
     }
-
-    
 
     ul {
       margin: 0px 0px;
