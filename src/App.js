@@ -13,6 +13,7 @@ import Lapies from "./components/Projects/Lapies/Lapies";
 import Turbine from "./components/Projects/Turbine/Turbine";
 import Heritage from "./components/Projects/Heritage/Heritage";
 import Horizon from "./components/Projects/Horizon/Horizon";
+import PBGG from "./components/Projects/PBGG/PBGG";
 
 
 function App() {
@@ -49,9 +50,9 @@ function App() {
               <Route path="/HORIZON 2023" element={<Horizon />} />
               <Route path="/LAPIÈS" element={<Lapies />} />
               <Route path="/SAP 2024" element={<SAP />} />
-              <Route path="/PBGG" element={<Contact />} />
+              <Route path="/Petits Budgets Grands Gouts" element={<PBGG />} />
               <Route path="/TURBINE 2024" element={<Turbine />} />
-              <Route path="/FESTIVAL DE JAZZ" element={<Contact />} />
+              
             </Routes>
           </div>
           <Footer />

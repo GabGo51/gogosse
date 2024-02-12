@@ -4,6 +4,7 @@ import s1 from "../components/Projects/SAP/img/S_01.jpg";
 import h1 from "../components/Projects/Heritage/img/h1.jpg";
 import rock from "../components/Projects/Lapies/img/ROCKKK.jpg";
 import e1 from '../components/Projects/EspaceFine/img/E-1.jpg'
+import p1 from '../components/Projects/PBGG/img/PB_01.jpg'
 
 const projects = [
   {
@@ -49,11 +50,11 @@ const projects = [
     img: s1,
   },
   {
-    title: "SAP 2024-2",
-    type: "Branding",
+    title: "Petits Budgets Grands Gouts",
+    type: "Editorial",
     description:
       "Introducing the new identity for the Outdoor Adventure Show. The identity is form-based and inspired by flexible visual system techniques. The Outdoor Show of 2024 boasts a modernized look without sacrificing its creative essence. The system originates from the logo itself and can be utilized in various ways to create assets and designs for the brand.",
-    img: s1,
+    img: p1,
   },
 ];
 
