@@ -233,7 +233,10 @@ const Container = styled.div`
 
 const ImgBox = styled(motion.div)`
   height: 100%;
-  margin-bottom: 20px;
+  
+  @media (min-width:2000px){
+    margin-bottom: 50px;
+  }
   .top {
     display: flex;
     flex-direction: column;
