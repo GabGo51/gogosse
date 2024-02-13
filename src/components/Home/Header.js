@@ -83,7 +83,7 @@ const Header = ({load}) => {
           animate={animate}
           transition={
             load
-              ? { duration: 0.5, delay: 2.7 }
+              ? { duration: 0.5, delay: 2.9 }
               : { duration: 0.5, delay: 0.2 }
           }
           onMouseEnter={() => cursorChangeHandler("hover")}
@@ -98,7 +98,7 @@ const Header = ({load}) => {
           animate={animate}
           transition={
             load
-              ? { duration: 0.5, delay: 2.8 }
+              ? { duration: 0.5, delay: 3 }
               : { duration: 0.5, delay: 0.3 }
           }
         >
@@ -116,7 +116,7 @@ const Header = ({load}) => {
           animate={animate}
           transition={
             load
-              ? { duration: 0.5, delay: 2.9 }
+              ? { duration: 0.5, delay: 3.1 }
               : { duration: 0.5, delay: 0.4 }
           }
           className="contact"
@@ -148,7 +148,7 @@ const Header = ({load}) => {
           animate={animate}
           transition={
             load
-              ? { duration: 0.5, delay: 3 }
+              ? { duration: 0.5, delay: 3.2 }
               : { duration: 0.5, delay: 0.5 }
           }
         >

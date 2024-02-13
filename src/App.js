@@ -92,7 +92,7 @@ const Container = styled.div`
 
     div {
       position: absolute;
-      bottom: 0px;
+      top: 50px;
       right: 50px;
       font-size: clamp(100px, 20vw, 250px);
       font-family: Tagada;

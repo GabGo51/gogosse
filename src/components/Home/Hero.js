@@ -112,7 +112,7 @@ const Hero = ({ load }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={
             load
-              ? { duration: 0.5, delay: 2.7 }
+              ? { duration: 0.5, delay: 2.8 }
               : { duration: 0.5, delay: 0.2 }
           }
           className="g1"
@@ -130,7 +130,7 @@ const Hero = ({ load }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={
             load
-              ? { duration: 0.5, delay: 2.8 }
+              ? { duration: 0.5, delay: 2.9 }
               : { duration: 0.5, delay: 0.3 }
           }
           className="o1"
@@ -148,7 +148,7 @@ const Hero = ({ load }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={
             load
-              ? { duration: 0.5, delay: 2.9 }
+              ? { duration: 0.5, delay: 3 }
               : { duration: 0.5, delay: 0.4 }
           }
           className="g2"
@@ -166,7 +166,7 @@ const Hero = ({ load }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={
             load
-              ? { duration: 0.5, delay: 3 }
+              ? { duration: 0.5, delay: 3.1 }
               : { duration: 0.5, delay: 0.5 }
           }
           className="o2"
@@ -184,7 +184,7 @@ const Hero = ({ load }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={
             load
-              ? { duration: 0.5, delay: 3.1 }
+              ? { duration: 0.5, delay: 3.2 }
               : { duration: 0.5, delay: 0.6 }
           }
           className="s1"
@@ -202,7 +202,7 @@ const Hero = ({ load }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={
             load
-              ? { duration: 0.5, delay: 3.2 }
+              ? { duration: 0.5, delay: 3.3 }
               : { duration: 0.5, delay: 0.7 }
           }
           className="s2"
@@ -220,7 +220,7 @@ const Hero = ({ load }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={
             load
-              ? { duration: 0.5, delay: 3.3 }
+              ? { duration: 0.5, delay: 3.4 }
               : { duration: 0.5, delay: 0.8 }
           }
           className="e"
