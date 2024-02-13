@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import projects from "../../data/projectData";
 import { useContext } from "react";
 import { MouseContext } from "../../context/mouseContext";
-
 
 import WorkButton from "../WorkButton";
 
@@ -25,13 +24,26 @@ const Projects = () => {
   const navigate = useNavigate();
   const handleNavigate = (page) => {
     cursorChangeHandler("");
-    
+
     window.scrollTo({
       top: 0,
-      
     });
     navigate(page);
   };
+
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1100); // Set initial state based on screen width
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth > 1100); // Update state when the screen size changes
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <Container id="project">
@@ -44,14 +56,13 @@ const Projects = () => {
         <ProjectBox className={blur ? "blurred" : ""}>
           {projects.map((project) => (
             <Project
+              $isDesktop={isDesktop}
               key={project.title}
               onClick={() => handleNavigate(`/${project.title}`)}
             >
               <h3>{project.title}</h3>
               <img alt="project" src={project.img} />
-              <p className="description">
-                {project.description}
-              </p>
+              <p className="description">{project.description}</p>
               <div className="project-info">
                 <p>{project.type}</p>
                 <p>{project.date}</p>
@@ -66,7 +77,6 @@ const Projects = () => {
   );
 };
 
-
 const Container = styled.div`
   background-color: white;
   padding: 20px;
@@ -78,28 +88,9 @@ const Container = styled.div`
     width: 100vw;
     margin: 50px 0px;
   }
-
-  .blurred {
-    filter: blur(2px);
-  }
-
-  
-
-    
-    
-
-  @media (max-width: 900px) {
-    .blurred {
-      filter: blur(0px);
-    }
-  }
 `;
 
 const ProjectBox = styled.div`
-  &:hover {
-    filter: blur(0);
-  }
-
   @media (max-width: 1100px) {
     display: flex;
     flex-wrap: wrap;
@@ -124,12 +115,10 @@ const Project = styled.div`
     height: 0;
     object-fit: cover;
     scale: 0;
-    filter: blur(10px);
-
     // Responsive styles
     @media (max-width: 1100px) {
-      top: 50px;
-      padding: 0;
+      width: 50%;
+      height: 100%;
     }
   }
 
@@ -160,19 +149,10 @@ const Project = styled.div`
     flex: 1;
     text-align: start;
     font-family: Authentic60C;
-    
 
     // Responsive styles
     @media (max-width: 1100px) {
-      max-width: 300px;
-    }
-
-    &:hover {
-      font-size: 14px;
-
-      @media (max-width: 1100px) {
-        font-size: 12px;
-      }
+      display: none;
     }
   }
 
@@ -191,44 +171,29 @@ const Project = styled.div`
     }
   }
 
-  &:hover {
+  ${({ $isDesktop }) =>
+    $isDesktop &&
+    `
+    &:hover {
     img {
       scale: 1;
-      filter: blur(0);
       width: 22vw;
       height: 22vw;
-
-      @media (max-width: 1100px) {
-        margin: 0;
-        margin-bottom: 10px;
-        scale: 1;
-        width: 100%;
-        height: 180px;
-        filter: blur(0px);
-      }
     }
 
     .description {
       font-size: 20px;
-
-      @media (max-width: 1100px) {
-        font-size: 12px;
-      }
     }
   }
+  `}
 
   @media (max-width: 1100px) {
     flex-direction: column-reverse;
     height: 240px;
-    width: 50%;
     border-bottom: none;
     width: 50%;
     padding: 0;
     margin-bottom: 0;
-
-    .blurred {
-      filter: blur(0px);
-    }
 
     h3 {
       margin-bottom: 20px;
@@ -240,7 +205,6 @@ const Project = styled.div`
       scale: 1;
       width: 95%;
       min-height: 180px;
-      filter: blur(0px);
     }
 
     .project-info {
@@ -263,14 +227,6 @@ const Project = styled.div`
       width: 100%;
     }
   }
-
-  // Responsive styles
-  /* @media (max-width: 350px) {
-    img {
-      width: 150px;
-      left: 55vw;
-    }
-  } */
 `;
 
 export default Projects;
