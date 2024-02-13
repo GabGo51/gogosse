@@ -96,7 +96,7 @@ const Project = styled.div`
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid black;
-  padding: 50px 0;
+  padding: 4vw 0;
   margin-bottom: 20px;
 
   img {
