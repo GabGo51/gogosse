@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { MouseContext } from "../context/mouseContext";
 import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
-
+import useScreenWidth from "../hooks/useScreenWidth";
 const WorkButton = ({ darkTheme }) => {
   const { cursorChangeHandler } = useContext(MouseContext);
 
@@ -54,31 +54,43 @@ const WorkButton = ({ darkTheme }) => {
     };
   }, []);
 
+  const isDesktop = useScreenWidth();
+
   return (
     <Container $darkTheme={isDarkTheme}>
-      <motion.button
-        animate={{ x: mouseX }}
-        transition={spring}
-        onMouseEnter={() => cursorChangeHandler("hover")}
-        onMouseLeave={() => cursorChangeHandler("")}
-        onClick={() => {
-          handleNavigate(`/contact`);
-          window.scrollTo({ top: 0 });
-        }}
-        className="lets-work"
-      >
-        Let's <div>W</div>ork
-      </motion.button>
+      {isDesktop ? (
+        <motion.button
+          animate={{ x: mouseX }}
+          transition={spring}
+          onMouseEnter={() => cursorChangeHandler("hover")}
+          onMouseLeave={() => cursorChangeHandler("")}
+          onClick={() => {
+            handleNavigate(`/contact`);
+            window.scrollTo({ top: 0 });
+          }}
+          className="work"
+        >
+          Let's <div>W</div>ork
+        </motion.button>
+      ) : (
+        <motion.button
+          onClick={() => {
+            handleNavigate(`/contact`);
+            window.scrollTo({ top: 0 });
+          }}
+          className="work-phone"
+        >
+          Let's <div>W</div>ork
+        </motion.button>
+      )}
     </Container>
   );
 };
 
-
-
 const Container = styled(motion.div)`
   width: 95%;
 
-  button {
+  .work {
     transition: 300ms;
     display: flex;
     align-items: center;
@@ -103,14 +115,28 @@ const Container = styled(motion.div)`
     &:hover {
       background-color: ${(props) => (props.$darkTheme ? "white" : "black")};
       color: ${(props) => (props.$darkTheme ? "black" : "white")};
-      
     }
+  }
 
-    @media (max-width: 1100px) {
-      width: 160px;
-      height: 60px;
-      font-size: 20px;
-      border-radius: 20px;
+  .work-phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    font-size: 20px;
+    margin-bottom: 50px;
+    border: 1px solid ${(props) => (props.$darkTheme ? "white" : "black")};
+    border-radius: 20px;
+    font-family: Authentic60;
+    color: ${(props) => (props.$darkTheme ? "white" : "black")};
+    width: 160px;
+    height: 60px;
+    margin-left: 10px;
+    text-align: center;
+    margin-top: 100px;
+    text-transform: uppercase;
+    div {
+      margin-left: 10px;
     }
   }
 `;
