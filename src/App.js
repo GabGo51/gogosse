@@ -51,7 +51,7 @@ function App() {
               <Route path="/LAPIÈS" element={<Lapies />} />
               <Route path="/SAP 2024" element={<SAP />} />
               <Route path="/PETITS BUDGETS GRANDS GOÛTS" element={<PBGG />} />
-              <Route path="/TURBINE 2024" element={<Turbine />} />
+              <Route path="/TURBINE 2022" element={<Turbine />} />
               
             </Routes>
           </div>

@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { MouseContext } from "../context/mouseContext";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
+import logo from "./logo-footer.png";
 
 const Footer = () => {
   const { cursorChangeHandler } = useContext(MouseContext);
@@ -48,7 +49,7 @@ const Footer = () => {
           onMouseLeave={() => cursorChangeHandler("")}
           onClick={() => handleNavigate("/")}
         >
-          GOGOSSE
+          <img src={logo} alt="logo" />
         </motion.button>
         <motion.ul
           initial={initial}
@@ -148,14 +149,12 @@ const Info = styled.div`
   align-items: end;
 
   width: 100%;
-
   button {
-    font-family: Tagada;
-    font-size: 34px;
-    font-weight: 400;
-    color: ${(props) => (props.$darkTheme ? "#f2f2f2" : "black")};
-    background-color: transparent;
-    border: none;
+    all: unset;
+    img {
+      width: 80px;
+      color: ${(props) => (props.$darkTheme ? "#f2f2f2" : "black")};
+    }
   }
 
   li {

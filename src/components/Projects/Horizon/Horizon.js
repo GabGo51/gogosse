@@ -48,7 +48,6 @@ const Horizon = () => {
 
       <div className="direction">
         <h3>ARTISTIC DIRECTION</h3>
-        <p>CHRISTELLE GUIMONT</p>
         <p>NICOLAS GOSSELIN</p>
         <p>CERYL BENZEKRI</p>
         <p>SIHAM EL OUAKOUDI</p>

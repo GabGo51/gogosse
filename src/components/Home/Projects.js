@@ -202,7 +202,7 @@ const Project = styled.div`
         margin: 0;
         margin-bottom: 10px;
         scale: 1;
-        width: 95%;
+        width: 100%;
         height: 180px;
         filter: blur(0px);
       }
