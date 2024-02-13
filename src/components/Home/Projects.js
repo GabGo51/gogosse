@@ -5,6 +5,7 @@ import { useState } from "react";
 import projects from "../../data/projectData";
 import { useContext } from "react";
 import { MouseContext } from "../../context/mouseContext";
+import useScreenWidth from "../../hooks/useScreenWidth";
 
 import WorkButton from "../WorkButton";
 
@@ -31,19 +32,9 @@ const Projects = () => {
     navigate(page);
   };
 
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1100); // Set initial state based on screen width
+  const isDesktop = useScreenWidth()
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth > 1100); // Update state when the screen size changes
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  
 
   return (
     <Container id="project">

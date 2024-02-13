@@ -3,20 +3,17 @@ import styled from "styled-components";
 import Hero from "./Hero";
 import Projects from "./Projects";
 import Header from "./Header";
-import gradient from './img/gradient.jpg'
+import gradient from "./img/gradient.jpg";
 
-
-const Home = ({load}) => {
-  
+const Home = ({ load }) => {
   return (
     <Container>
       <div className="top-section">
-        <Header load={load}/>
+        <Header load={load} />
         <Hero load={load} />
       </div>
-      
+
       <Projects id="project" />
-      
     </Container>
   );
 };
@@ -30,24 +27,20 @@ const Container = styled.div`
     background-image: url(${gradient});
     background-size: cover;
     margin-bottom: 150px;
-    @media (max-width:1100px){
+    @media (max-width: 1100px) {
       height: auto;
     }
   }
 
-  .gradient{
+  .gradient {
     margin-top: 0px;
     height: 200px;
     width: 100vw;
 
     @media (max-width: 500px) {
-    height: 100px;
-    
+      height: 100px;
+    }
   }
-  }
-  
-
-  
 
   a {
     transition: 500ms;

@@ -59,7 +59,7 @@ const OtherHeader = ({ name }) => {
   }, []);
 
   return (
-    <Container darkTheme={isDarkTheme}>
+    <Container $darkTheme={isDarkTheme}>
       <div className={"header"}>
         <motion.h1
           initial={initial}
@@ -278,7 +278,7 @@ const Container = styled.header`
       
 
       li {
-        border: 1px solid ${(props) => (props.darkTheme ? "white" : "black")};
+        border: 1px solid ${(props) => (props.$darkTheme ? "white" : "black")};
         border-radius: 15px;
         margin-left: 10px;
       }

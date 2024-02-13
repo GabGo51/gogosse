@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 import Home from "./components/Home/Home";
 import Cursor from "./Cursor";
@@ -92,8 +92,8 @@ const Container = styled.div`
 
     div {
       position: absolute;
-      top: 50px;
-      right: 50px;
+      top: 20px;
+      right: 20px;
       font-size: clamp(100px, 20vw, 250px);
       font-family: Tagada;
     }
