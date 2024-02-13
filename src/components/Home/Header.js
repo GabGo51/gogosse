@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { MouseContext } from "../../context/mouseContext";
 import { AnimatePresence, motion } from "framer-motion";
 
-const Header = () => {
+const Header = ({load}) => {
   const { cursorChangeHandler } = useContext(MouseContext);
 
   const [isOpen, setIsOpen] = useState(false);
@@ -81,7 +81,11 @@ const Header = () => {
         <motion.h1
           initial={initial}
           animate={animate}
-          transition={{ duration: 0.5, delay: 0.1 }}
+          transition={
+            load
+              ? { duration: 0.5, delay: 2.7 }
+              : { duration: 0.5, delay: 0.2 }
+          }
           onMouseEnter={() => cursorChangeHandler("hover")}
           onMouseLeave={() => cursorChangeHandler("")}
           onClick={() => handleNavigate("/")}
@@ -92,7 +96,11 @@ const Header = () => {
         <motion.p
           initial={initial}
           animate={animate}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={
+            load
+              ? { duration: 0.5, delay: 2.8 }
+              : { duration: 0.5, delay: 0.3 }
+          }
         >
           Nicolas Gosselin, aka Gogosse, a French Canadian designer and recent
           DESIGN graduate based in Montreal. Specializing in branding, poster
@@ -106,7 +114,11 @@ const Header = () => {
         <motion.ul
           initial={initial}
           animate={animate}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          transition={
+            load
+              ? { duration: 0.5, delay: 2.9 }
+              : { duration: 0.5, delay: 0.4 }
+          }
           className="contact"
         >
           <li
@@ -134,7 +146,11 @@ const Header = () => {
         <motion.nav
           initial={initial}
           animate={animate}
-          transition={{ duration: 0.5, delay: 0.6 }}
+          transition={
+            load
+              ? { duration: 0.5, delay: 3 }
+              : { duration: 0.5, delay: 0.5 }
+          }
         >
           <i className="fa-solid fa-bars" onClick={toggleMenu}></i>
           <ul>

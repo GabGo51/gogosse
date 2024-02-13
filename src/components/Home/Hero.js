@@ -9,10 +9,9 @@ import O from "./img/O.png";
 import S from "./img/S.png";
 import E from "./img/E.png";
 
-const Hero = () => {
+const Hero = ({ load }) => {
   const [mouseX, setMouseX] = useState(0);
   const { cursorChangeHandler } = useContext(MouseContext);
-
   const [activeProject, setActiveProject] = useState(projects[0]);
 
   const spring = {
@@ -42,6 +41,7 @@ const Hero = () => {
   };
 
   useEffect(() => {
+    
     const handleMouseMove = (e) => {
       const adjustedMouseX = e.clientX - 340;
       const minX = 0;
@@ -110,10 +110,16 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
+          transition={
+            load
+              ? { duration: 0.5, delay: 2.7 }
+              : { duration: 0.5, delay: 0.2 }
+          }
           className="g1"
           onMouseEnter={() => handleHover(projects[0].title)}
-          onMouseLeave={()=>{cursorChangeHandler("")}}
+          onMouseLeave={() => {
+            cursorChangeHandler("");
+          }}
           onClick={() => handleNavigate(`/${projects[0].title}`)}
         >
           <img alt="letter" src={G} />
@@ -122,10 +128,16 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={
+            load
+              ? { duration: 0.5, delay: 2.8 }
+              : { duration: 0.5, delay: 0.3 }
+          }
           className="o1"
           onMouseEnter={() => handleHover(projects[1].title)}
-          onMouseLeave={()=>{cursorChangeHandler("")}}
+          onMouseLeave={() => {
+            cursorChangeHandler("");
+          }}
           onClick={() => handleNavigate(`/${projects[1].title}`)}
         >
           <img alt="letter" src={O} />
@@ -134,10 +146,16 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          transition={
+            load
+              ? { duration: 0.5, delay: 2.9 }
+              : { duration: 0.5, delay: 0.4 }
+          }
           className="g2"
           onMouseEnter={() => handleHover(projects[2].title)}
-          onMouseLeave={()=>{cursorChangeHandler("")}}
+          onMouseLeave={() => {
+            cursorChangeHandler("");
+          }}
           onClick={() => handleNavigate(`/${projects[2].title}`)}
         >
           <img alt="letter" src={G} />
@@ -146,10 +164,16 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          transition={
+            load
+              ? { duration: 0.5, delay: 3 }
+              : { duration: 0.5, delay: 0.5 }
+          }
           className="o2"
           onMouseEnter={() => handleHover(projects[3].title)}
-          onMouseLeave={()=>{cursorChangeHandler("")}}
+          onMouseLeave={() => {
+            cursorChangeHandler("");
+          }}
           onClick={() => handleNavigate(`/${projects[3].title}`)}
         >
           <img alt="letter" src={O} />
@@ -158,10 +182,16 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
+          transition={
+            load
+              ? { duration: 0.5, delay: 3.1 }
+              : { duration: 0.5, delay: 0.6 }
+          }
           className="s1"
           onMouseEnter={() => handleHover(projects[4].title)}
-          onMouseLeave={()=>{cursorChangeHandler("")}}
+          onMouseLeave={() => {
+            cursorChangeHandler("");
+          }}
           onClick={() => handleNavigate(`/${projects[4].title}`)}
         >
           <img alt="letter" src={S} />
@@ -170,10 +200,16 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
+          transition={
+            load
+              ? { duration: 0.5, delay: 3.2 }
+              : { duration: 0.5, delay: 0.7 }
+          }
           className="s2"
           onMouseEnter={() => handleHover(projects[5].title)}
-          onMouseLeave={()=>{cursorChangeHandler("")}}
+          onMouseLeave={() => {
+            cursorChangeHandler("");
+          }}
           onClick={() => handleNavigate(`/${projects[5].title}`)}
         >
           <img alt="letter" src={S} />
@@ -182,10 +218,16 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.7 }}
+          transition={
+            load
+              ? { duration: 0.5, delay: 3.3 }
+              : { duration: 0.5, delay: 0.8 }
+          }
           className="e"
           onMouseEnter={() => handleHover(projects[6].title)}
-          onMouseLeave={()=>{cursorChangeHandler("")}}
+          onMouseLeave={() => {
+            cursorChangeHandler("");
+          }}
           onClick={() => handleNavigate(`/${projects[6].title}`)}
         >
           <img alt="letter" src={E} />
@@ -233,18 +275,13 @@ const Container = styled.div`
 
 const ImgBox = styled(motion.div)`
   height: 100%;
-  
-  
-  
+
   .top {
     max-height: 700px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    
-    
-    
   }
 
   .cadre {
@@ -254,7 +291,6 @@ const ImgBox = styled(motion.div)`
     justify-content: center;
     width: 100%;
     height: 100%;
-    
   }
 
   div {
@@ -276,7 +312,7 @@ const ImgBox = styled(motion.div)`
     height: 100%;
     position: absolute;
     object-fit: cover;
-    animation: ${appearAnimation} 800ms forwards;
+    animation: ${appearAnimation} 900ms forwards;
 
     &:hover {
       scale: 1.3;
@@ -379,7 +415,7 @@ const LettersBox = styled(motion.div)`
     margin-right: 1.5vw;
   }
 
-  @media (max-width:1100px){
+  @media (max-width: 1100px) {
     margin-top: -30px;
   }
 `;

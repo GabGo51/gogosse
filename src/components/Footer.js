@@ -153,7 +153,7 @@ const Info = styled.div`
     all: unset;
     img {
       width: 80px;
-      color: ${(props) => (props.$darkTheme ? "#f2f2f2" : "black")};
+      filter: ${(props) => (props.$darkTheme ? "invert(0.95)" : "")};
     }
   }
 

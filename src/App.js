@@ -15,9 +15,8 @@ import Heritage from "./components/Projects/Heritage/Heritage";
 import Horizon from "./components/Projects/Horizon/Horizon";
 import PBGG from "./components/Projects/PBGG/PBGG";
 
-
 function App() {
-  const [load, setLoad] = useState(false);
+  const [load, setLoad] = useState(true);
 
   const [count, setCount] = useState(0);
 
@@ -26,40 +25,43 @@ function App() {
       if (count < 100) {
         setCount(count + 1);
       } else {
-        setLoad(true);
+        setLoad(false);
       }
     }, 25); // 1000ms / 25 = 40 updates per second (2.5 seconds for 100 updates)
 
     return () => clearTimeout(timer);
   }, [count]);
 
+  //i want to load the page
+  // i have 2.5s to do so
+  //i animate the page with a delay of 2.5s
 
   return (
     <Router>
       <Cursor />
 
-      {load ? (
+      <Container>
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Home load={load} />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/HÉRITAGE BÂTI" element={<Heritage />} />
+            <Route path="/ESPACE FINE VOL.2" element={<EspaceFine />} />
+            <Route path="/HORIZON 2023" element={<Horizon />} />
+            <Route path="/LAPIÈS" element={<Lapies />} />
+            <Route path="/SAP 2024" element={<SAP />} />
+            <Route path="/PETITS BUDGETS GRANDS GOÛTS" element={<PBGG />} />
+            <Route path="/TURBINE 2022" element={<Turbine />} />
+          </Routes>
+        </div>
+        <Footer />
+      </Container>
+      {load && (
         <Container>
-          <div className="content">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/HÉRITAGE BÂTI" element={<Heritage />} />
-              <Route path="/ESPACE FINE VOL.2" element={<EspaceFine />} />
-              <Route path="/HORIZON 2023" element={<Horizon />} />
-              <Route path="/LAPIÈS" element={<Lapies />} />
-              <Route path="/SAP 2024" element={<SAP />} />
-              <Route path="/PETITS BUDGETS GRANDS GOÛTS" element={<PBGG />} />
-              <Route path="/TURBINE 2022" element={<Turbine />} />
-              
-            </Routes>
+          <div className="loading-animation">
+            <div>{count}</div>
           </div>
-          <Footer />
-        </Container>
-      ) : (
-        <Container>
-          <div className="loading-animation">{count}</div>
         </Container>
       )}
     </Router>
@@ -78,12 +80,23 @@ const Container = styled.div`
   }
 
   .loading-animation {
-    position: absolute;
-    bottom: 0px;
-    right: 50px;
-    font-size: clamp(100px, 20vw, 250px);
-    font-family: Tagada;
-    
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000000;
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+
+    div {
+      position: absolute;
+      bottom: 0px;
+      right: 50px;
+      font-size: clamp(100px, 20vw, 250px);
+      font-family: Tagada;
+    }
   }
 `;
 

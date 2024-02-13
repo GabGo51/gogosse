@@ -6,13 +6,13 @@ import Header from "./Header";
 import gradient from './img/gradient.jpg'
 
 
-const Home = () => {
+const Home = ({load}) => {
   
   return (
     <Container>
       <div className="top-section">
-        <Header />
-        <Hero />
+        <Header load={load}/>
+        <Hero load={load} />
       </div>
       
       <Projects id="project" />
