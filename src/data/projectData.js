@@ -59,7 +59,7 @@ const projects = [
     title: "PETITS BUDGETS GRANDS GOÛTS",
     type: "Editorial",
     description:
-      "Petits Budgets Grands Goût is an editorial endeavor featuring student recipes from our class. Our aim was to compile and share our culinary creations while crafting a unique recipe book. We explored budget-friendly cooking with flavorful twists, enriching our culinary journeys together.",
+      "Petits Budgets Grands Goûts is an editorial endeavor featuring student recipes from our class. We aimed to compile and share our culinary creations while crafting a unique recipe book. We explored budget friendly cooking  with flavorful twists, enriching our culinary journeys together.",
     img: p1,
     date: "2023",
   },

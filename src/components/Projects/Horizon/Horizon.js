@@ -51,6 +51,7 @@ const Horizon = () => {
         <p>CHRISTELLE GUIMONT</p>
         <p>NICOLAS GOSSELIN</p>
         <p>CERYL BENZEKRI</p>
+        <p>SIHAM EL OUAKOUDI</p>
       </div>
     </Container>
   );

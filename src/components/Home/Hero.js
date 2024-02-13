@@ -241,8 +241,8 @@ const ImgBox = styled(motion.div)`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 110%;
-    margin-top: -35px;
+    height: 100%;
+    
     
     
   }
@@ -253,7 +253,7 @@ const ImgBox = styled(motion.div)`
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 110%;
+    height: 100%;
     
   }
 
@@ -263,7 +263,7 @@ const ImgBox = styled(motion.div)`
     margin-bottom: 20px;
     font-family: Authentic90C;
     position: relative;
-    width: 30%;
+    width: 35%;
 
     overflow: hidden;
     border: none;
@@ -273,7 +273,7 @@ const ImgBox = styled(motion.div)`
     transition: 500ms;
     border: none;
     width: 100%;
-    height: 110%;
+    height: 100%;
     position: absolute;
     object-fit: cover;
     animation: ${appearAnimation} 800ms forwards;
