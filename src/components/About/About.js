@@ -45,13 +45,13 @@ const About = () => {
           >
             Gogosse is my creative space where I share my graphic design work.
             The name "Gogosse" holds special significance for me—it's deeply
-            intertwined with my family's legacy and ethos. Rooted in the surname
-            "Gosselin," it represents more than just a title it embodies our
-            family's resourcefulness and inventive spirit.In my family, we're
-            known for being "gosseux," which in French means finding creative
-            ways to make things work of any kind. Choosing the name "Gogosse"
-            was a no-brainer given my backgrounds family's penchant for creative
-            problem-solving.
+            intertwined with my family's legacy and ethos. Rooted in my last
+            name "Gosselin," it represents more than just a title, it embodies
+            our family's resourcefulness and inventive spirit. In my family,
+            we're known for being ‘’gosseux’’, which in French means finding
+            creative ways to make things work of any kind. Choosing the name
+            "Gogosse" was a no-brainer given my family's background penchant for
+            creative problem-solving.
           </motion.p>
           <motion.p
             initial={initial}

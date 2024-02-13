@@ -64,13 +64,13 @@ const Header = () => {
     }
   };
 
-  const phoneScroll = () =>{
-    console.log('hey');
+  const phoneScroll = () => {
+    console.log("hey");
     window.scrollBy({
       top: 1000,
-      behavior: 'smooth'
-  });
-  }
+      behavior: "smooth",
+    });
+  };
 
   const initial = { opacity: 0, y: -20 };
   const animate = { opacity: 1, y: 0 };
@@ -94,10 +94,10 @@ const Header = () => {
           animate={animate}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          Gogosse is Nicolas Gosselin, a French Canadian designer and recent
+          Nicolas Gosselin, aka Gogosse, a French Canadian designer and recent
           DESIGN graduate based in Montreal. Specializing in branding, poster
           design, and EDITORIAL DESIGN, I am dedicated to creating clean and
-          FLEXIBLE designs that leave a lasting impact. Beyond my design
+          FLEXIBLE design that leave a lasting impact. Beyond my design
           expertise, I am also an avid skier with a deep passion for the
           outdoors. My work is a reflection of this dual love for design
           precision and the exhilaration of nature.
@@ -113,7 +113,9 @@ const Header = () => {
             onMouseEnter={handleBlur}
             onMouseLeave={removeBlur}
             className={blur ? "blurred" : ""}
-            onClick={() =>{window.location.href = "mailto:ggss.studio@outlook.com"}}
+            onClick={() => {
+              window.location.href = "mailto:ggss.studio@outlook.com";
+            }}
           >
             ggss.studio@outlook.com
           </li>
@@ -121,7 +123,9 @@ const Header = () => {
             onMouseEnter={handleBlur}
             onMouseLeave={removeBlur}
             className={blur ? "blurred" : ""}
-            onClick={() =>{window.location.href = "tel:+14508225550"}}
+            onClick={() => {
+              window.location.href = "tel:+14508225550";
+            }}
           >
             450 822 5550
           </li>
@@ -186,12 +190,12 @@ const Header = () => {
                 onMouseEnter={handleBlur}
                 onMouseLeave={removeBlur}
                 onClick={() => {
-                  scrollToRef('project');
+                  scrollToRef("project");
                   removeBlur();
-                  setTimeout(()=>{
-                      setIsOpen(false)
-                  },500)
-                  //need timeout for the function to happen before removing element from dom 
+                  setTimeout(() => {
+                    setIsOpen(false);
+                  }, 500);
+                  //need timeout for the function to happen before removing element from dom
                 }}
                 className={blur ? "blurred" : ""}
               >

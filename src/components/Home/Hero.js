@@ -234,19 +234,21 @@ const Container = styled.div`
 const ImgBox = styled(motion.div)`
   height: 100%;
   
-  @media (min-width:2000px){
-    margin-bottom: 50px;
-  }
+  
+  
   .top {
+    max-height: 700px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 110%;
-    margin-top: -30px;
+    margin-top: -35px;
+    
     
   }
 
   .cadre {
+    max-height: 700px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -267,6 +269,7 @@ const ImgBox = styled(motion.div)`
     border: none;
   }
   img {
+    max-height: 700px;
     transition: 500ms;
     border: none;
     width: 100%;
@@ -350,6 +353,7 @@ const LettersBox = styled(motion.div)`
   display: flex;
   justify-content: space-between;
   padding: 0 20px;
+  margin-bottom: -10px;
   @media (max-width: 1000px) {
     padding: 0;
   }

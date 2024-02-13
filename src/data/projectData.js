@@ -11,7 +11,7 @@ const projects = [
     title: "ESPACE FINE VOL.2",
     type: "Editorial",
     description:
-      " Magazine Design: Espace Fine's Second Issue. I was involved in the layout design of Espace Fine's second issue, a collaborative magazine project among design students. The goal was to create a publication featuring a diverse array of projects contributed by individuals in our community. This included photography, design, and various other creative endeavors, resulting in a vibrant and multifaceted piece.",
+      " Magazine Design: Espace Fine's Second Issue. I was involved in the layout design of Espace Fine's second issue, a collaborative magazine project among design students. The goal was to create a publication featuring a diverse array of projects contributed by individuals in our community. Photography, design, and various other creative endeavors, resulted in a vibrant and multifaceted piece.",
     img: e1,
     date: "2023",
   },
@@ -19,7 +19,7 @@ const projects = [
     title: "HÉRITAGE BÂTI",
     type: "Editorial",
     description:
-      "Héritage is a project that honors significant architects in Montreal and their contributions to the city's skyline and urban development. The design of the book is inspired by the architectural world, with elements of buildings being translated into shapes or design motifs within the book's layout. It captures a fusion of architectural principles and graphic design, celebrating Montreal's rich architectural heritage.",
+      "Héritage Bâti is a project that honors significant architects in Montreal and their contributions to the city's skyline and urban development. The design of the book is inspired by the architectural world, with elements of buildings being translated into shapes or design motifs within the book's layout. It captures a fusion of architectural principles and graphic design, celebrating Montreal's rich architectural heritage.",
     img: h1,
     date: "2024",
   },
@@ -35,7 +35,7 @@ const projects = [
     title: "TURBINE 2022",
     type: "Branding",
     description:
-      "Turbine 2023 is the concept for Ahuntsic's graphic design expo, inspired by brutalist aesthetics. We chose the word 'Turbine' to represent our cohort of students for the year because we operate in a workfield that is constantly in flux, circulating new ideas, new designers, and new ways of thinking.",
+      "Turbine 2023 is the concept for Ahuntsic's graphic design expo, inspired by brutalist aesthetics. We chose the word 'Turbine' to represent our cohort because we operate in a workfield that is constantly in flux, circulating new ideas, new designers, and new ways of thinking.",
     img: t1,
     date: "2022",
   },
