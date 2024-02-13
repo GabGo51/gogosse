@@ -35,7 +35,7 @@ const About = () => {
           >
             Hi, I'm Nicolas, a Montreal-based designer! My practice covers
             various types of projects: bookmaking, branding, poster design,
-            creative coding, web design, motion design, and animation.
+            creative coding, web design and motion design.
           </motion.p>
 
           <motion.p
