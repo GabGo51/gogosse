@@ -45,7 +45,7 @@ const Hero = () => {
     const handleMouseMove = (e) => {
       const adjustedMouseX = e.clientX - 340;
       const minX = 0;
-      const maxX = window.innerWidth - window.innerWidth * 0.32; //adjust for responsiveness depending on width of teh asset
+      const maxX = window.innerWidth - window.innerWidth * 0.365; //adjust for responsiveness depending on width of teh asset
 
       if (window.innerWidth > 1100) {
         setMouseX(Math.max(minX, Math.min(adjustedMouseX, maxX)));
