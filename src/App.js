@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import { ReactLenis, useLenis } from 'lenis/react'
 
 import Home from "./components/Home/Home";
 import Cursor from "./Cursor";
@@ -36,8 +37,14 @@ function App() {
   // i have 2.5s to do so
   //i animate the page with a delay of 2.5s
 
+
+  const lenis = useLenis(({ scroll }) => {
+    // called every scroll
+  })
+
   return (
     <Router>
+      <ReactLenis root>
       <Cursor />
 
       <Container>
@@ -64,6 +71,7 @@ function App() {
           </div>
         </Container>
       )}
+      </ReactLenis>
     </Router>
   );
 }
